@@ -10,6 +10,22 @@
  */
 
 #include <stdio.h>
+#include <stdbool.h>
+
+/* 月の定数定義 */
+#define MIN_MONTH 1
+#define MAX_MONTH 12
+
+/* 日数の定数定義 */
+#define DAYS_31 31
+#define DAYS_30 30
+#define DAYS_FEB_NORMAL 28
+#define DAYS_FEB_LEAP 29
+
+/* 閏年計算用の定数 */
+#define YEAR_DIV_400 400
+#define YEAR_DIV_100 100
+#define YEAR_DIV_4 4
 
 int main(void) {
     int year, month;
@@ -27,39 +43,37 @@ int main(void) {
     }
 
     /* 月の検証 */
-    if (month < 1 || month > 12) {
+    if (month < MIN_MONTH || month > MAX_MONTH) {
         printf("無効な月です: %d\n", month);
         return 1;
     }
 
     /* 閏年判定 */
-    int is_leap = 0;
-    if ((year % 400) == 0) {
-        is_leap = 1;
-    } else if ((year % 100) == 0) {
-        is_leap = 0;
-    } else if ((year % 4) == 0) {
-        is_leap = 1;
+    bool is_leap = false;
+    if ((year % YEAR_DIV_400) == 0) {
+        is_leap = true;
+    } else if ((year % YEAR_DIV_100) == 0) {
+        is_leap = false;
+    } else if ((year % YEAR_DIV_4) == 0) {
+        is_leap = true;
     }
 
     int days;
     switch (month) {
         case 1: case 3: case 5: case 7: case 8: case 10: case 12:
-            days = 31;
+            days = DAYS_31;
             break;
         case 4: case 6: case 9: case 11:
-            days = 30;
+            days = DAYS_30;
             break;
         case 2:
-            /* 三項演算子を使わずに if-else で明示的に設定する（教育目的） */
             if (is_leap) {
-                days = 29;
+                days = DAYS_FEB_LEAP;
             } else {
-                days = 28;
+                days = DAYS_FEB_NORMAL;
             }
             break;
         default:
-            /* ここには来ないはず */
             days = 0;
             break;
     }
