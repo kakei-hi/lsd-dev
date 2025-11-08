@@ -14,36 +14,45 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>  /* EXIT_SUCCESS, EXIT_FAILURE のため */
+#include <ctype.h>   /* isalpha() のため */
+
+/* 定数定義 */
+#define INPUT_SUCCESS 1
+#define MAX_CHAR_LENGTH 1
 
 int main(void) {
-    char ch;
+    char input_char;  /* より説明的な変数名に変更 */
 
     printf("文字を1つ入力してください: ");
-    /* 前の空白文字をスキップするために書式指定子の前に空白を入れる */
-    if (scanf(" %c", &ch) != 1) {
-        printf("入力エラー: 1 文字を入力してください\n");
-        return 1;
+    
+    /* 入力処理と検証 */
+    if (scanf(" %c", &input_char) != INPUT_SUCCESS) {
+        printf("入力エラー: 1文字を入力してください\n");
+        return EXIT_FAILURE;
     }
 
-    /* 判定: 小文字の母音かどうかを switch で確認する */
-    switch (ch) {
+    /* 英字であることを確認 */
+    if (!isalpha(input_char)) {
+        printf("エラー: '%c' は英字ではありません\n", input_char);
+        return EXIT_FAILURE;
+    }
+
+    /* 判定処理: 小文字の母音かどうかを判定 */
+    switch (tolower(input_char)) {  /* 大文字も受け付けるように改善 */
         case 'a':
         case 'i':
         case 'u':
         case 'e':
         case 'o':
-            printf("入力: '%c' -> 母音です\n", ch);
+            printf("入力: '%c' -> 母音です\n", input_char);
             break;
         default:
-            printf("入力: '%c' -> 子音です\n", ch);
+            if (isalpha(input_char)) {
+                printf("入力: '%c' -> 子音です\n", input_char);
+            }
             break;
     }
 
-    /* 教育的補足（コメントで説明）:
-     * - 小文字のみチェックしているので、大文字も扱いたい場合は
-     *   'A','I','U','E','O' を追加するか、tolower() を使う。
-     * - 英字以外（数字や記号）を弾く場合は isalpha() などを使って事前に検査する。
-     */
-
-    return 0;
+    return EXIT_SUCCESS;
 }
