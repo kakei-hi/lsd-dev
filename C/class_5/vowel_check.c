@@ -19,7 +19,6 @@
 
 /* 定数定義 */
 #define INPUT_SUCCESS 1
-#define MAX_CHAR_LENGTH 1
 
 int main(void) {
     char input_char;  /* より説明的な変数名に変更 */
