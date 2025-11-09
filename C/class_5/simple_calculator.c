@@ -9,6 +9,13 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h> /* EXIT_SUCCESS / EXIT_FAILURE を使用 */
+
+/* マジックナンバーを定数化 */
+#define OUTPUT_PRECISION 6        /* 小数表示桁数 */
+#define EXPECTED_OP_COUNT 1       /* 演算子読み取り数 */
+#define EXPECTED_VALUE_COUNT 2    /* 数値読み取り数 */
+#define ZERO_FLOAT 0.0f           /* ゼロ判定用 */
 
 int main(void) {
     char op;
@@ -16,33 +23,33 @@ int main(void) {
 
     /* 演算子の入力 */
     printf("演算子を入力してください (+ - * /): ");
-    if (scanf(" %c", &op) != 1) {
+    if (scanf(" %c", &op) != EXPECTED_OP_COUNT) {
         printf("入力エラー\n");
-        return 1;
+        return EXIT_FAILURE;
     }
 
     /* 2つの数値の入力 */
     printf("2つの数値を入力してください（例: 1.2 3.4）: ");
-    if (scanf("%f %f", &a, &b) != 2) {
+    if (scanf("%f %f", &a, &b) != EXPECTED_VALUE_COUNT) {
         printf("数値の入力エラー\n");
-        return 1;
+        return EXIT_FAILURE;
     }
 
     switch (op) {
         case '+':
-            printf("%.6f\n", a + b);
+            printf("%.*f\n", OUTPUT_PRECISION, a + b);
             break;
         case '-':
-            printf("%.6f\n", a - b);
+            printf("%.*f\n", OUTPUT_PRECISION, a - b);
             break;
         case '*':
-            printf("%.6f\n", a * b);
+            printf("%.*f\n", OUTPUT_PRECISION, a * b);
             break;
         case '/':
             if (b == 0.0f) {
                 printf("Division by zero\n");
             } else {
-                printf("%.6f\n", a / b);
+                printf("%.*f\n", OUTPUT_PRECISION, a / b);
             }
             break;
         default:
@@ -50,5 +57,5 @@ int main(void) {
             break;
     }
 
-    return 0;
+    return EXIT_SUCCESS;
 }
