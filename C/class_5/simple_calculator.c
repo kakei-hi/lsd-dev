@@ -22,8 +22,15 @@ int main(void) {
     float a, b;
 
     /* 演算子の入力 */
-    printf("演算子を入力してください (+ - * /): ");
+/*    printf("演算子を入力してください (+ - * /): ");
     if (scanf(" %c", &op) != EXPECTED_OP_COUNT) {
+        printf("入力エラー\n");
+        return EXIT_FAILURE;
+    }
+        */
+    printf("演算子を入力してください (+ - * /): ");
+    scanf(" %c", &op);
+    if (!(op == '+' || op == '-' || op == '*' || op == '/')) {
         printf("入力エラー\n");
         return EXIT_FAILURE;
     }
