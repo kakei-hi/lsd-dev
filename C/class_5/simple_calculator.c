@@ -25,7 +25,7 @@ int main(void) {
     printf("演算子を入力してください (+ - * /): ");
     scanf(" %c", &op);
     if (!(op == '+' || op == '-' || op == '*' || op == '/')) {
-        printf("入力エラー\n");
+        printf("Invalid Operation\n");
         return EXIT_FAILURE;
     }
 
@@ -52,9 +52,6 @@ int main(void) {
             } else {
                 printf("%.*f\n", OUTPUT_PRECISION, a / b);
             }
-            break;
-        default:
-            printf("Invalid operator\n");
             break;
     }
 
