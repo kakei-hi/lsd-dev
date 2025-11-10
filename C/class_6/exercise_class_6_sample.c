@@ -3,29 +3,36 @@
  * ********************/
 
 #include <stdio.h>
+#include <stdlib.h>
 
-int main()
-{
-    int     i, j;
+/* 九九の範囲定数 */
+#define MULTIPLICATION_MIN 1
+#define MULTIPLICATION_MAX 9
 
-    // 列のインデックスを表示
-    printf("\t");   // タブを挿入
-    for ( i = 1; i <= 9; i++)
-    {
-        printf("%2d\t", i); // %2d: 2桁分のスペースを確保して整数を表示
+/* 表示用のフォーマット定数 */
+#define DISPLAY_DIGITS 2
+
+/**
+ * メイン関数: 九九表全体を表示
+ */
+int main(void) {
+    int row, col;
+
+    /* ヘッダー（列番号）を表示 */
+    printf("\t");   // 左上の空白用タブ
+    for (col = MULTIPLICATION_MIN; col <= MULTIPLICATION_MAX; col++) {
+        printf("%*d\t", DISPLAY_DIGITS, col);
     }
-
     printf("\n\n");
-    for ( i = 1; i <= 9; i++)
-    {
-        printf("%2d", i);    // 行のインデックスを表示
-        for (j = 1; j <= 9; j ++ )
-        {
-            printf("\t%2d", i * j);
+
+    /* 九九表の本体（各行の計算結果）を表示 */
+    for (row = MULTIPLICATION_MIN; row <= MULTIPLICATION_MAX; row++) {
+        printf("%*d", DISPLAY_DIGITS, row);    // 行番号を表示
+        for (col = MULTIPLICATION_MIN; col <= MULTIPLICATION_MAX; col++) {
+            printf("\t%*d", DISPLAY_DIGITS, row * col);
         }
         printf("\n");
     }
     
-    return 0;
-    
+    return EXIT_SUCCESS;
 }
