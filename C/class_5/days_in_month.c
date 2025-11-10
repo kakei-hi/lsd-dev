@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include <stdbool.h>
+#include <stdlib.h>
 
 /* 月の定数定義 */
 #define MIN_MONTH 1
@@ -27,25 +28,28 @@
 #define YEAR_DIV_100 100
 #define YEAR_DIV_4 4
 
+// 期待する入力数を定数として定義
+#define EXPECTED_INPUT_COUNT 1
+
 int main(void) {
     int year, month;
 
     printf("西暦を入力してください（例: 2024）: ");
-    if (scanf("%d", &year) != 1) {
+    if (scanf("%d", &year) != EXPECTED_INPUT_COUNT) {
         printf("入力エラー: 整数の西暦を入力してください\n");
-        return 1;
+        return EXIT_FAILURE;
     }
 
     printf("月を入力してください（1-12）: ");
-    if (scanf("%d", &month) != 1) {
+    if (scanf("%d", &month) != EXPECTED_INPUT_COUNT) {
         printf("入力エラー: 整数の月を入力してください\n");
-        return 1;
+        return EXIT_FAILURE;
     }
 
     /* 月の検証 */
     if (month < MIN_MONTH || month > MAX_MONTH) {
         printf("無効な月です: %d\n", month);
-        return 1;
+        return EXIT_FAILURE;
     }
 
     /* 閏年判定 */
@@ -73,9 +77,6 @@ int main(void) {
                 days = DAYS_FEB_NORMAL;
             }
             break;
-        default:
-            days = 0;
-            break;
     }
 
     printf("%d年%d月は %d 日です\n", year, month, days);
@@ -85,5 +86,5 @@ int main(void) {
      * - 入力検証 (month の範囲チェック) を忘れないこと
      */
 
-    return 0;
+    return EXIT_SUCCESS;  // 正常終了の場合
 }
