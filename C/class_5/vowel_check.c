@@ -47,9 +47,7 @@ int main(void) {
             printf("入力: '%c' -> 母音です\n", input_char);
             break;
         default:
-            if (isalpha(input_char)) {
-                printf("入力: '%c' -> 子音です\n", input_char);
-            }
+            printf("入力: '%c' -> 子音です\n", input_char);
             break;
     }
 
