@@ -30,8 +30,8 @@ int main(void) {
     }
 
     /* 2つの数値の入力 */
-    printf("2つの数値を入力してください（例: 1.2 3.4）: ");
-    if (scanf("%f %f", &a, &b) != EXPECTED_VALUE_COUNT) {
+    printf("2つの数値を入力してください（例: 1.2, 3.4）: ");
+    if (scanf("%f, %f", &a, &b) != EXPECTED_VALUE_COUNT) {
         printf("数値の入力エラー\n");
         return EXIT_FAILURE;
     }
