@@ -23,7 +23,14 @@ int main(void) {
 
     /* 演算子の入力 */
     printf("演算子を入力してください (+ - * /): ");
-    scanf(" %c", &op);
+
+    /* 入力成否の検出を追加 */
+    if (scanf(" %c", &op) != EXPECTED_OP_COUNT) {
+        printf("入力エラー: 演算子を入力してください\n");
+        return EXIT_FAILURE;
+    }
+
+    /* 値の妥当性検証 */
     if (!(op == '+' || op == '-' || op == '*' || op == '/')) {
         printf("Invalid Operation\n");
         return EXIT_FAILURE;
