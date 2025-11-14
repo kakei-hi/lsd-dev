@@ -28,11 +28,11 @@ int main(void)
     srand((unsigned int)seed);
 
     /* サイコロを trials 回振る */
-    for (int i = 0; i < trials; ++i) {
+    for (int i = 0; i < trials; i ++) {
         /* 1〜6 のランダムな値を生成 */
         int roll = (rand() % 6) + 1;
         if (roll == 1) {
-            ++count_one;
+            count_one ++;
         }
     }
 
