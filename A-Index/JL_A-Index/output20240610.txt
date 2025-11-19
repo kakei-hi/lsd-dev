@@ -1,0 +1,24 @@
+s = (ac_x * cd_y - ac_y * cd_x) / (ab_x * cd_y - ab_y * cd_x)
+t = (ca_x * ab_y - ca_y * ab_x) / (cd_x * ab_y - cd_y * ab_x)
+
+(xx[1], yy[1]) = (1.0f0, 1.0f0)
+(ab_x[1, 1, 1], ab_y[1, 1, 1]) = (99.0f0, 0.0f0)
+(cd_x[1, 1, 1], cd_y[1, 1, 1]) = (30.0f0, 0.0f0)
+(ac_x[1, 1, 1], ac_y[1, 1, 1]) = (-1.0f0, -1.0f0)
+(ca_x[1, 1, 1], ca_y[1, 1, 1]) = (1.0f0, 1.0f0)
+normal_s[1, 1, 1] = Inf32
+normal_t[1, 1, 1] = 0.033333335f0
+var"##695"[1, 1, :] = Float32[NaN, 0.0, NaN, 0.0, NaN, 0.0, NaN, -0.0, 0.0, NaN, 0.0, NaN, 0.0, NaN, 0.0, NaN]
+min_dist_crossing[1, 1, :] = Float32[NaN]
+  0.215343 seconds (566.88 k allocations: 41.589 MiB, 92.12% compilation time)
+
+(xx[1], yy[1]) = (1.0f0, 1.0f0)
+(ab_x[1, 1, 2], ab_y[1, 1, 2]) = (99.0f0, 0.0f0)
+(cd_x[1, 1, 2], cd_y[1, 1, 2]) = (0.0f0, 20.0f0)
+(ac_x[1, 1, 2], ac_y[1, 1, 2]) = (29.0f0, -1.0f0)
+(ca_x[1, 1, 2], ca_y[1, 1, 2]) = (-29.0f0, 1.0f0)
+normal_s[1, 1, 2] = 0.2929293f0
+normal_t[1, 1, 2] = -Inf32
+var"##734"[1, 1, :] = Float32[NaN, 0.0, NaN, 0.0, NaN, 0.0, NaN, -0.0, 0.0, NaN, 0.0, NaN, 0.0, NaN, 0.0, NaN]
+min_dist_crossing[1, 1, :] = Float32[NaN]
+  0.227812 seconds (567.10 k allocations: 41.589 MiB, 5.43% gc time, 87.18% compilation time)

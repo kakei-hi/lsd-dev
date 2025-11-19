@@ -1,0 +1,12 @@
+# DXFファイルの読み込み
+import ezdxf
+
+## DXFファイルを読み込む
+doc = ezdxf.readfile("../Plan/25F_layout_0903.dxf")
+
+# モデルベースを取得
+msp = doc.modelspace()
+
+# エンティティをループして処理
+for entity in msp:
+  print(entity)

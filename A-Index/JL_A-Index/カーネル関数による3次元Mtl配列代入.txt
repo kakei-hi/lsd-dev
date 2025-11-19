@@ -1,0 +1,187 @@
+Mac Studio
+
+1.9 S
+num_poins = 200 * 200
+num_edges = 176
+div_n = 300
+
+5.6 S
+num_poins = 200 * 200
+num_edges = 176
+div_n = 350
+
+4.1 S
+num_poins = 200 * 200
+num_edges = 176
+div_n = 400
+
+9.7 S
+num_poins = 200 * 200
+num_edges = 176
+div_n = 450
+
+NG
+num_poins = 200 * 200
+num_edges = 176
+div_n = 500
+
+MacBook Pro M4Max
+
+1.1 S
+num_poins = 200 * 200
+num_edges = 176
+div_n = 300
+
+2.9 S
+num_poins = 200 * 200
+num_edges = 176
+div_n = 350
+
+4.0 S
+num_poins = 200 * 200
+num_edges = 176
+div_n = 450
+
+2.7 S
+num_poins = 200 * 200
+num_edges = 176
+div_n = 700
+
+10.4 S
+num_poins = 200 * 200
+num_edges = 176
+div_n = 750
+
+8.9 S
+num_poins = 200 * 200
+num_edges = 176
+div_n = 900
+
+NG
+num_poins = 200 * 200
+num_edges = 176
+div_n = 1000
+
+# カーネル関数による3次元Mtl配列代入
+
+using Metal, Chain, BenchmarkTools
+
+
+# カーネル関数 代入
+function kernel_assign(cd_x, cd_y, ac_x, ac_y, cos_k0, cos_k1, sin_k0, sin_k1, cos_i, sin_i)
+    i = thread_position_in_grid_3d().x
+    j = thread_position_in_grid_3d().y
+    k = thread_position_in_grid_3d().z
+
+    if i > size(cd_x, 1) || j > size(cd_x, 2) || k > size(cd_x, 3)        
+        return
+    end
+
+    cd_x[i, j, k] = cos_k1[k] - cos_k0[k]
+    cd_y[i, j, k] = sin_k1[k] - sin_k0[k]
+    ac_x[i, j, k] = cos_k0[k] - cos_i[i]
+    ac_y[i, j, k] = sin_k0[k] - sin_i[i]
+    
+    return nothing
+end
+
+function main()
+    # num_points = 300 * 300
+    # num_points = 200 * 200
+    # num_edges = 176
+
+    # α = Float32(0.5)
+    # div_n = 
+    # @chain Metal.current_device() begin
+    #     _.maxBufferLength
+    #     floor(α * (_ / (sizeof(Float32) * num_points * num_edges)))
+    #     convert(Int, _)
+    # end
+
+num_points = 40000
+num_edges = 176
+# div_n = 700   
+div_n = 250
+    cos_k0 = MtlArray{Float32}(undef, num_edges)
+    sin_k0 = MtlArray{Float32}(undef, num_edges)
+    cos_k1 = MtlArray{Float32}(undef, num_edges)
+    sin_k1 = MtlArray{Float32}(undef, num_edges)
+    cos_i = MtlArray{Float32}(undef, num_points)
+    sin_i = MtlArray{Float32}(undef, num_points)
+
+    cos_k0 =
+    @chain collect(1:num_edges) begin
+        (_ .- 1) .* (2 * π / num_edges)
+        cos.()
+        convert.(Float32, _)
+        MtlArray(_)
+    end
+    
+    sin_k0 =
+    @chain collect(1:num_edges) begin
+        (_ .- 1) .* (2 * π / num_edges)
+        sin.()
+        convert.(Float32, _)
+        MtlArray(_)
+    end
+    
+    cos_k1 =
+    @chain collect(1:num_edges) begin
+        (_) .* (2 * π / num_edges)
+        cos.()
+        convert.(Float32, _)
+        MtlArray(_)
+    end
+    
+    sin_k1 =
+    @chain collect(1:num_edges) begin
+        (_) .* (2 * π / num_edges)
+        sin.()
+        convert.(Float32, _)
+        MtlArray(_)
+    end
+
+    cos_i =
+    @chain collect(1:num_points) begin
+        (_ .- 1) .* (2 * π / num_points)
+        cos.()
+        convert.(Float32, _)
+        MtlArray(_)
+    end
+    
+    sin_i =
+    @chain collect(1:num_points) begin
+        (_ .- 1) .* (2 * π / num_points)
+        sin.()
+        convert.(Float32, _)
+        MtlArray(_)
+    end
+    
+    mtl_cd_x = MtlArray{Float32}(undef, num_points, div_n, num_edges)
+    mtl_cd_y = MtlArray{Float32}(undef, num_points, div_n, num_edges)
+    mtl_ac_x = MtlArray{Float32}(undef, num_points, div_n, num_edges)
+    mtl_ac_y = MtlArray{Float32}(undef, num_points, div_n, num_edges)
+
+    # Threadgroupのサイズを設定
+    # threads_per_group = (10, 10, 10)  # MacPro M4MAX OK Mac Studio NG
+    threads_per_group = (10, 9, 9)  # = 810 < 832
+    num_groups = (ceil(Int, num_points / threads_per_group[1]), 
+                ceil(Int, div_n / threads_per_group[2]), 
+                ceil(Int, num_edges / threads_per_group[3]))
+    
+    # カーネル関数を実行
+    @metal threads = threads_per_group groups = num_groups kernel_assign(mtl_cd_x, mtl_cd_y, mtl_ac_x, mtl_ac_y,
+    cos_k0, cos_k1, sin_k0, sin_k1, cos_i, sin_i)
+ 
+    # 3次元Mtl配列をArrayに変換
+    cd_x = Array(mtl_cd_x)
+    # cos_k0 = Array(cos_k0)
+    # cos_k1 = Array(cos_k1)
+    # println("cd_x[1, 1, 1] ", cd_x[1, 1, 1])
+    # println("cos_k1[1] - cos_k0[1]: ", cos_k1[1] - cos_k0[1])
+    # println("mtl_cd_x:[num_points, div_n, num_edges] ", mtl_cd_x[num_points, div_n, num_edges])
+    # println("cos_k1[num_edges] - cos_k0[num_edges]: ", cos_k1[num_edges] - cos_k0[num_edges])
+    
+end
+
+main()
