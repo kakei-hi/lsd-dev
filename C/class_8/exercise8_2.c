@@ -13,7 +13,7 @@ float sum(float a, float b)
 // 平均を求める
 float avg(float x, float y)
 {
-    return((x + y) / 2.0);
+    return (x + y) / 2.0;
 }
 
 // 2数を比較して大きな数値を返す
@@ -25,7 +25,6 @@ float lrg(float x, float y)
     else{
         return y;
     }
-    
     
 }
 
