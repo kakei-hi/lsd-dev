@@ -4,56 +4,145 @@
  *
  */
 
-#include	<stdio.h>
+#include <stdio.h>
 
-int main()
+// 定数定義
+#define STUDENT_COUNT 5      // 学生の人数
+#define SUBJECT_COUNT 5      // 科目の数
+#define COLUMN_COUNT 6       // 列数（学生番号 + 科目数）
+#define STUDENT_ID_INDEX 0   // 学生番号の列インデックス
+#define FIRST_SUBJECT_INDEX 1 // 最初の科目の列インデックス
+
+/*
+ * 関数: calculate_student_average
+ * 目的: 指定した学生の平均点を計算する
+ * 引数: scores - 成績データ配列, student_index - 学生のインデックス
+ * 戻り値: その学生の平均点
+ */
+float calculate_student_average(int scores[][COLUMN_COUNT], int student_index)
 {
-    // 配列の初期化
-    int		dat[5][6] = {{1010, 80, 55, 92, 71, 81},
+    float sum = 0.0;
+    
+    // 各科目の得点を合計（学生番号を除く）
+    for (int j = FIRST_SUBJECT_INDEX; j < COLUMN_COUNT; j++) {
+        sum += (float)scores[student_index][j];
+    }
+    
+    return sum / SUBJECT_COUNT;
+}
+
+/*
+ * 関数: calculate_subject_average
+ * 目的: 指定した科目の平均点を計算する
+ * 引数: scores - 成績データ配列, subject_index - 科目のインデックス
+ * 戻り値: その科目の平均点
+ */
+float calculate_subject_average(int scores[][COLUMN_COUNT], int subject_index)
+{
+    float sum = 0.0;
+    
+    // 全学生の該当科目の得点を合計
+    for (int i = 0; i < STUDENT_COUNT; i++) {
+        sum += (float)scores[i][subject_index];
+    }
+    
+    return sum / STUDENT_COUNT;
+}
+
+/*
+ * 関数: calculate_all_student_averages
+ * 目的: 全学生の平均点を計算する
+ * 引数: scores - 成績データ配列, averages - 平均点を格納する配列
+ */
+void calculate_all_student_averages(int scores[][COLUMN_COUNT], float averages[])
+{
+    for (int i = 0; i < STUDENT_COUNT; i++) {
+        averages[i] = calculate_student_average(scores, i);
+    }
+}
+
+/*
+ * 関数: calculate_all_subject_averages
+ * 目的: 全科目の平均点を計算する
+ * 引数: scores - 成績データ配列, averages - 平均点を格納する配列
+ */
+void calculate_all_subject_averages(int scores[][COLUMN_COUNT], float averages[])
+{
+    for (int i = FIRST_SUBJECT_INDEX; i < COLUMN_COUNT; i++) {
+        // 科目インデックスと配列インデックスのズレを調整
+        averages[i - FIRST_SUBJECT_INDEX] = calculate_subject_average(scores, i);
+    }
+}
+
+/*
+ * 関数: print_header
+ * 目的: 成績表のヘッダーを表示する
+ */
+void print_header(void)
+{
+    printf("\n学生番号\t英語\t\t数学\t\t国語\t\t理科\t\t社会\t\t平均点\n");
+}
+
+/*
+ * 関数: print_student_scores
+ * 目的: 各学生の成績と平均点を表示する
+ * 引数: scores - 成績データ配列, averages - 学生毎の平均点配列
+ */
+void print_student_scores(int scores[][COLUMN_COUNT], float averages[])
+{
+    for (int i = 0; i < STUDENT_COUNT; i++) {
+        // 学生番号と各科目の得点を表示
+        for (int j = 0; j < COLUMN_COUNT; j++) {
+            printf("%d\t\t", scores[i][j]);
+        }
+        // 平均点を表示（小数点以下2桁）
+        printf("%.2f\n", averages[i]);
+    }
+}
+
+/*
+ * 関数: print_subject_averages
+ * 目的: 各科目の平均点を表示する
+ * 引数: averages - 科目毎の平均点配列
+ */
+void print_subject_averages(float averages[])
+{
+    printf("-----------------------------------------------------------------------------------------------------\n");
+    printf("\t\t");
+    
+    for (int i = 0; i < SUBJECT_COUNT; i++) {
+        printf("%.2f\t\t", averages[i]);
+    }
+    printf("\n");
+}
+
+int main(void)
+{
+    // 成績データの初期化
+    // [学生][項目] 項目: 0=学生番号, 1=英語, 2=数学, 3=国語, 4=理科, 5=社会
+    int scores[STUDENT_COUNT][COLUMN_COUNT] = {
+        {1010, 80, 55, 92, 71, 81},
         {1032, 62, 54, 67, 75, 78},
         {1084, 52, 42, 52, 60, 59},
         {1107, 83, 91, 85, 96, 88},
         {1116, 72, 73, 80, 69, 65}
-    };	//	1番目の添え字：学生の識別  2番目の添え字：項目（0:学生番号 1:英語 2:数学 3:国語 4:理科 5:社会）
-    int		i, j;
-    float	sum, average_sub[5], average_std[5];		//	_sub：科目毎の平均点，_std：学生毎の平均点
+    };
     
-    //	学生毎の平均点を計算する
-    for ( i = 0; i < 5; i ++) {		//	学生iについて平均点を計算する
-        sum = 0.0;
-        for ( j = 1; j < 6; j ++) {		//	各科目の得点はj = 1 〜 5
-            sum += (float)dat[i][j];
-        }
-        average_std[i] = sum / 5.0;
-    }
+    float average_by_subject[SUBJECT_COUNT];  // 科目毎の平均点
+    float average_by_student[STUDENT_COUNT];  // 学生毎の平均点
     
-    //	科目毎の平均点を計算する
-    for ( i = 1; i < 6; i ++) {		//	科目iについて平均点を計算する
-        sum = 0.0;
-        for ( j = 0; j < 5; j ++) {
-            sum += (float)dat[j][i];
-        }
-        average_sub[i - 1] = sum / 5.0;		//	dat[][]とaverage_sub[]では科目に関する添え字がズレている
-    }
+    // 学生毎の平均点を計算
+    calculate_all_student_averages(scores, average_by_student);
     
-    //	結果表示を見やすくするために適宜タブを挿入する
-    printf("\n学生番号\t英語\t\t数学\t\t国語\t\t理科\t\t社会\t\t平均点\n");		//	インデックス行
-    for ( i = 0; i < 5; i ++) {
-        for ( j = 0; j < 6; j ++) {
-            printf("%d\t\t", dat[i][j]);
-        }
-        printf("%.2f\n", average_std[i]);
-    }
+    // 科目毎の平均点を計算
+    calculate_all_subject_averages(scores, average_by_subject);
     
-    printf("-----------------------------------------------------------------------------------------------------\n");
-    printf("\t\t");
-    for ( i = 0; i < 5; i ++) {
-        printf("%.2f\t\t", average_sub[i]);
-    }
-    printf("\n");
+    // 結果を表示
+    print_header();
+    print_student_scores(scores, average_by_student);
+    print_subject_averages(average_by_subject);
     
     return 0;
-    
 }
 
 
