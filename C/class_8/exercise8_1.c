@@ -25,7 +25,7 @@ int main(){
     printf("a = %d", a);
 
     // Q-6
-    b = (float)5 / (float)3.0;
+    b = (float)5 / (float)3;
     printf("b = %f", b);
 
     // Q-7
