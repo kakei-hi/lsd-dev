@@ -27,7 +27,14 @@ int main(void)
     int roll_result;           // サイコロを振った結果（0〜5）
     
     // 乱数生成器の初期化（現在時刻をシード値として使用）
-    srand((unsigned)time(NULL));
+    // time() が失敗した場合は固定シードにフォールバック
+    time_t current_time = time(NULL);
+    if (current_time == (time_t)-1) {
+        printf("警告: time() の取得に失敗したため、固定シードで初期化します。\n");
+        srand(12345);  // 固定シード（再現性のため）
+    } else {
+        srand((unsigned)current_time);
+    }
     
     // すべての目のカウンターを0で初期化
     for (i = 0; i < DICE_FACES; i++) {
