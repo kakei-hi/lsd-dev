@@ -16,12 +16,12 @@ int main ()
 	
 	printf("\n為替レートを入力してください");
 	printf("\n対米ドル\t");
-	fscanf(stdin, "%f", &rateD);
+	scanf("%f", &rateD);
 	printf("\n対ユーロ\t");
-	fscanf(stdin, "%f", &rateE);
+	scanf("%f", &rateE);
 
 	printf("\n換算金額を入力してください\t");
-	fscanf(stdin, "%f", &yen);
+	scanf("%f", &yen);
 	
 	exchange(yen, rateD, rateE, &usd, &euro);
 	
