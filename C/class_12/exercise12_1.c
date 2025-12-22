@@ -11,10 +11,35 @@
 
 // Magic Number回避のため定数化
 #define ARRAY_LENGTH 5
-#define TEST_INDEX 3  // 「i番目」を 3 として検証
+
+// ユーザーから i 番目（1始まり）を安全に取得する関数
+int get_user_index(void) {
+    int selected_index = 0;
+    while (1) {
+        printf("i番目の要素番号を入力してください (1〜%d): ", ARRAY_LENGTH - 1);
+        if (scanf("%d", &selected_index) != 1) {
+            // 数値以外が入力された場合は入力バッファをクリア
+            int c;
+            while ((c = getchar()) != '\n' && c != EOF) {}
+            printf("数値を入力してください。\n");
+            continue;
+        }
+        if (selected_index < 1 || selected_index > ARRAY_LENGTH - 1) {
+            printf("範囲外です。1〜%dの整数を入力してください。\n", ARRAY_LENGTH - 1);
+            // 入力バッファの残りをクリア
+            int c;
+            while ((c = getchar()) != '\n' && c != EOF) {}
+            continue;
+        }
+        // 改行など残りをクリア
+        int c;
+        while ((c = getchar()) != '\n' && c != EOF) {}
+        return selected_index;
+    }
+}
 
 // int型配列での検証
-void demonstrate_int(void) {
+void demonstrate_int(int selected_index) {
     int a[ARRAY_LENGTH] = {10, 20, 30, 40, 50};
 
     // 1) 配列名は先頭要素のアドレス
@@ -25,25 +50,25 @@ void demonstrate_int(void) {
     printf("    &a[0]   = %p\n", (void *)p_from_first);
 
     // 2) i番目の要素のアドレスの2通りの表現
-    int *addr_i_by_amp = &a[TEST_INDEX - 1];
-    int *addr_i_by_add = a + (TEST_INDEX - 1);
-    printf("[int] 2) %d番目要素のアドレスの2通りの表現\n", TEST_INDEX);
-    printf("    &a[%d]   = %p\n", TEST_INDEX - 1, (void *)addr_i_by_amp);
-    printf("    a + (%d) = %p\n", TEST_INDEX - 1, (void *)addr_i_by_add);
+    int *addr_i_by_amp = &a[selected_index - 1];
+    int *addr_i_by_add = a + (selected_index - 1);
+    printf("[int] 2) %d番目要素のアドレスの2通りの表現\n", selected_index);
+    printf("    &a[%d]   = %p\n", selected_index - 1, (void *)addr_i_by_amp);
+    printf("    a + (%d) = %p\n", selected_index - 1, (void *)addr_i_by_add);
 
     // 3) i番目と(i+1)番目のアドレス差（型に依存）
-    int *addr_i = &a[TEST_INDEX - 1];
-    int *addr_next = &a[TEST_INDEX];
+    int *addr_i = &a[selected_index - 1];
+    int *addr_next = &a[selected_index];
     ptrdiff_t diff_elements = addr_next - addr_i; // 要素数としての差（常に1）
-    uintptr_t diff_bytes = (uintptr_t)(void *)addr_next - (uintptr_t)(void *)addr_i; // バイト差
-    printf("[int] 3) %d番目と%d番目のアドレス差\n", TEST_INDEX, TEST_INDEX + 1);
+    uintptr_t diff_bytes = (uintptr_t)addr_next - (uintptr_t)addr_i; // バイト差
+    printf("[int] 3) %d番目と%d番目のアドレス差\n", selected_index, selected_index + 1);
     printf("    要素差        = %td\n", diff_elements);
     printf("    バイト差      = %lu\n", (unsigned long)diff_bytes);
     printf("    sizeof(int)   = %zu\n\n", sizeof(int));
 }
 
 // double型配列での検証
-void demonstrate_double(void) {
+void demonstrate_double(int selected_index) {
     double a[ARRAY_LENGTH] = {1.1, 2.2, 3.3, 4.4, 5.5};
 
     double *p_from_name = a;
@@ -52,24 +77,24 @@ void demonstrate_double(void) {
     printf("    a       = %p\n", (void *)p_from_name);
     printf("    &a[0]   = %p\n", (void *)p_from_first);
 
-    double *addr_i_by_amp = &a[TEST_INDEX - 1];
-    double *addr_i_by_add = a + (TEST_INDEX - 1);
-    printf("[double] 2) %d番目要素のアドレスの2通りの表現\n", TEST_INDEX);
-    printf("    &a[%d]   = %p\n", TEST_INDEX - 1, (void *)addr_i_by_amp);
-    printf("    a + (%d) = %p\n", TEST_INDEX - 1, (void *)addr_i_by_add);
+    double *addr_i_by_amp = &a[selected_index - 1];
+    double *addr_i_by_add = a + (selected_index - 1);
+    printf("[double] 2) %d番目要素のアドレスの2通りの表現\n", selected_index);
+    printf("    &a[%d]   = %p\n", selected_index - 1, (void *)addr_i_by_amp);
+    printf("    a + (%d) = %p\n", selected_index - 1, (void *)addr_i_by_add);
 
-    double *addr_i = &a[TEST_INDEX - 1];
-    double *addr_next = &a[TEST_INDEX];
+    double *addr_i = &a[selected_index - 1];
+    double *addr_next = &a[selected_index];
     ptrdiff_t diff_elements = addr_next - addr_i;
-    uintptr_t diff_bytes = (uintptr_t)(void *)addr_next - (uintptr_t)(void *)addr_i;
-    printf("[double] 3) %d番目と%d番目のアドレス差\n", TEST_INDEX, TEST_INDEX + 1);
+    uintptr_t diff_bytes = (uintptr_t)addr_next - (uintptr_t)addr_i;
+    printf("[double] 3) %d番目と%d番目のアドレス差\n", selected_index, selected_index + 1);
     printf("    要素差        = %td\n", diff_elements);
     printf("    バイト差      = %lu\n", (unsigned long)diff_bytes);
     printf("    sizeof(double)= %zu\n\n", sizeof(double));
 }
 
 // char型配列での検証
-void demonstrate_char(void) {
+void demonstrate_char(int selected_index) {
     char a[ARRAY_LENGTH] = {'A', 'B', 'C', 'D', 'E'};
 
     char *p_from_name = a;
@@ -78,17 +103,17 @@ void demonstrate_char(void) {
     printf("    a       = %p\n", (void *)p_from_name);
     printf("    &a[0]   = %p\n", (void *)p_from_first);
 
-    char *addr_i_by_amp = &a[TEST_INDEX - 1];
-    char *addr_i_by_add = a + (TEST_INDEX - 1);
-    printf("[char] 2) %d番目要素のアドレスの2通りの表現\n", TEST_INDEX);
-    printf("    &a[%d]   = %p\n", TEST_INDEX - 1, (void *)addr_i_by_amp);
-    printf("    a + (%d) = %p\n", TEST_INDEX - 1, (void *)addr_i_by_add);
+    char *addr_i_by_amp = &a[selected_index - 1];
+    char *addr_i_by_add = a + (selected_index - 1);
+    printf("[char] 2) %d番目要素のアドレスの2通りの表現\n", selected_index);
+    printf("    &a[%d]   = %p\n", selected_index - 1, (void *)addr_i_by_amp);
+    printf("    a + (%d) = %p\n", selected_index - 1, (void *)addr_i_by_add);
 
-    char *addr_i = &a[TEST_INDEX - 1];
-    char *addr_next = &a[TEST_INDEX];
+    char *addr_i = &a[selected_index - 1];
+    char *addr_next = &a[selected_index];
     ptrdiff_t diff_elements = addr_next - addr_i;
-    uintptr_t diff_bytes = (uintptr_t)(void *)addr_next - (uintptr_t)(void *)addr_i;
-    printf("[char] 3) %d番目と%d番目のアドレス差\n", TEST_INDEX, TEST_INDEX + 1);
+    uintptr_t diff_bytes = (uintptr_t)addr_next - (uintptr_t)addr_i;
+    printf("[char] 3) %d番目と%d番目のアドレス差\n", selected_index, selected_index + 1);
     printf("    要素差        = %td\n", diff_elements);
     printf("    バイト差      = %lu\n", (unsigned long)diff_bytes);
     printf("    sizeof(char)  = %zu\n\n", sizeof(char));
@@ -98,10 +123,13 @@ int main(void) {
     // 実行開始メッセージ
     printf("=== 配列とポインタの確認 (exercise12_1) ===\n\n");
 
-    // 型ごとに検証を実施
-    demonstrate_int();
-    demonstrate_double();
-    demonstrate_char();
+    // ユーザー入力で i 番目を決定
+    int selected_index = get_user_index();
+
+    // 型ごとに検証を実施（選択された i を渡す）
+    demonstrate_int(selected_index);
+    demonstrate_double(selected_index);
+    demonstrate_char(selected_index);
 
     return 0;
 }
