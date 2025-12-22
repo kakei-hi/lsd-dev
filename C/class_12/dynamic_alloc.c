@@ -5,33 +5,43 @@
 #include    <stdio.h>
 #include    <stdlib.h>  // for malloc(), free() 
 
+// マジックナンバーの定数化
+#define DEFAULT_COUNT 5
+#define STEP_VALUE    10.0f
+
 int main()
 {
-    int     n = 5;
-    float   *array;
+    size_t  count = DEFAULT_COUNT;     // 要素数
+    float   *array = NULL;             // 初期化しておく
 
-    int     i;
-
-    // メモリ領域を動的に確保
-    array = (float *)malloc(n * sizeof(float));
-
-    // 各要素の値とアドレスを表示
-    printf("array = %p \n", array);
-    for ( i = 0; i  <  n; i++)
-    {
-        printf("array[%d] = %f &array[%d] = %p \n", i, array[i], i, array + i);
+    // メモリ領域を動的に確保（NULLチェックを追加）
+    array = malloc(count * sizeof(float));
+    if (array == NULL) {
+        fprintf(stderr, "メモリ領域の確保に失敗しました。\n");
+        return EXIT_FAILURE; // 変更: 数値ではなくマクロを使用
     }
 
+    printf("array = %p \n", (void *)array);
+
+    // 先に初期化してから値を表示（未初期化読み取りの回避）
     printf("配列arrayに値を代入\n");
-    for ( i = 0; i < n; i++)
+    for (size_t idx = 0; idx < count; idx++)
     {
-       *(array + i) = i * 10.0; // array[i] =  i * 10.0;と同等
-       printf("array[%d] = %f \n", i, array[i]);
+        array[idx] = (float)idx * STEP_VALUE; // array[idx] と *(array + idx) は同等
+        printf("array[%zu] = %f \n", idx, array[idx]);
+    }
+
+    // 各要素の値とアドレスを表示
+    printf("各要素のアドレスを表示\n");
+    for (size_t idx = 0; idx < count; idx++)
+    {
+        printf("array[%zu] = %f &array[%zu] = %p \n",
+               idx, array[idx], idx, (void *)(array + idx));
     }
 
     // mallocで確保したメモリ領域を開放
     free(array);
     
-    return 0;
+    return EXIT_SUCCESS; // 変更: 数値ではなくマクロを使用
     
 }

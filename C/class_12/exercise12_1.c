@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <stdint.h>  // uintptr_t を使ってバイト差を計算
 #include <stddef.h>  // ptrdiff_t を使って要素差を計算
+#include <stdlib.h>  // 追加: EXIT_SUCCESS
 
 // Magic Number回避のため定数化
 #define ARRAY_LENGTH 5
@@ -131,5 +132,5 @@ int main(void) {
     demonstrate_double(selected_index);
     demonstrate_char(selected_index);
 
-    return 0;
+    return EXIT_SUCCESS; // 変更: 数値ではなくマクロを使用
 }
