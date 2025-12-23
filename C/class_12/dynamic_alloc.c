@@ -12,7 +12,7 @@
 int main()
 {
     size_t  count = DEFAULT_COUNT;     // 要素数
-    float   *array = NULL;             // 初期化しておく
+    float   *array = NULL;             // ポインタを初期化しておく
 
     // メモリ領域を動的に確保（NULLチェックを追加）
     array = malloc(count * sizeof(float));

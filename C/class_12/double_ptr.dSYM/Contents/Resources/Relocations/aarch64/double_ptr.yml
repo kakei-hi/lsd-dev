@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/hidekazukakei/Documents/GitHub/lsd-dev/C/class_12/double_ptr'
+relocations:     []
+...
