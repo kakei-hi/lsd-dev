@@ -7,100 +7,115 @@
 #include	<stdlib.h>		//	rand(), srand(), malloc(), free()
 #include	<time.h>		//	time()
 
+// 追加: マジックナンバーの定数化
+#define RANDOM_RANGE 30
+#define MENU_ASC 1
+#define MENU_DESC 2
+#define MENU_EXIT 99
+
+// 追加: プロトタイプ宣言（snake_case）
+void print_array(const int *dat, int size);
+void sort_array(int method, int *dat, int size);
+
 int main()
 {
 	int		i, mth, *ss;		//	ss:整数列を格納する配列へのポインタ
     int	    array_size;	        //	整数列の要素数
-	void	printResult(int *, int);	//	配列の内容をモニタに表示する関数
-								        //	配列のポインタを受け渡す
-                                        //  整数列要素数を渡す
-	void	mySort(int, int *, int);    //	整数列を指定された方法で並び替える関数
-								        //	並び替え方法と配列のポインタを受け渡す
-                                        //  整数列要素数を渡す
 
-    //  ソートする整数列の要素数を入力
+    //  ソートする整数列の要素数を入力（入力チェック追加）
     printf("\nソートする整数列の要素数を入力してください\t");
-    fscanf(stdin, "%d", &array_size);
+    if (scanf("%d", &array_size) != 1 || array_size <= 0) {
+        fprintf(stderr, "\n入力値が不正です（正の整数を指定してください）\n");
+        return 1;
+    }
 
-    //  整数列を代入する配列の領域を確保
+    //  整数列を代入する配列の領域を確保（NULLチェック追加）
     ss = (int *)malloc(array_size * sizeof(int));
+    if (ss == NULL) {
+        fprintf(stderr, "\nメモリの確保に失敗しました\n");
+        return 1;
+    }
+
 	//	整数列を配列に格納
 	srand(time(NULL));		//	乱数のシードを設定
 	for ( i = 0; i < array_size; i ++ ){
-		ss[i] = rand() % 30;	// 0以上30未満の整数を代入
+		ss[i] = rand() % RANDOM_RANGE;	// 0以上RANDOM_RANGE未満の整数を代入
 	}
 
-	//	配列の内容を出力
-	printResult(ss, array_size);
+	//	配列の内容を出力（関数名変更）
+	// printResult(ss, array_size);
+	print_array(ss, array_size);
 
 	printf("\nソート方法を入力してください");
-	printf("\n昇順・・・1　　降順・・・2　　終了・・・99\t");
-	fscanf(stdin, "%d", &mth);
-	while ( mth != 99 ){
-		if ( mth == 1 || mth == 2 ){
-			mySort(mth, ss, array_size);
-			printResult(ss, array_size);
+	printf("\n昇順・・・%d　　降順・・・%d　　終了・・・%d\t", MENU_ASC, MENU_DESC, MENU_EXIT);
+	// 入力チェック追加
+	if (scanf("%d", &mth) != 1) {
+		fprintf(stderr, "\n入力エラーが発生しました\n");
+		free(ss);
+		return 1;
+	}
+	while ( mth != MENU_EXIT ){
+		if ( mth == MENU_ASC || mth == MENU_DESC ){
+			// mySort(mth, ss, array_size);
+			sort_array(mth, ss, array_size);
+			// printResult(ss, array_size);
+			print_array(ss, array_size);
 		}
 		else {
 			printf("\n入力された値が適切ではありません");
 		}
 		printf("\nソート方法を入力してください");
-		printf("\n昇順・・・1　　降順・・・2　　終了・・・99\t");
-		fscanf(stdin, "%d",&mth);
+		printf("\n昇順・・・%d　　降順・・・%d　　終了・・・%d\t", MENU_ASC, MENU_DESC, MENU_EXIT);
+		// 入力チェック追加
+		if (scanf("%d",&mth) != 1) {
+			fprintf(stderr, "\n入力エラーが発生しました\n");
+			break;
+		}
 	}
 
 	printf("\nプログラムを終了します\n");
 
-    //  確保したメモリ領域を開放素r
+    //  確保したメモリ領域を開放する
     free(ss);
 
     return 0;
 }
 
 /************************************************************
-
-	配列の内容を出力
-
+	配列の内容を出力（snake_case & const安全化）
 ************************************************************/
-
- //void printResult(int *dat)
-void printResult(int *dat, int size)
+void print_array(const int *dat, int size)
 {
-	int		i;
-
-	printf("(");
-	for ( i = 0; i < size; i ++ ){
-		if ( i != (size - 1) ){
-			printf("%d,", *(dat + i));
-		}
-		else {
-			printf("%d)", *(dat + i));
-		}
-	}
-
+    printf("(");
+    for ( int i = 0; i < size; i ++ ){
+        if ( i != (size - 1) ){
+            printf("%d,", dat[i]);
+        }
+        else {
+            printf("%d)", dat[i]);
+        }
+    }
 }
 
-
 /************************************************************
-
 	整数列の並び替え
-		与えられた整数列のコピーを作成
-		コピーされた整数列で大小を比較
-		結果を与えられたポインタが指示する配列に返す
-
 ************************************************************/
-
-void mySort(int method, int *dat, int size)
+void sort_array(int method, int *dat, int size)
 {
-	int		i, j, k, m_num, l_num, e_num, ofs, *cpy;
+    // mySortのロジックそのまま
+    int     i, j, k, m_num, l_num, e_num, ofs, *cpy;
 
-    //  コピー先配列の領域を確保
-    cpy = (int *)malloc(size * sizeof(int));
+    //  コピー先配列の領域を確保（NULLチェック追加）
+    cpy = malloc(size * sizeof(*cpy));
+    if (cpy == NULL) {
+        fprintf(stderr, "\nメモリの確保に失敗しました\n");
+        return;
+    }
 
-	//	整数列のコピーの作成
-	for ( i = 0; i < size; i ++ ){
-		cpy[i] = *(dat + i);
-	}
+    //  整数列のコピーの作成
+    for ( i = 0; i < size; i ++ ){
+        cpy[i] = dat[i];
+    }
 
 	//	着目した要素の値が与えられた整数列の中で
 	//	何番目に大きいのか（小さいのか）
@@ -119,7 +134,7 @@ void mySort(int method, int *dat, int size)
 				e_num ++;
 			}
 		}
-		if ( method == 1 ){
+		if ( method == MENU_ASC ){
 			ofs = l_num;
 		}
 		else {
@@ -131,7 +146,6 @@ void mySort(int method, int *dat, int size)
 		}
 	}
 
-    //  確保したメモリ領域を開放素r
+    //  確保したメモリ領域を開放する
     free(cpy);
-
 }
