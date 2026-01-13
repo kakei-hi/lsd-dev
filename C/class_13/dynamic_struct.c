@@ -8,13 +8,14 @@
 
 // typedef は使わずに構造体を定義
 struct person {
-    char name[NAME_MAX_LEN + 1]; // 末尾の '\0' 用に +1
+    // name を動的に確保するためポインタに変更
+    char *name;
     int age;
 };
 
 int main(void) {
     // 構造体を動的に1つ確保
-    struct person *p = (struct person *)malloc(sizeof(struct person));
+    struct person *p = malloc(sizeof(struct person));
     if (p == NULL) {
         fprintf(stderr, "[ERROR] メモリ確保に失敗しました\n");
         return EXIT_FAILURE;
@@ -27,13 +28,23 @@ int main(void) {
     const char *input_name = "Alice";
     int input_age = 20;
 
-    // 名前を安全にコピー（終端保証）
-    strncpy(p->name, input_name, NAME_MAX_LEN);
-    p->name[NAME_MAX_LEN] = '\0';
+    // 名前用のメモリを動的に確保（最大 NAME_MAX_LEN まで）
+    size_t src_len = strlen(input_name);
+    size_t name_len = (src_len > NAME_MAX_LEN) ? NAME_MAX_LEN : src_len;
+    p->name = malloc(name_len + 1);
+    if (p->name == NULL) {
+        fprintf(stderr, "[ERROR] 名前用メモリの確保に失敗しました\n");
+        free(p);
+        return EXIT_FAILURE;
+    }
+    // 文字列を安全にコピーして終端を保証
+    memcpy(p->name, input_name, name_len);
+    p->name[name_len] = '\0';
 
     // 年齢の簡単な範囲チェック
     if (input_age < 0 || input_age > MAX_AGE) {
         fprintf(stderr, "[ERROR] 年齢が不正です（0..%d）\n", MAX_AGE);
+        free(p->name);
         free(p);
         return EXIT_FAILURE;
     }
@@ -43,7 +54,8 @@ int main(void) {
     printf("Name: %s\n", p->name);
     printf("Age : %d\n", p->age);
 
-    // 必ず解放
+    // 必ず解放（name → 構造体の順）
+    free(p->name);
     free(p);
     return EXIT_SUCCESS;
 }

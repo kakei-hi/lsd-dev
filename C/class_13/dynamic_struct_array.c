@@ -13,7 +13,7 @@
 
 // typedef を使わずに構造体を定義
 struct person {
-    char name[NAME_LEN];
+    char *name;  // 動的確保に変更
     int age;
 };
 
@@ -27,9 +27,20 @@ int main(void) {
     }
 
     // 2) 配列を利用（ここではサンプル値を代入）
+    //    各要素の name を要素ごとに動的確保してから利用する
     for (int i = 0; i < PEOPLE_COUNT; i++) {
-        // string.h を使わず、stdio.h の snprintf で安全に作成
-        // NAME_LEN を超えないように書式化する
+        people[i].name = malloc(NAME_LEN);  // 固定長で確保（学習用に簡素化）
+        if (people[i].name == NULL) {
+            fprintf(stderr, "[ERROR] name用メモリ確保に失敗しました (i=%d)\n", i);
+            // 失敗した場合：これまで確保した name を解放してから配列を解放
+            for (int j = 0; j < i; j++) {
+                free(people[j].name);
+                people[j].name = NULL;
+            }
+            free(people);
+            return EXIT_FAILURE;
+        }
+        // string.h を使わず、stdio.h の snprintf で安全に書式化
         snprintf(people[i].name, NAME_LEN, "Person_%d", i);
         people[i].age = 20 + i;
     }
@@ -39,7 +50,11 @@ int main(void) {
         printf("%d: name=%s, age=%d\n", i, people[i].name, people[i].age);
     }
 
-    // 4) 使用後は必ず解放
+    // 4) 使用後は必ず解放（name -> people の順に解放）
+    for (int i = 0; i < PEOPLE_COUNT; i++) {
+        free(people[i].name);
+        people[i].name = NULL;
+    }
     free(people);
     return EXIT_SUCCESS;
 }
