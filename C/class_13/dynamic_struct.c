@@ -30,7 +30,10 @@ int main(void) {
 
     // 名前用のメモリを動的に確保（最大 NAME_MAX_LEN まで）
     size_t src_len = strlen(input_name);
-    size_t name_len = (src_len > NAME_MAX_LEN) ? NAME_MAX_LEN : src_len;
+    size_t name_len = src_len;
+    if (src_len > NAME_MAX_LEN) {
+        name_len = NAME_MAX_LEN;
+    }
     p->name = malloc(name_len + 1);
     if (p->name == NULL) {
         fprintf(stderr, "[ERROR] 名前用メモリの確保に失敗しました\n");
