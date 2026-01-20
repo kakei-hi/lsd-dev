@@ -1,0 +1,1 @@
+#include <string.h>  // 動的文字列操作に必要
