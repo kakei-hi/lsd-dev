@@ -3,10 +3,10 @@
 // ファイルはこの1本のみ（ヘッダーやテストは作成しない）。
 
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <errno.h>
-#include <stdbool.h>
+#include <stdlib.h>  // EXIT_SUCCESS, EXIT_FAILURE, strtol などの標準ライブラリ関数を使用するため
+#include <string.h>  // strcspn 関数（文字列から改行を除去する処理）を使用するため
+#include <errno.h>   // errno 変数（strtol のエラー判定）を使用するため
+#include <stdbool.h> // bool, true, false 型（閏年判定の戻り値）を使用するため
 
 // 定数（Magic Number回避）
 #define MIN_YEAR 1
