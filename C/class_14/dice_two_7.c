@@ -15,7 +15,7 @@
 #define DEFAULT_TRIALS 100000 // 入力不正時のデフォルト試行回数
 
 // --------- サイコロ（等確率）を1回振って目を返す ---------
-int roll_die(int sides) {
+int roll_dice(int sides) {
     unsigned int r = (unsigned int)rand();   
     return (int)(r % sides) + 1; // 1..sides の目
 }
@@ -103,8 +103,8 @@ int main(void) {
 
     // 実験の実行: 2つのフェアな7面サイコロを振る
     for (int t = 0; t < trials; ++t) {
-        int d1 = roll_die(SIDES);
-        int d2 = roll_die(SIDES);
+        int d1 = roll_dice(SIDES);
+        int d2 = roll_dice(SIDES);
         int sum = d1 + d2; // 合計は 2..14
         counts[sum]++;
     }
