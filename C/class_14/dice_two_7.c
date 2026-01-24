@@ -14,17 +14,8 @@
 #define MAX_SUM (2 * SIDES)// 合計の最大値（7+7）
 #define DEFAULT_TRIALS 100000 // 入力不正時のデフォルト試行回数
 
-// --------- フェアなサイコロ（等確率）を1回振って目を返す ---------
-// rand()%SIDES はわずかに偏りが出る可能性があるため、
-// 7で割り切れる範囲にリジェクトサンプリングして偏りを避ける。
-int roll_fair_die(int sides) {
-/*     // RAND_MAX+1 が sides で割り切れる領域の上限を計算
-    unsigned int range_limit = (unsigned int)((RAND_MAX + 1U) / sides) * (unsigned int)sides;
-    unsigned int r;
-    do {
-        r = (unsigned int)rand();
-    } while (r >= range_limit); // 上限外は引き直して偏りを除去
- */ 
+// --------- サイコロ（等確率）を1回振って目を返す ---------
+int roll_die(int sides) {
     unsigned int r = (unsigned int)rand();   
     return (int)(r % sides) + 1; // 1..sides の目
 }
@@ -46,7 +37,7 @@ int theoretical_count_for_sum(int sum) {
 // 標準入力から回数を読み取り、0以下ならデフォルト値に置換
 int read_trials_from_stdin(void) {
     char buf[256];
-    long trials = 
+    long trials = 0;
     printf("試行回数を入力してください（例: 100000）: ");
     if (fgets(buf, sizeof(buf), stdin) != NULL) {
         char *endptr = NULL;
@@ -107,8 +98,8 @@ int main(void) {
 
     // 実験の実行: 2つのフェアな7面サイコロを振る
     for (int t = 0; t < trials; ++t) {
-        int d1 = roll_fair_die(SIDES);
-        int d2 = roll_fair_die(SIDES);
+        int d1 = roll_die(SIDES);
+        int d2 = roll_die(SIDES);
         int sum = d1 + d2; // 合計は 2..14
         counts[sum]++;
     }
