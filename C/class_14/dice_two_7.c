@@ -22,15 +22,20 @@ int roll_die(int sides) {
 
 // --------- 理論的な組合せ数（合計sumが出る通り数）を返す ---------
 // 1..SIDES の2つの和が sum になる組の数
+// 全ての組み合わせを直接数え上げる方法（初心者向け）
 int theoretical_count_for_sum(int sum) {
     if (sum < MIN_SUM || sum > MAX_SUM) return 0;
-    // 和の分布は三角形分布: 2..(SIDES+1) で増加、(SIDES+2)..(2*SIDES) で減少
-    int midpoint = SIDES + 1;
-    if (sum <= midpoint) {
-        return sum - 1; // 例: sum=2 ->1通り, sum=3 ->2通り ...
-    } else {
-        return (2 * SIDES + 1) - sum; // 例: sum=14 ->1通り
+    
+    int count = 0;
+    // die1 と die2 の全ての組み合わせを調べる
+    for (int die1 = 1; die1 <= SIDES; die1++) {
+        for (int die2 = 1; die2 <= SIDES; die2++) {
+            if (die1 + die2 == sum) {
+                count++;  // 合計が一致したらカウント
+            }
+        }
     }
+    return count;  // 例: sum=2 ->1通り(1+1), sum=8 ->7通り(1+7,2+6,...,7+1)
 }
 
 // --------- 入力（試行回数）を取得して安全に整数へ ---------
