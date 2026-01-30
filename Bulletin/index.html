@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="徳島大学 地域科学研究の目次一覧。研究論文、査読論文、研究ノートなどを巻号別に検索・閲覧できます。">
+    <meta name="keywords" content="徳島大学, 地域科学研究, 学術誌, 論文, 紀要">
+    <meta name="author" content="掛井秀一 (KAKEI Hidekazu)">
+    <title>徳島大学 地域科学研究 - 目次一覧</title>
+    
+    <!-- SEO & Open Graph -->
+    <meta property="og:title" content="徳島大学 地域科学研究 - 目次一覧">
+    <meta property="og:description" content="徳島大学 地域科学研究の目次一覧。研究論文、査読論文、研究ノートなどを巻号別に検索・閲覧できます。">
+    <meta property="og:type" content="website">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header" role="banner">
+        <div class="header-container">
+            <div class="site-branding">
+                <div class="site-logo" aria-hidden="true">地研</div>
+                <div>
+                    <h1 class="site-title">地域科学研究</h1>
+                    <p class="site-subtitle">徳島大学</p>
+                </div>
+            </div>
+            
+            <div class="header-actions">
+                <div class="search-container">
+                    <span class="search-icon" aria-hidden="true">🔍</span>
+                    <input 
+                        type="search" 
+                        class="search-input" 
+                        id="searchInput"
+                        placeholder="論文タイトル・著者名で検索"
+                        aria-label="論文を検索"
+                    >
+                </div>
+                <a href="reg_2025.html" class="lang-switch" aria-label="English版に切り替え">
+                    <span aria-hidden="true">🌐</span>
+                    <span>English</span>
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- メタ情報バナー -->
+    <section class="meta-banner">
+        <div class="meta-container">
+            <div class="meta-info">
+                <h1>Regional Science Research</h1>
+                <p class="issn-info">
+                    <span><strong>ISSN 2433-3492</strong> (オンライン版)</span>
+                    <span><strong>ISSN-L 2186-7720</strong> (冊子版)</span>
+                </p>
+            </div>
+            <a href="https://www.tokushima-u.ac.jp/ias/bulletin/" class="repo-link" target="_blank" rel="noopener noreferrer">
+                <span aria-hidden="true">📚</span>
+                <span>機関リポジトリ</span>
+            </a>
+        </div>
+    </section>
+    
+    <!-- メインコンテンツ -->
+    <main class="main-container">
+        <!-- 論文一覧 -->
+        <div class="volumes-container" id="volumesContainer" role="main" aria-label="論文一覧">
+            <!-- JavaScriptで動的に生成 -->
+        </div>
+        
+        <!-- フィルタサイドバー -->
+        <aside class="filters-sidebar" role="complementary" aria-label="フィルタ">
+            <div class="filter-section">
+                <h2 class="filter-title">発行年で絞り込み</h2>
+                <div class="filter-options" id="yearFilters">
+                    <!-- JavaScriptで動的に生成 -->
+                </div>
+            </div>
+            
+            <div class="filter-section">
+                <h2 class="filter-title">カテゴリで絞り込み</h2>
+                <div class="filter-options" id="categoryFilters">
+                    <!-- JavaScriptで動的に生成 -->
+                </div>
+            </div>
+            
+            <button class="clear-filters" id="clearFilters">フィルタをクリア</button>
+        </aside>
+    </main>
+    
+    <!-- フッター -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>徳島大学 地域科学研究</h3>
+                    <p>
+                        徳島大学大学院社会産業理工学研究部が発行する学術雑誌です。
+                        地域科学に関する幅広い研究成果を発信しています。
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>リンク</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://www.tokushima-u.ac.jp/" target="_blank" rel="noopener">徳島大学</a></li>
+                        <li><a href="https://www.tokushima-u.ac.jp/ias/" target="_blank" rel="noopener">社会産業理工学研究部</a></li>
+                        <li><a href="https://www.tokushima-u.ac.jp/ias/bulletin/" target="_blank" rel="noopener">機関リポジトリ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>お問い合わせ</h3>
+                    <ul class="footer-links">
+                        <li><a href="mailto:contact@example.com">メールでのお問い合わせ</a></li>
+                        <li><a href="#">投稿規程</a></li>
+                        <li><a href="#">執筆要領</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 徳島大学 地域科学研究. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // ============================================
+        // データ
+        // ============================================
+        const volumesData = [
+            {
+                volume: 15,
+                year: 2025,
+                sections: {
+                    "査読論文": [
+                        {
+                            title: "The Pre-Migration Work Destination Selection Process and current situation of Myanmar Care Migrant Workers in Rural Japan : A Preliminary Study for Life History Research",
+                            titleJa: "ミャンマー人介護労働者の移住前の就業先選択プロセスと現状 : ライフヒストリー研究への予備的調査",
+                            authors: "Yukari Nagata, Pann Thae Chu",
+                            authorsJa: "永田由香利, パン セー チュー",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2013313",
+                            language: "ja",
+                            tags: ["査読論文"]
+                        },
+                        {
+                            title: "A Case Study on Future Prospects of ICT-Based Collaborative Language Learning between Japanese and Taiwanese University Students",
+                            titleJa: "ICTを活用した日台大学生による言語協働学習の効果",
+                            authors: "Chifu Nagamoto",
+                            authorsJa: "永本智富",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2013862",
+                            language: "ja",
+                            tags: ["査読論文"]
+                        }
+                    ]
+                }
+            },
+            {
+                volume: 14,
+                year: 2024,
+                sections: {
+                    "査読論文": [
+                        {
+                            title: "Issues regarding skateboarding events sponsored by the government – Examples of three events held in Tokushima Prefecture –",
+                            titleJa: "行政が主催するスケートボードイベントに関する課題 – 徳島県で開催された3つのイベントを事例として –",
+                            authors: "Mikiya Ota, Takuya Yabe",
+                            authorsJa: "太田幹也, 矢部拓也",
+                            link: "https://repo.lib.tokushima-u.ac.jp/ja/list/t-pubs/rsr/14/--/item/119391",
+                            language: "ja",
+                            tags: ["査読論文"]
+                        }
+                    ]
+                }
+            },
+            {
+                volume: 13,
+                year: 2023,
+                sections: {
+                    "査読論文": [
+                        {
+                            title: "Issues and Possibility of Agricultural Cooperative in Marketing of Vegetables Through Analysis of Farmer's Market in Tokushima Prefecture : A Case Study in \"JA-Yumeichiba\" of Awagun-Tobu Agricultural Cooperative",
+                            titleJa: "徳島県における農産物直売所の分析を通した農協の青果物マーケティングの課題と可能性 : 阿波郡東部農協「JA夢市場」を事例として",
+                            authors: "Naoshi Hashimoto, Atsushi Yamafuji",
+                            authorsJa: "橋本直史, 山藤篤",
+                            link: "https://repo.lib.tokushima-u.ac.jp/ja/list/t-pubs/rsr/13/--/item/117894",
+                            language: "ja",
+                            tags: ["査読論文"]
+                        },
+                        {
+                            title: "Issues and possibility of Carrot Marketing in Main Production Area of Tokushima Prefecture under COVID-19 Pandemic: A Case Study in Itanogun Agricultural Cooperative",
+                            titleJa: "コロナ禍における徳島県主産地のニンジンマーケティングの課題と可能性 : 板野郡農協を事例として",
+                            authors: "Naoshi Hashimoto",
+                            authorsJa: "橋本直史",
+                            link: "https://repo.lib.tokushima-u.ac.jp/ja/list/t-pubs/rsr/13/--/item/118517",
+                            language: "ja",
+                            tags: ["査読論文"]
+                        }
+                    ]
+                }
+            },
+            {
+                volume: 12,
+                year: 2022,
+                sections: {
+                    "論文": [
+                        {
+                            title: "Present situation of Elaeocarpus zolloingeri tree planted in Mt. Shiroyama in 2006 : survival and infection status of Elaeocarpus yellows (Second Report)",
+                            titleJa: "2006年に城山に植栽されたホルトノキの現況 : 生存と黄化病感染状況（第2報）",
+                            authors: "Masaya Satoh, Nanoha Kusuda, Yoshiki Osaka, Sachina Seki, Mone Abe",
+                            authorsJa: "佐藤征弥, 楠田菜乃羽, 大阪佳季, 関幸奈, 阿部萌音",
+                            link: "https://repo.lib.tokushima-u.ac.jp/ja/list/t-pubs/rsr/12/--/item/117627",
+                            language: "ja",
+                            tags: ["論文"]
+                        }
+                    ]
+                }
+            },
+            {
+                volume: 11,
+                year: 2021,
+                sections: {
+                    "査読論文": [
+                        {
+                            title: "Analysis on Agricultural Marketing of Naruto-Kintoki under Expandion of Exportation of Domestic Sweet Potato : Focus on Agricultural Cooperatives in Tokushima",
+                            titleJa: "国産かんしょ輸出拡大下における鳴門金時の農業マーケティング分析 : 徳島県の農協を中心に",
+                            authors: "Naoshi Hashimoto, Takashi Toyonari, Takehiko Tsuda",
+                            authorsJa: "橋本直史, 豊成尚, 津田岳彦",
+                            link: "https://repo.lib.tokushima-u.ac.jp/ja/list/t-pubs/rsr/11/--/item/115858",
+                            language: "ja",
+                            tags: ["査読論文"]
+                        }
+                    ]
+                }
+            },
+            {
+                volume: 10,
+                year: 2020,
+                sections: {
+                    "査読論文": [
+                        {
+                            title: "Hachisuka Mochiaki's Overseas Achievements",
+                            titleJa: "蜂須賀正韶の海外における業績",
+                            authors: "Masaya Satoh, Yuri Takasuka, Daiki Matsu-ura, Yoshimi Takagi, Masaki Tomitsuka, Ryuji Yorioka, Takayoshi Miyazaki",
+                            authorsJa: "佐藤征弥, 高須賀友里, 松浦大樹, 高木佳美, 富塚正樹, 依岡隆二, 宮崎隆義",
+                            link: "https://repo.lib.tokushima-u.ac.jp/115414",
+                            language: "ja",
+                            tags: ["査読論文"]
+                        },
+                        {
+                            title: "About park management dedicated to skateboarding in city park administration - Taking Naruto City's community opening facility \"UZU Park\" as an example -",
+                            titleJa: "都市公園行政におけるスケートボード専用公園の管理運営について － 鳴門市コミュニティ開放施設「UZU PARK」を事例として －",
+                            authors: "Mikiya Ota, Mituhiro Sato",
+                            authorsJa: "太田幹也, 佐藤充宏",
+                            link: "https://repo.lib.tokushima-u.ac.jp/115546",
+                            language: "ja",
+                            tags: ["査読論文"]
+                        }
+                    ]
+                }
+            },
+            {
+                volume: 9,
+                year: 2019,
+                sections: {
+                    "論文": [
+                        {
+                            title: "Present situation of Elaeocarpus zolloingeri tree planted in Mt. Shiroyama in 2006 : survival and infection status of Elaeocarpus yellows",
+                            titleJa: "2006年に城山に植栽されたホルトノキの現況 : 生存と黄化病感染状況",
+                            authors: "Masaya Satoh, Miku Mizutani, Yuichi Kumagai, Ayano Nishimura, Ryuji Yorioka, Takayoshi Miyazaki",
+                            authorsJa: "佐藤征弥, 水谷美玖, 熊谷雄一, 西村綾乃, 依岡隆二, 宮崎隆義",
+                            link: "https://repo.lib.tokushima-u.ac.jp/113913",
+                            language: "ja",
+                            tags: ["論文"]
+                        }
+                    ]
+                }
+            },
+            {
+                volume: 8,
+                year: 2018,
+                sections: {
+                    "査読論文": [
+                        {
+                            title: "Reexamination of the formation process of the retail market structure in the Japanese confectionery market : Focus on the 1970s to 2000s",
+                            titleJa: "日本の菓子市場における小売市場構造の形成過程の再検討 : 1970年代から2000年代を中心に",
+                            authors: "Naoshi Hashimoto",
+                            authorsJa: "橋本直史",
+                            link: "https://repo.lib.tokushima-u.ac.jp/112618",
+                            language: "ja",
+                            tags: ["査読論文"]
+                        }
+                    ]
+                }
+            }
+        ];
+        
+        // ============================================
+        // 状態管理
+        // ============================================
+        let activeYearFilters = new Set();
+        let activeCategoryFilters = new Set();
+        let searchQuery = '';
+        
+        // ============================================
+        // 初期化
+        // ============================================
+        document.addEventListener('DOMContentLoaded', () => {
+            renderFilters();
+            renderVolumes();
+            setupEventListeners();
+        });
+        
+        // ============================================
+        // フィルタの描画
+        // ============================================
+        function renderFilters() {
+            // 年フィルタ
+            const years = [...new Set(volumesData.map(v => v.year))].sort((a, b) => b - a);
+            const yearFiltersContainer = document.getElementById('yearFilters');
+            yearFiltersContainer.innerHTML = years.map(year => {
+                const count = volumesData.find(v => v.year === year) ? 
+                    Object.values(volumesData.find(v => v.year === year).sections)
+                        .flat().length : 0;
+                return `
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox year-filter" value="${year}" data-year="${year}">
+                        <span class="filter-label">${year}年</span>
+                        <span class="filter-count">(${count})</span>
+                    </label>
+                `;
+            }).join('');
+            
+            // カテゴリフィルタ
+            const categories = [...new Set(volumesData.flatMap(v => 
+                Object.keys(v.sections)
+            ))];
+            const categoryFiltersContainer = document.getElementById('categoryFilters');
+            categoryFiltersContainer.innerHTML = categories.map(category => {
+                const count = volumesData.reduce((acc, v) => 
+                    acc + (v.sections[category]?.length || 0), 0);
+                return `
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox category-filter" value="${category}" data-category="${category}">
+                        <span class="filter-label">${category}</span>
+                        <span class="filter-count">(${count})</span>
+                    </label>
+                `;
+            }).join('');
+        }
+        
+        // ============================================
+        // 巻号の描画
+        // ============================================
+        function renderVolumes() {
+            const container = document.getElementById('volumesContainer');
+            const filteredData = getFilteredData();
+            
+            if (filteredData.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-state-icon" aria-hidden="true">📭</div>
+                        <h2 class="empty-state-title">該当する論文が見つかりませんでした</h2>
+                        <p class="empty-state-description">検索条件やフィルタを変更してお試しください</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            container.innerHTML = filteredData.map(volume => `
+                <article class="volume-card" data-volume="${volume.volume}">
+                    <header class="volume-header" role="button" tabindex="0" aria-expanded="false" aria-controls="volume-${volume.volume}-content">
+                        <div>
+                            <h2 class="volume-title">第${volume.volume}巻</h2>
+                            <p class="volume-meta">${volume.year}年 | ${getTotalPapers(volume)}本の論文</p>
+                        </div>
+                        <span class="accordion-icon" aria-hidden="true">▼</span>
+                    </header>
+                    <div class="volume-content" id="volume-${volume.volume}-content">
+                        <div class="volume-body">
+                            ${renderSections(volume.sections)}
+                        </div>
+                    </div>
+                </article>
+            `).join('');
+            
+            // アコーディオン機能
+            document.querySelectorAll('.volume-header').forEach(header => {
+                header.addEventListener('click', toggleAccordion);
+                header.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        toggleAccordion(e);
+                    }
+                });
+            });
+            
+            // 最新巻を自動的に展開
+            const firstCard = document.querySelector('.volume-card');
+            if (firstCard) {
+                firstCard.classList.add('expanded');
+                const header = firstCard.querySelector('.volume-header');
+                if (header) {
+                    header.setAttribute('aria-expanded', 'true');
+                }
+            }
+        }
+        
+        function toggleAccordion(e) {
+            const card = e.currentTarget.closest('.volume-card');
+            const isExpanded = card.classList.contains('expanded');
+            card.classList.toggle('expanded');
+            e.currentTarget.setAttribute('aria-expanded', !isExpanded);
+        }
+        
+        function renderSections(sections) {
+            return Object.entries(sections).map(([category, papers]) => `
+                <section class="category-section">
+                    <div class="category-header">
+                        <span class="category-badge">${category}</span>
+                        <span class="category-count">${papers.length}本</span>
+                    </div>
+                    <div class="papers-list">
+                        ${papers.map(paper => `
+                            <article class="paper-item">
+                                <a href="${paper.link}" class="paper-title-link" target="_blank" rel="noopener noreferrer">
+                                    ${paper.titleJa || paper.title}
+                                </a>
+                                <p class="paper-authors">${paper.authorsJa || paper.authors}</p>
+                                <div class="paper-meta">
+                                    ${paper.tags.map(tag => `<span class="paper-tag">${tag}</span>`).join('')}
+                                    <span class="paper-tag ${paper.language}">${paper.language === 'ja' ? '日本語' : '英語'}</span>
+                                </div>
+                            </article>
+                        `).join('')}
+                    </div>
+                </section>
+            `).join('');
+        }
+        
+        function getTotalPapers(volume) {
+            return Object.values(volume.sections).reduce((acc, papers) => acc + papers.length, 0);
+        }
+        
+        // ============================================
+        // フィルタリング
+        // ============================================
+        function getFilteredData() {
+            let filtered = volumesData;
+            
+            // 年でフィルタ
+            if (activeYearFilters.size > 0) {
+                filtered = filtered.filter(v => activeYearFilters.has(v.year));
+            }
+            
+            // カテゴリでフィルタ
+            if (activeCategoryFilters.size > 0) {
+                filtered = filtered.map(volume => ({
+                    ...volume,
+                    sections: Object.fromEntries(
+                        Object.entries(volume.sections)
+                            .filter(([category]) => activeCategoryFilters.has(category))
+                    )
+                })).filter(v => Object.keys(v.sections).length > 0);
+            }
+            
+            // 検索でフィルタ
+            if (searchQuery) {
+                filtered = filtered.map(volume => ({
+                    ...volume,
+                    sections: Object.fromEntries(
+                        Object.entries(volume.sections).map(([category, papers]) => [
+                            category,
+                            papers.filter(paper => 
+                                matchesSearch(paper, searchQuery)
+                            )
+                        ]).filter(([_, papers]) => papers.length > 0)
+                    )
+                })).filter(v => Object.keys(v.sections).length > 0);
+            }
+            
+            return filtered;
+        }
+        
+        function matchesSearch(paper, query) {
+            const searchText = query.toLowerCase();
+            return (
+                (paper.title && paper.title.toLowerCase().includes(searchText)) ||
+                (paper.titleJa && paper.titleJa.toLowerCase().includes(searchText)) ||
+                (paper.authors && paper.authors.toLowerCase().includes(searchText)) ||
+                (paper.authorsJa && paper.authorsJa.toLowerCase().includes(searchText))
+            );
+        }
+        
+        // ============================================
+        // イベントリスナー
+        // ============================================
+        function setupEventListeners() {
+            // 検索
+            const searchInput = document.getElementById('searchInput');
+            searchInput.addEventListener('input', debounce((e) => {
+                searchQuery = e.target.value.trim();
+                renderVolumes();
+            }, 300));
+            
+            // 年フィルタ
+            document.addEventListener('change', (e) => {
+                if (e.target.classList.contains('year-filter')) {
+                    const year = parseInt(e.target.dataset.year);
+                    if (e.target.checked) {
+                        activeYearFilters.add(year);
+                    } else {
+                        activeYearFilters.delete(year);
+                    }
+                    renderVolumes();
+                }
+            });
+            
+            // カテゴリフィルタ
+            document.addEventListener('change', (e) => {
+                if (e.target.classList.contains('category-filter')) {
+                    const category = e.target.dataset.category;
+                    if (e.target.checked) {
+                        activeCategoryFilters.add(category);
+                    } else {
+                        activeCategoryFilters.delete(category);
+                    }
+                    renderVolumes();
+                }
+            });
+            
+            // フィルタクリア
+            document.getElementById('clearFilters').addEventListener('click', () => {
+                activeYearFilters.clear();
+                activeCategoryFilters.clear();
+                searchQuery = '';
+                document.getElementById('searchInput').value = '';
+                document.querySelectorAll('.filter-checkbox').forEach(cb => cb.checked = false);
+                renderVolumes();
+            });
+        }
+        
+        // ============================================
+        // ユーティリティ
+        // ============================================
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+    </script>
+</body>
+</html>
