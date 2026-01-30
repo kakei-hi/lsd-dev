@@ -1,0 +1,300 @@
+// 第1巻から第7巻までのデータ（index.htmlのvolumesData形式）
+
+const additionalVolumesData = [
+    {
+        volume: 7,
+        year: 2017,
+        sections: {
+            "論文": [
+                {
+                    title: "Contemporary regional issues in sustainability : Prospective application for activation of local community and university education from an international seminar",
+                    titleJa: "持続可能性における現代的地域課題：国際セミナーからの地域活性化と大学教育への展望的応用",
+                    authors: "Awangku Hassanal Bahar Pengiran Bagul, Makoto Ohashi",
+                    authorsJa: "アワンク・ハッサナル・バハル・ペンギラン・バグル, 大橋眞",
+                    link: "https://repo.lib.tokushima-u.ac.jp/110200",
+                    language: "en",
+                    tags: ["論文"]
+                }
+            ],
+            "査読論文": [
+                {
+                    title: "Relationship between Difficulties in Emotion Regulation and the Results of Activity and Distraction",
+                    titleJa: "感情制御困難傾向と活動性および気晴らしの結果との関連",
+                    authors: "Yuki Shinoura, Hiromi Sakai",
+                    authorsJa: "篠浦友希, 境泉洋",
+                    link: "https://repo.lib.tokushima-u.ac.jp/110887",
+                    language: "ja",
+                    tags: ["査読論文"]
+                }
+            ],
+            "実践報告": [
+                {
+                    title: "Practical Report of FY2016 Tokushima University Faculty of Integrated Arts and Sciences Dean's Discretionary Budget Creative Research Project \"Moraes Commemoration Project for Regional Revitalization\"",
+                    titleJa: "平成28年度徳島大学総合科学部部局長裁量経費総合科学部創生研究プロジェクト実践報告「モラエス顕彰による地方創生プロジェクト」",
+                    authors: "Takayoshi Miyazaki, Eisaku Ishikawa, Masaya Satoh, Hiromi Sakai",
+                    authorsJa: "宮崎隆義, 石川榮作, 佐藤征弥, 境泉洋",
+                    link: "https://repo.lib.tokushima-u.ac.jp/110987",
+                    language: "ja",
+                    tags: ["実践報告"]
+                }
+            ]
+        }
+    },
+    {
+        volume: 6,
+        year: 2016,
+        sections: {
+            "査読論文": [
+                {
+                    title: "Relationship between duration of functional and dysfunctional self-focused attention and anxiety and depression",
+                    titleJa: "機能的・非機能的自己注目の持続と不安・抑うつの関連",
+                    authors: "Saki Taniguchi, Mai Miyamoto, Akiko Mizoguchi, Hiromi Sakai",
+                    authorsJa: "谷口早紀, 宮本真衣, 溝口暁子, 境泉洋",
+                    link: "https://repo.lib.tokushima-u.ac.jp/109601",
+                    language: "ja",
+                    tags: ["査読論文"]
+                },
+                {
+                    title: "Present situation of Elaeocarpus zolloingeri tree planted in Mt. Shiroyama in 2006 : survival and infection status of Elaeocarpus yellows",
+                    titleJa: "2006年に徳島市城山に植樹されたホルトノキの苗木の現状 : 生育状況とホルトノキ萎黄病感染状況について",
+                    authors: "Masaya Satoh, Daisuke Minoda, Ryohei Takai, Yusuke Imada, Takaharu Anzai, Ryutaro Tanaka, Eri Shimokome, Ayami Oda, Hajime Nonoichi, Risa Kamae, Shota Okumura, Miyu Hirase, Chihiro Itonaga, Shinzaburo Sano, Hiroaki Nakagawa, Hiro Okada, Mayu Yamagata",
+                    authorsJa: "佐藤征弥, 箕田大祐, 高井竜平, 今田悠介, 安西隆治, 田中隆太郎, 下込衣里, 小田彩未, 野々市元, 釜江梨紗, 奥村彰太, 平瀬未悠, 糸永千尋, 佐野慎三郎, 中川寛章, 岡田ひろ, 山形真由",
+                    link: "https://repo.lib.tokushima-u.ac.jp/110014",
+                    language: "ja",
+                    tags: ["査読論文"]
+                }
+            ],
+            "論文": [
+                {
+                    title: "Moraes's Garden (6) Moraes's Eye: The Landscape of Tokushima",
+                    titleJa: "モラエスの庭 (6) モラエスの目：徳島の風景",
+                    authors: "Takayoshi Miyazaki, Eisaku Ishikawa, Masaya Satoh, Hiromi Sakai",
+                    authorsJa: "宮崎隆義, 石川榮作, 佐藤征弥, 境泉洋",
+                    link: "https://repo.lib.tokushima-u.ac.jp/110015",
+                    language: "ja",
+                    tags: ["論文"]
+                }
+            ],
+            "実践報告": [
+                {
+                    title: "Practical Report of FY2015 Tokushima University Faculty of Integrated Arts and Sciences Dean's Discretionary Budget Creative Research Project \"Globalism and Moraes - Reconstruction of Tokushima's Nature, People, and Heart that Moraes Spread to the World\"",
+                    titleJa: "平成27年度徳島大学総合科学部部局長裁量経費総合科学部創生研究プロジェクト実践報告「グローバリズムとモラエス - モラエスが世界に広げた〈徳島の自然・人・心〉の再構築 -」",
+                    authors: "Takayoshi Miyazaki, Eisaku Ishikawa, Masaya Satoh, Hiromi Sakai",
+                    authorsJa: "宮崎隆義, 石川榮作, 佐藤征弥, 境泉洋",
+                    link: "https://repo.lib.tokushima-u.ac.jp/110016",
+                    language: "ja",
+                    tags: ["実践報告"]
+                }
+            ]
+        }
+    },
+    {
+        volume: 5,
+        year: 2015,
+        sections: {
+            "査読論文": [
+                {
+                    title: "Effects of self-efficacy and employment anxiety on career indecision among university students",
+                    titleJa: "大学生の職業未決定に自己効力と就職不安が与える影響",
+                    authors: "Hirokazu Matsubara, Azusa Noma, Megumi Ushio, Hiromi Sakai",
+                    authorsJa: "松原弘和, 野間あずさ, 牛尾恵, 境泉洋",
+                    link: "https://repo.lib.tokushima-u.ac.jp/109547",
+                    language: "ja",
+                    tags: ["査読論文"]
+                },
+                {
+                    title: "The bridge and park built by German prisoners of war from Bando POW camp in the precincts of Oasa Hiko Shrine",
+                    titleJa: "板東俘虜収容所のドイツ兵が大麻比古神社境内に造った橋と公園",
+                    authors: "Masaya Satoh, Eri Tanegashima, Katsuaki Amita, Saburo Kawakami",
+                    authorsJa: "佐藤征弥, 種ヶ嶋絵理, 網田克明, 川上三郎",
+                    link: "https://repo.lib.tokushima-u.ac.jp/109548",
+                    language: "ja",
+                    tags: ["査読論文"]
+                },
+                {
+                    title: "Living with the \"stuttering\" body: The meaning of stuttering coping methods seen in narratives at a stuttering self-help organization",
+                    titleJa: "「嚼む」身体と共に生きる : 吃音自助組織での語りにみる吃音対処法の意味",
+                    authors: "Ryo Otsuka, Naoki Naito",
+                    authorsJa: "大塚諒, 内藤直樹",
+                    link: "https://repo.lib.tokushima-u.ac.jp/109551",
+                    language: "ja",
+                    tags: ["査読論文"]
+                }
+            ],
+            "論文": [
+                {
+                    title: "Moraes's Garden (5) The Position of Moraes's Works and the Fifth National Industrial Exhibition",
+                    titleJa: "モラエスの庭 (5) モラエスの著作の位置づけと第五回内国勧業博覧会",
+                    authors: "Takayoshi Miyazaki, Eisaku Ishikawa, Masaya Satoh, Hiromi Sakai",
+                    authorsJa: "宮崎隆義, 石川榮作, 佐藤征弥, 境泉洋",
+                    link: "https://repo.lib.tokushima-u.ac.jp/109549",
+                    language: "ja",
+                    tags: ["論文"]
+                }
+            ],
+            "実践報告": [
+                {
+                    title: "Practical Report of FY2014 Tokushima University Faculty of Integrated Arts and Sciences Dean's Discretionary Budget Creative Research Project \"Globalism and Moraes - Reconstruction of Tokushima's Nature, People, and Heart that Moraes Spread to the World\"",
+                    titleJa: "平成26年度徳島大学総合科学部部局長裁量経費総合科学部創生研究プロジェクト実践報告「グローバリズムとモラエス - モラエスが世界に広げた〈徳島の自然・人・心〉の再構築 -」",
+                    authors: "Takayoshi Miyazaki, Eisaku Ishikawa, Masaya Satoh, Hiromi Sakai",
+                    authorsJa: "宮崎隆義, 石川榮作, 佐藤征弥, 境泉洋",
+                    link: "https://repo.lib.tokushima-u.ac.jp/109550",
+                    language: "ja",
+                    tags: ["実践報告"]
+                }
+            ]
+        }
+    },
+    {
+        volume: 4,
+        year: 2014,
+        sections: {
+            "査読論文": [
+                {
+                    title: "Use and significance of Anan City marble in historically important buildings in Japan",
+                    titleJa: "日本の歴史的重要建造物における徳島県阿南市産大理石の使用とその意義",
+                    authors: "Keisuke Ishida, Takahito Hayabuchi, Kenichi Nakao, Shozo Toomei",
+                    authorsJa: "石田啓祐, 早渕隆人, 中尾賢一, 東明省三",
+                    link: "https://repo.lib.tokushima-u.ac.jp/106424",
+                    language: "ja",
+                    tags: ["査読論文"]
+                }
+            ],
+            "論文": [
+                {
+                    title: "Marriage behavior of young people in Tokushima Prefecture",
+                    titleJa: "徳島県の若年層の結婚行動",
+                    authors: "Tomokuni Mizunoue, Tong Zhao",
+                    authorsJa: "水ノ上智邦, 趙彤",
+                    link: "https://repo.lib.tokushima-u.ac.jp/106425",
+                    language: "ja",
+                    tags: ["論文"]
+                },
+                {
+                    title: "Moraes's Garden (4) Gaze on Life, Gaze on Death",
+                    titleJa: "モラエスの庭 (4) 生へのまなざし、死へのまなざし",
+                    authors: "Takayoshi Miyazaki, Eisaku Ishikawa, Masaya Satoh, Hiromi Sakai",
+                    authorsJa: "宮崎隆義, 石川榮作, 佐藤征弥, 境泉洋",
+                    link: "https://repo.lib.tokushima-u.ac.jp/106426",
+                    language: "ja",
+                    tags: ["論文"]
+                },
+                {
+                    title: "About articles on Moraes's grave, farewell ceremony, and his room reported in the Portuguese popular newspaper \"CIVILIZAÇÃO\" January 1930 issue",
+                    titleJa: "ポルトガルの大衆紙\"CIVILIZAÇÃO\"が1930年1月号で伝えたモラエスの墓、告別式、彼の部屋に関する記事について",
+                    authors: "Masaya Satoh, Takiko Okamura, Hiromi Sakai, Eisaku Ishikawa, Takayoshi Miyazaki",
+                    authorsJa: "佐藤征弥, 岡村多希子, 境泉洋, 石川榮作, 宮崎隆義",
+                    link: "https://repo.lib.tokushima-u.ac.jp/106428",
+                    language: "ja",
+                    tags: ["論文"]
+                }
+            ],
+            "実践報告": [
+                {
+                    title: "Practical Report of FY2013 Tokushima University Faculty of Integrated Arts and Sciences Dean's Discretionary Budget Creative Research Project \"Globalism and Moraes - Reconstruction of Tokushima's Nature, People, and Heart that Moraes Spread to the World\"",
+                    titleJa: "平成25年度徳島大学総合科学部学部長裁量経費総合科学部創生研究プロジェクト実践報告「グローバリズムとモラエス - モラエスが世界に広げた〈徳島の自然・人・心〉の再構築 -」",
+                    authors: "Takayoshi Miyazaki, Eisaku Ishikawa, Masaya Satoh, Hiromi Sakai",
+                    authorsJa: "宮崎隆義, 石川榮作, 佐藤征弥, 境泉洋",
+                    link: "https://repo.lib.tokushima-u.ac.jp/106427",
+                    language: "ja",
+                    tags: ["実践報告"]
+                }
+            ],
+            "研究ノート": [
+                {
+                    title: "Attempt to create a \"voice language map\" in the Yoshino River basin of Tokushima Prefecture",
+                    titleJa: "徳島県吉野川流域における『声の言語地図』作成の試み",
+                    authors: "Yukako Tsuboguchi, Abdunabi Ubul, Seiji Oizumi, Ying Chen",
+                    authorsJa: "峪口有香子, Abdunabi Ubul, 大泉誠治, 陳英",
+                    link: "https://repo.lib.tokushima-u.ac.jp/106429",
+                    language: "ja",
+                    tags: ["研究ノート"]
+                }
+            ]
+        }
+    },
+    {
+        volume: 3,
+        year: 2013,
+        sections: {
+            "論文": [
+                {
+                    title: "Life strategies of migrant domestic workers in China: From interview surveys in Dalian",
+                    titleJa: "中国の出稼ぎ家事労働者の生活戦略 : 大連でのインタビュー調査から",
+                    authors: "Xinni Dong",
+                    authorsJa: "董鑫妮",
+                    link: "https://repo.lib.tokushima-u.ac.jp/105954",
+                    language: "ja",
+                    tags: ["論文"]
+                },
+                {
+                    title: "The use of trusts in Canada",
+                    titleJa: "カナダにおける信託の利用",
+                    authors: "Donovan Waters (translated by Masato Shimizu)",
+                    authorsJa: "ドノヴァン・ウォーターズ著, 清水真人訳",
+                    link: "https://repo.lib.tokushima-u.ac.jp/106413",
+                    language: "ja",
+                    tags: ["翻訳"]
+                }
+            ],
+            "研究ノート": [
+                {
+                    title: "A new approach to evaluating cancer care-related information on the Internet: A medical information sociology essay focusing on meaningfulness in life",
+                    titleJa: "インターネットにおけるがん療養関連情報の新たな評価への試み : 生活における有意味さに注目した医療情報社会学的試論",
+                    authors: "Mina Karu, Chiemi Matsuura, Yoshio Kashida",
+                    authorsJa: "香留美菜, 松浦智恵美, 樫田美雄",
+                    link: "https://repo.lib.tokushima-u.ac.jp/105955",
+                    language: "ja",
+                    tags: ["研究ノート"]
+                }
+            ]
+        }
+    },
+    {
+        volume: 2,
+        year: 2012,
+        sections: {
+            "査読論文": [
+                {
+                    title: "A consideration of intercultural communication: Focusing on \"shame\" and \"amae\" culture",
+                    titleJa: "異文化コミュニケーションに関する一考察 : 「恥」と「甘え」文化を中心に",
+                    authors: "Huanu Tang, Makoto Ohashi",
+                    authorsJa: "唐画女, 大橋眞",
+                    link: "https://repo.lib.tokushima-u.ac.jp/111848",
+                    language: "ja",
+                    tags: ["査読論文"]
+                }
+            ]
+        }
+    },
+    {
+        volume: 1,
+        year: 2011,
+        sections: {
+            "論文": [
+                {
+                    title: "From corporal punishment to psychotropic drugs: From the narratives of facility staff working at child welfare institution Y in Z prefecture",
+                    titleJa: "体罰から向精神薬へ : Z県の児童養護施設Yで働く施設職員の語りから",
+                    authors: "Kohei Yoshida, Atsushi Tsuchiya",
+                    authorsJa: "吉田耕平, 土屋敦",
+                    link: "https://repo.lib.tokushima-u.ac.jp/113478",
+                    language: "ja",
+                    tags: ["論文"]
+                },
+                {
+                    title: "Verification of changes in perspectives on children's problem behavior and the medicalization process: From an examination of medical literature from the 1960s to the 2010s",
+                    titleJa: "子どもの問題行動への視角の変遷と医療化プロセスの検証 : 1960年代から2010年代の医学文献の検討から",
+                    authors: "Kohei Yoshida, Fumiya Sato, Atsushi Tsuchiya, Kayoko Ueno",
+                    authorsJa: "吉田耕平, 佐藤文哉, 土屋敦, 上野加代子",
+                    link: "https://repo.lib.tokushima-u.ac.jp/114059",
+                    language: "ja",
+                    tags: ["論文"]
+                }
+            ]
+        }
+    }
+];
+
+// 使用方法：
+// このデータをindex.htmlのvolumesDataに結合する場合：
+// const volumesData = [...additionalVolumesData, ...既存のvolumesData];
