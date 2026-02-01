@@ -7,7 +7,7 @@ const volumesData = [
                 {
                     title: "The Pre-Migration Work Destination Selection Process and current situation of Myanmar Care Migrant Workers in Rural Japan : A Preliminary Study for Life History Research",
                     authors: "Yukari Nagata, Pann Thae Chu",
-                    link: "https://tokushima-u.repo.nii.ac.jp/record/2013313",
+                    link: "https://tokushima-u.repo.nii.ac.jp/records/2013313",
                     language: "ja",
                     tags: ["peer-reviewed paper"]
                 },
@@ -66,7 +66,7 @@ const volumesData = [
                 {
                     title: "Present situation of Elaeocarpus zolloingeri tree planted in Mt. Shiroyama in 2006 : survival and infection status of Elaeocarpus yellows (Second Report)",
                     authors: "Masaya Satoh, Nanoha Kusuda, Yoshiki Osaka, Sachina Seki, Mone Abe",
-                    link: "https://tokushima-u.repo.nii.ac.jp/records/ja/list/t-pubs/rsr/12/--/item/117627",
+                    link: "https://tokushima-u.repo.nii.ac.jp/records/2010430",
                     language: "ja",
                     tags: ["paper"]
                 }
@@ -81,7 +81,7 @@ const volumesData = [
                 {
                     title: "Analysis on Agricultural Marketing of Naruto-Kintoki under Expandion of Exportation of Domestic Sweet Potato : Focus on Agricultural Cooperatives in Tokushima",
                     authors: "Naoshi Hashimoto, Takashi Toyonari, Takehiko Tsuda",
-                    link: "https://tokushima-u.repo.nii.ac.jp/records/ja/list/t-pubs/rsr/11/--/item/115858",
+                    link: "https://tokushima-u.repo.nii.ac.jp/records/2008781",
                     language: "ja",
                     tags: ["peer-reviewed paper"]
                 }
@@ -96,14 +96,14 @@ const volumesData = [
                 {
                     title: "Hachisuka Mochiaki's Overseas Achievements",
                     authors: "Masaya Satoh, Yuri Takasuka, Daiki Matsu-ura, Yoshimi Takagi, Masaki Tomitsuka, Ryuji Yorioka, Takayoshi Miyazaki",
-                    link: "https://tokushima-u.repo.nii.ac.jp/records/115414",
+                    link: "https://tokushima-u.repo.nii.ac.jp/records/20083444",
                     language: "ja",
                     tags: ["peer-reviewed paper"]
                 },
                 {
                     title: "About park management dedicated to skateboarding in city park administration - Taking Naruto City's community opening facility \"UZU Park\" as an example -",
                     authors: "Mikiya Ota, Mituhiro Sato",
-                    link: "https://tokushima-u.repo.nii.ac.jp/records/115546",
+                    link: "https://tokushima-u.repo.nii.ac.jp/records/2008473",
                     language: "ja",
                     tags: ["peer-reviewed paper"]
                 }
@@ -136,15 +136,6 @@ const volumesData = [
         volume: 8,
         year: 2018,
         sections: {
-            "peer-reviewed paper": [
-                {
-                    title: "Reexamination of the formation process of the retail market structure in the Japanese confectionery market : Focus on the 1970s to 2000s",
-                    authors: "Naoshi Hashimoto",
-                    link: "https://tokushima-u.repo.nii.ac.jp/records/112618",
-                    language: "ja",
-                    tags: ["peer-reviewed paper"]
-                }
-            ],
             "paper": [
                 {
                     title: "A critical overview for problems of cross-cultural communication: from the standpoint of the \"haji\" and \"amae\" culture",
