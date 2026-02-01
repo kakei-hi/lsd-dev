@@ -35,7 +35,7 @@
                             titleJa: "行政が主催するスケートボードイベントに関する課題 – 徳島県で開催された3つのイベントを事例として –",
                             authors: "Mikiya Ota, Takuya Yabe",
                             authorsJa: "太田幹也, 矢部拓也",
-                            link: "https://repo.lib.tokushima-u.ac.jp/ja/list/t-pubs/rsr/14/--/item/119391",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2012085",
                             language: "ja",
                             tags: ["査読論文"]
                         }
@@ -52,7 +52,7 @@
                             titleJa: "徳島県における農産物直売所の分析を通した農協の青果物マーケティングの課題と可能性 : 阿波郡東部農協「JA夢市場」を事例として",
                             authors: "Naoshi Hashimoto, Atsushi Yamafuji",
                             authorsJa: "橋本直史, 山藤篤",
-                            link: "https://repo.lib.tokushima-u.ac.jp/ja/list/t-pubs/rsr/13/--/item/117894",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2010685",
                             language: "ja",
                             tags: ["査読論文"]
                         },
@@ -61,7 +61,7 @@
                             titleJa: "コロナ禍における徳島県主産地のニンジンマーケティングの課題と可能性 : 板野郡農協を事例として",
                             authors: "Naoshi Hashimoto",
                             authorsJa: "橋本直史",
-                            link: "https://repo.lib.tokushima-u.ac.jp/ja/list/t-pubs/rsr/13/--/item/118517",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2011249",
                             language: "ja",
                             tags: ["査読論文"]
                         }
@@ -78,7 +78,7 @@
                             titleJa: "2006年に城山に植栽されたホルトノキの現況 : 生存と黄化病感染状況（第2報）",
                             authors: "Masaya Satoh, Nanoha Kusuda, Yoshiki Osaka, Sachina Seki, Mone Abe",
                             authorsJa: "佐藤征弥, 楠田菜乃羽, 大阪佳季, 関幸奈, 阿部萌音",
-                            link: "https://repo.lib.tokushima-u.ac.jp/ja/list/t-pubs/rsr/12/--/item/117627",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2010430",
                             language: "ja",
                             tags: ["論文"]
                         }
@@ -95,7 +95,7 @@
                             titleJa: "かんしょ輸出拡大下のなると金時産地の集荷・販売対応：輸出を通じた集出荷体制の検討",
                             authors: "Naoshi Hashimoto, Takashi Toyonari, Takehiko Tsuda",
                             authorsJa: "橋本直史, 豊成尚, 津田岳彦",
-                            link: "https://repo.lib.tokushima-u.ac.jp/ja/list/t-pubs/rsr/11/--/item/115858",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2008781",
                             language: "ja",
                             tags: ["査読論文"]
                         }
@@ -112,7 +112,7 @@
                             titleJa: "蜂須賀茂韶の海外での功績",
                             authors: "Masaya Satoh, Yuri Takasuka, Daiki Matsu-ura, Yoshimi Takagi, Masaki Tomitsuka, Ryuji Yorioka, Takayoshi Miyazaki",
                             authorsJa: "佐藤征弥, 高須賀友里, 松浦大樹, 高木佳美, 富塚昌輝, 依岡隆二, 宮崎隆義",
-                            link: "https://repo.lib.tokushima-u.ac.jp/115414",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/20083444",
                             language: "ja",
                             tags: ["査読論文"]
                         },
@@ -121,7 +121,7 @@
                             titleJa: "都市公園行政におけるスケートボード専用公園の管理運営について：鳴門市コミュニティ開放施設「UZU PARK」を事例として",
                             authors: "Mikiya Ota, Mituhiro Sato",
                             authorsJa: "太田幹也, 佐藤充宏",
-                            link: "https://repo.lib.tokushima-u.ac.jp/115546",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2008473",
                             language: "ja",
                             tags: ["査読論文"]
                         }
@@ -138,7 +138,7 @@
                             titleJa: "体罰から向精神薬へ : Z県の児童養護施設Yで働く施設職員の語りから",
                             authors: "Kohei Yoshida, Atsushi Tsuchiya",
                             authorsJa: "吉田耕平, 土屋敦",
-                            link: "https://repo.lib.tokushima-u.ac.jp/113478",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2006549",
                             language: "ja",
                             tags: ["論文"]
                         },
@@ -147,7 +147,7 @@
                             titleJa: "子どもの問題行動への視角の変遷と医療化プロセスの検証 : 1960年代から2010年代の医学文献の検討から",
                             authors: "Kohei Yoshida, Fumiya Sato, Atsushi Tsuchiya, Kayoko Ueno",
                             authorsJa: "吉田耕平, 佐藤文哉, 土屋敦, 上野加代子",
-                            link: "https://repo.lib.tokushima-u.ac.jp/114059",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2007043",
                             language: "ja",
                             tags: ["論文"]
                         }
@@ -164,7 +164,7 @@
                             titleJa: "異文化コミュニケーションに関する一考察 : 「恥」と「甘え」文化を中心に",
                             authors: "Huanu Tang, Makoto Ohashi",
                             authorsJa: "唐画女, 大橋眞",
-                            link: "https://repo.lib.tokushima-u.ac.jp/111848",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/12005013",
                             language: "ja",
                             tags: ["論文"]
                         }
@@ -181,7 +181,7 @@
                             titleJa: "Contemporary regional issues in sustainability : Prospective application for activation of local community and university education from an international seminar",
                             authors: "Awangku Hassanal Bahar Pengiran Bagul, Makoto Ohashi",
                             authorsJa: "Awangku Hassanal Bahar Pengiran Bagul, Makoto Ohashi",
-                            link: "https://repo.lib.tokushima-u.ac.jp/110200",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2003398",
                             language: "en",
                             tags: ["論文"]
                         }
@@ -192,7 +192,7 @@
                             titleJa: "感情制御困難傾向と活動性および気晴らしの結果との関連",
                             authors: "Yuki Shinoura, Motohiro Sakai",
                             authorsJa: "篠浦友希, 境泉洋",
-                            link: "https://repo.lib.tokushima-u.ac.jp/110887",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2004083",
                             language: "ja",
                             tags: ["査読論文"]
                         }
@@ -203,7 +203,7 @@
                             titleJa: "平成28年度徳島大学総合科学部部局長裁量経費総合科学部創生研究プロジェクト実践報告「モラエス顕彰による地方創生プロジェクト」",
                             authors: "Takayoshi Miyazaki, Eisaku Ishikawa, Masaya Satoh, Motohiro Sakai",
                             authorsJa: "宮崎隆義, 石川榮作, 佐藤征弥, 境泉洋",
-                            link: "https://repo.lib.tokushima-u.ac.jp/110987",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2004179",
                             language: "ja",
                             tags: ["実践報告"]
                         }
@@ -220,7 +220,7 @@
                             titleJa: "機能的・非機能的自己注目の持続と不安・抑うつの関連",
                             authors: "Saki Taniguchi, Mai Miyamoto, Akiko Mizoguchi, Motohiro Sakai",
                             authorsJa: "谷口早紀, 宮本真衣, 溝口暁子, 境泉洋",
-                            link: "https://repo.lib.tokushima-u.ac.jp/109601",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002844",
                             language: "ja",
                             tags: ["査読論文"]
                         },
@@ -229,7 +229,7 @@
                             titleJa: "2006年に徳島市城山に植樹されたホルトノキの苗木の現状 : 生育状況とホルトノキ萎黄病感染状況について",
                             authors: "Masaya Satoh, Daisuke Minoda, Ryohei Takai, Yusuke Imada, Takaharu Anzai, Ryutaro Tanaka, Eri Shimogomi, Ayami Oda, Hajime Nonoichi, Risa Kamae, Shota Okumura, Miyu Hirase, Chihiro Itonaga, Shinzaburo Sano, Hiroaki Nakagawa, Hiro Okada, Mayu Yamagata",
                             authorsJa: "佐藤征弥, 箕田大祐, 高井竜平, 今田悠介, 安西隆治, 田中隆太郎, 下込衣里, 小田彩未, 野々市元, 釜江梨紗, 奥村彰太, 平瀬未悠, 糸永千尋, 佐野慎三郎, 中川寛章, 岡田ひろ, 山形真由",
-                            link: "https://repo.lib.tokushima-u.ac.jp/110014",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2003239",
                             language: "ja",
                             tags: ["査読論文"]
                         }
@@ -240,7 +240,7 @@
                             titleJa: "モラエスの庭 −(6) モラエスの目：徳島の風景",
                             authors: "Takayoshi Miyazaki, Eisaku Ishikawa, Masaya Satoh, Motohiro Sakai",
                             authorsJa: "宮崎隆義, 石川榮作, 佐藤征弥, 境泉洋",
-                            link: "https://repo.lib.tokushima-u.ac.jp/110015",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2003240",
                             language: "ja",
                             tags: ["論文"]
                         }
@@ -251,7 +251,7 @@
                             titleJa: "平成27年度徳島大学総合科学部部局長裁量経費総合科学部創生研究プロジェクト実践報告「グローバリズムとモラエス - モラエスが世界に広げた〈徳島の自然・人・心〉の再構築 -」",
                             authors: "Takayoshi Miyazaki, Eisaku Ishikawa, Masaya Satoh, Motohiro Sakai",
                             authorsJa: "宮崎隆義, 石川榮作, 佐藤征弥, 境泉洋",
-                            link: "https://repo.lib.tokushima-u.ac.jp/110016",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2004179",
                             language: "ja",
                             tags: ["実践報告"]
                         }
@@ -268,7 +268,7 @@
                             titleJa: "大学生の職業未決定に自己効力と就職不安が与える影響",
                             authors: "Hirokazu Matsubara, Azusa Noma, Megumi Ushio, Motohiro Sakai",
                             authorsJa: "松原弘和, 野間あずさ, 牛尾恵, 境泉洋",
-                            link: "https://repo.lib.tokushima-u.ac.jp/109547",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002793",
                             language: "ja",
                             tags: ["査読論文"]
                         },
@@ -277,7 +277,7 @@
                             titleJa: "板東俘虜収容所のドイツ兵が大麻比古神社境内に造った橋と公園",
                             authors: "Masaya Satoh, Eri Tanegashima, Katsuaki Amita, Saburo Kawakami",
                             authorsJa: "佐藤征弥, 種ヶ嶋絵理, 網田克明, 川上三郎",
-                            link: "https://repo.lib.tokushima-u.ac.jp/109548",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002794",
                             language: "ja",
                             tags: ["査読論文"]
                         },
@@ -286,7 +286,7 @@
                             titleJa: "「嚼む」身体と共に生きる : 吃音自助組織での語りにみる吃音対処法の意味",
                             authors: "Ryo Otsuka, Naoki Naito",
                             authorsJa: "大塚諒, 内藤直樹",
-                            link: "https://repo.lib.tokushima-u.ac.jp/109551",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002797",
                             language: "ja",
                             tags: ["査読論文"]
                         }
@@ -297,7 +297,7 @@
                             titleJa: "モラエスの庭 −(5) モラエスの著作の位置づけと第五回内国勧業博覧会",
                             authors: "Takayoshi Miyazaki, Eisaku Ishikawa, Masaya Satoh, Motohiro Sakai",
                             authorsJa: "宮崎隆義, 石川榮作, 佐藤征弥, 境泉洋",
-                            link: "https://repo.lib.tokushima-u.ac.jp/109549",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002795",
                             language: "ja",
                             tags: ["論文"]
                         }
@@ -308,7 +308,7 @@
                             titleJa: "平成26年度徳島大学総合科学部部局長裁量経費総合科学部創生研究プロジェクト実践報告「グローバリズムとモラエス - モラエスが世界に広げた〈徳島の自然・人・心〉の再構築 -」",
                             authors: "Takayoshi Miyazaki, Eisaku Ishikawa, Masaya Satoh, Motohiro Sakai",
                             authorsJa: "宮崎隆義, 石川榮作, 佐藤征弥, 境泉洋",
-                            link: "https://repo.lib.tokushima-u.ac.jp/109550",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002796",
                             language: "ja",
                             tags: ["実践報告"]
                         }
@@ -325,7 +325,7 @@
                             titleJa: "日本の歴史的重要建造物における徳島県阿南市産大理石の使用とその意義",
                             authors: "Keisuke Ishida, Takahito Hayabuchi, Kenichi Nakao, Shozo Toomei",
                             authorsJa: "石田啓祐, 早渕隆人, 中尾賢一, 東明省三",
-                            link: "https://repo.lib.tokushima-u.ac.jp/106424",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002583",
                             language: "ja",
                             tags: ["査読論文"]
                         }
@@ -336,7 +336,7 @@
                             titleJa: "徳島県の若年層の結婚行動",
                             authors: "Tomokuni Mizunoue, Tong Zhao",
                             authorsJa: "水ノ上智邦, 趙彤",
-                            link: "https://repo.lib.tokushima-u.ac.jp/106425",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/12002584",
                             language: "ja",
                             tags: ["論文"]
                         },
@@ -345,7 +345,7 @@
                             titleJa: "モラエスの庭 −(4) 生へのまなざし、死へのまなざし",
                             authors: "Takayoshi Miyazaki, Eisaku Ishikawa, Masaya Satoh, Motohiro Sakai",
                             authorsJa: "宮崎隆義, 石川榮作, 佐藤征弥, 境泉洋",
-                            link: "https://repo.lib.tokushima-u.ac.jp/106426",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/12002585",
                             language: "ja",
                             tags: ["論文"]
                         },
@@ -354,7 +354,7 @@
                             titleJa: "ポルトガルの大衆紙\"CIVILIZAÇÃO\"が1930年1月号で伝えたモラエスの墓、告別式、彼の部屋に関する記事について",
                             authors: "Masaya Satoh, Takiko Okamura, Motohiro Sakai, Eisaku Ishikawa, Takayoshi Miyazaki",
                             authorsJa: "佐藤征弥, 岡村多希子, 境泉洋, 石川栄作, 宮崎隆義",
-                            link: "https://repo.lib.tokushima-u.ac.jp/106428",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/12002587",
                             language: "ja",
                             tags: ["論文"]
                         }
@@ -365,7 +365,7 @@
                             titleJa: "平成25年度徳島大学総合科学部学部長裁量経費総合科学部創生研究プロジェクト実践報告「グローバリズムとモラエス - モラエスが世界に広げた〈徳島の自然・人・心〉の再構築 -」",
                             authors: "Takayoshi Miyazaki, Eisaku Ishikawa, Masaya Satoh, Motohiro Sakai",
                             authorsJa: "宮崎隆義, 石川榮作, 佐藤征弥, 境泉洋",
-                            link: "https://repo.lib.tokushima-u.ac.jp/106427",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/12002586",
                             language: "ja",
                             tags: ["実践報告"]
                         }
@@ -376,7 +376,7 @@
                             titleJa: "徳島県吉野川流域における『声の言語地図』作成の試み",
                             authors: "Yukako Tsuboguchi, Abdunabi Ubul, Seiji Oizumi, Ying Chen",
                             authorsJa: "峪口有香子, Abdunabi Ubul, 大泉誠治, 陳英",
-                            link: "https://repo.lib.tokushima-u.ac.jp/106429",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/12002588",
                             language: "ja",
                             tags: ["研究ノート"]
                         }
@@ -404,7 +404,7 @@
                             titleJa: "中国の出稼ぎ家事労働者の生活戦略 : 大連でのインタビュー調査から",
                             authors: "Xinni Dong",
                             authorsJa: "董鑫妮",
-                            link: "https://repo.lib.tokushima-u.ac.jp/105954",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002159",
                             language: "ja",
                             tags: ["論文"]
                         },
@@ -413,7 +413,7 @@
                             titleJa: "日本の近世女性のあり方に関する一考察 - 阿波国における「桜戸日記」を中心に - ",
                             authors: "Donovan Waters (translated by Masato Shimizu)",
                             authorsJa: "湯麗, 劉潔, 大橋眞",
-                            link: "https://repo.lib.tokushima-u.ac.jp/106414",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002573",
                             language: "ja",
                             tags: ["論文"]
                         },
@@ -453,7 +453,7 @@
                             titleJa: "インターネットにおけるがん療養関連情報の新たな評価への試み : 生活における有意味さに注目した医療情報社会学的試論",
                             authors: "Mina Karu, Chiemi Matsuura, Yoshio Kashida",
                             authorsJa: "香留美菜, 松浦智恵美, 樫田美雄",
-                            link: "https://repo.lib.tokushima-u.ac.jp/105955",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002160",
                             language: "ja",
                             tags: ["研究ノート"]
                         },
@@ -462,7 +462,7 @@
                             titleJa: "「行動する保守」の論理(9) ― 国家革新の一部として排外主義運動に参加するθ氏の場合 ―",
                             authors: "Naoto Higuchi",
                             authorsJa: "樋口直人",
-                            link: "https://repo.lib.tokushima-u.ac.jp/106415",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002574",
                             language: "ja",
                             tags: ["研究ノート"]
                         },
@@ -471,7 +471,7 @@
                             titleJa: "在特会の論理(22) ― 「日の丸をじいちゃんが掲げた」Ｖ氏の場合 ―",
                             authors: "Naoto Higuchi",
                             authorsJa: "樋口直人",
-                            link: "https://repo.lib.tokushima-u.ac.jp/106416",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002575",
                             language: "ja",
                             tags: ["研究ノート"]
                         },
@@ -480,7 +480,7 @@
                             titleJa: "在特会の論理(23) ― インターネットで世界が変わったＷ氏の場合 ―",
                             authors: "Naoto Higuchi",
                             authorsJa: "樋口直人",
-                            link: "https://repo.lib.tokushima-u.ac.jp/106417",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002576",
                             language: "ja",
                             tags: ["研究ノート"]
                         },
@@ -489,7 +489,7 @@
                             titleJa: "在特会の論理(24) ― 労組専従から右旋回したＸ氏の場合 ―",
                             authors: "Naoto Higuchi",
                             authorsJa: "樋口直人",
-                            link: "https://repo.lib.tokushima-u.ac.jp/106418",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002577",
                             language: "ja",
                             tags: ["研究ノート"]
                         },
@@ -498,7 +498,7 @@
                             titleJa: "在特会の論理(25) ― 勉強サークルとしての在特会に参加したＹ氏の場合 ―",
                             authors: "Naoto Higuchi",
                             authorsJa: "樋口直人",
-                            link: "https://repo.lib.tokushima-u.ac.jp/106419",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002578",
                             language: "ja",
                             tags: ["研究ノート"]
                         }
@@ -509,7 +509,7 @@
                             titleJa: "カナダにおける信託の利用",
                             authors: "Donovan Waters (translated by Masato Shimizu)",
                             authorsJa: "ドノヴァン・ウォーターズ著, 清水真人訳",
-                            link: "https://repo.lib.tokushima-u.ac.jp/106413",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002572",
                             language: "ja",
                             tags: ["翻訳"]
                         }
@@ -526,7 +526,7 @@
                             titleJa: "在宅療養者と介護者の相互行為分析―ある脊椎損傷者の着替え場面に注目して―",
                             authors: "Yuko Hotta, Yoshio Kashida",
                             authorsJa: "堀田裕子, 樫田美雄",
-                            link: "https://repo.lib.tokushima-u.ac.jp/105933",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002138",
                             language: "ja",
                             tags: ["査読論文"]
                         },
@@ -535,7 +535,7 @@
                             titleJa: "徳島公園（徳島中央公園）の造園設計について － 日比谷公園及びザイファースドルフ城との比較 ー",
                             authors: "Masaya Satoh, Yusuke Yasuda, Kazumasa Matoba, Akinori Maedaka, Bao Siqin Gowa, Yuka Hirashima, Asuka Nakajima, Masahiro Sakata, Jun Kurochi, Zhehao Han, Yosuke Endo, Motohiro Sakai, Takayoshi Miyazaki",
                             authorsJa: "佐藤征弥, 安田侑右, 的場一将, 前髙明典, 包斯琴高娃, 平島佑香, 中島明日香, 坂田真宏, 黒地潤, 韓哲浩, 遠藤陽介, 境泉洋, 宮崎隆義",
-                            link: "https://repo.lib.tokushima-u.ac.jp/105940",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002145",
                             language: "ja",
                             tags: ["査読論文"]
                         }
@@ -546,7 +546,7 @@
                             titleJa: "「\"異なる他者\"とのかかわり方」に関連する諸要因の研究 ― 徳島大学総合科学部1年生を対象にしたアンケート調査から ―",
                             authors: "Remi Igata, Yun Ji, Yukako Tsuboguchi, Xinni Dong, Junko Futsugi, Tetsuya Haigo, Xiaoting Yang, Kohei Yoshida, Kayoko Ueno, Kazuhiro Makabe",
                             authorsJa: "井形玲美, 季昀, 峪口有香子, 董鑫妮, 二木順子, 拝郷哲也, 楊暁婷, 吉田耕平, 上野加代子, 真壁和裕",
-                            link: "https://repo.lib.tokushima-u.ac.jp/105934",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002139",
                             language: "ja",
                             tags: ["論文"]
                         },
@@ -555,7 +555,7 @@
                             titleJa: "Hokkaido farming methods in Manchukuo in 1940s",
                             authors: "Shinnosuke Tama",
                             authorsJa: "玉真之介",
-                            link: "https://repo.lib.tokushima-u.ac.jp/105935",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002140",
                             language: "en",
                             tags: ["論文"]
                         },
@@ -564,7 +564,7 @@
                             titleJa: "モラエスが見た蛍",
                             authors: "Masaya Satoh, Motohiro Sakai, Takayoshi Miyazaki",
                             authorsJa: "佐藤征弥, 境泉洋, 宮崎隆義",
-                            link: "https://repo.lib.tokushima-u.ac.jp/104324",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002046",
                             language: "ja",
                             tags: ["論文"]
                         },
@@ -573,7 +573,7 @@
                             titleJa: "中国青島市における交通機関の言語景観についての一考査",
                             authors: "Jie Liu, Makoto Ohashi, Shinsuke Kishie",
                             authorsJa: "劉潔, 大橋眞, 岸江信介",
-                            link: "https://repo.lib.tokushima-u.ac.jp/105942",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002147",
                             language: "ja",
                             tags: ["論文"]
                         },
@@ -582,7 +582,7 @@
                             titleJa: "中国青島市における観光スポットの言語景観について",
                             authors: "Jie Liu, Makoto Ohashi, Shinsuke Kishie",
                             authorsJa: "劉潔, 大橋眞, 岸江信介",
-                            link: "https://repo.lib.tokushima-u.ac.jp/105944",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002149",
                             language: "ja",
                             tags: ["論文"]
                         },
@@ -591,7 +591,7 @@
                             titleJa: "モラエスの庭 ― （2）「随想」の変質 ―",
                             authors: "Takayoshi Miyazaki, Masaya Satoh, Motohiro Sakai",
                             authorsJa: "宮崎隆義, 佐藤征弥, 境泉洋",
-                            link: "https://repo.lib.tokushima-u.ac.jp/105945",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002150",
                             language: "ja",
                             tags: ["論文"]
                         }
@@ -602,7 +602,7 @@
                             titleJa: "発達障害者と支援者をめぐるニーズ",
                             authors: "Ryoko Fukumitsu",
                             authorsJa: "福光涼子",
-                            link: "https://repo.lib.tokushima-u.ac.jp/105941",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002146",
                             language: "ja",
                             tags: ["研究ノート"]
                         },
@@ -611,7 +611,7 @@
                             titleJa: "「行動する保守」の論理(5) ― トンデモ本から歴史問題をめぐる嫌悪感へ・ε氏の場合 ―",
                             authors: "Naoto Higuchi",
                             authorsJa: "樋口直人",
-                            link: "https://repo.lib.tokushima-u.ac.jp/105948",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002153",
                             language: "ja",
                             tags: ["研究ノート"]
                         },
@@ -620,7 +620,7 @@
                             titleJa: "「行動する保守」の論理(6) ― 中国が重要だというα氏・再 ―",
                             authors: "Naoto Higuchi",
                             authorsJa: "樋口直人",
-                            link: "https://repo.lib.tokushima-u.ac.jp/105949",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002154",
                             language: "ja",
                             tags: ["研究ノート"]
                         },
@@ -629,7 +629,7 @@
                             titleJa: "在特会の論理(11) ― ノンポリ転じて活動家になったK氏の場合 ―",
                             authors: "Naoto Higuchi",
                             authorsJa: "樋口直人",
-                            link: "https://repo.lib.tokushima-u.ac.jp/105950",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002155",
                             language: "ja",
                             tags: ["研究ノート"]
                         },
@@ -638,7 +638,7 @@
                             titleJa: "在特会の論理(12) ― 在特会が多くの人に勇気を与えたというL氏の場合 ―",
                             authors: "Naoto Higuchi",
                             authorsJa: "樋口直人",
-                            link: "https://repo.lib.tokushima-u.ac.jp/105951",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002156",
                             language: "ja",
                             tags: ["研究ノート"]
                         },
@@ -647,7 +647,7 @@
                             titleJa: "在特会の論理(13) ― 大学生時代から『正論』を読んでいたM氏の場合 ―",
                             authors: "Naoto Higuchi",
                             authorsJa: "樋口直人",
-                            link: "https://repo.lib.tokushima-u.ac.jp/105952",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002157",
                             language: "ja",
                             tags: ["研究ノート"]
                         },
@@ -656,7 +656,7 @@
                             titleJa: "在特会の論理(14) ― 交際相手に勧誘されたN氏の場合 ―",
                             authors: "Naoto Higuchi",
                             authorsJa: "樋口直人",
-                            link: "https://repo.lib.tokushima-u.ac.jp/105953",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002158",
                             language: "ja",
                             tags: ["研究ノート"]
                         }
@@ -667,7 +667,7 @@
                             titleJa: "平成23年度徳島大学総合科学部学部長裁量経費総合科学部創生研究プロジェクト成果報告「モラエスの庭 ― 徳島の自然・人・心 ―」",
                             authors: "Takayoshi Miyazaki, Masaya Satoh, Motohiro Sakai",
                             authorsJa: "宮崎隆義, 佐藤征弥, 境泉洋",
-                            link: "https://repo.lib.tokushima-u.ac.jp/105946",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002151",
                             language: "ja",
                             tags: ["実践報告"]
                         }
@@ -678,7 +678,7 @@
                             titleJa: "ケベック州における信託",
                             authors: "Donovan Waters (translated by Masato Shimizu)",
                             authorsJa: "ドノヴァン・ウォーターズ著, 清水真人訳",
-                            link: "https://repo.lib.tokushima-u.ac.jp/105947",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002152",
                             language: "ja",
                             tags: ["翻訳"]
                         }
@@ -695,7 +695,7 @@
                             titleJa: "中途診断というカテゴリー変化の中で生きる ― 発達障害者の中途診断経験と自己探求の社会学 ―",
                             authors: "Rina Oue, Yoshio Kashida",
                             authorsJa: "大上梨奈, 樫田美雄",
-                            link: "https://repo.lib.tokushima-u.ac.jp/105904",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002109",
                             language: "ja",
                             tags: ["査読論文"]
                         },
@@ -704,7 +704,7 @@
                             titleJa: "『阿波名所図会』における眉山の自然と景観",
                             authors: "Masaya Satoh, Kaori Ikehata, Kentaro Ukita, Yan Wang, Mina Oguri, Keiichiro Kaseda, Jun Kato, Yusuke Kinoshita, Tayo Sugimoto, Masahiro Takahashi, Takahiro Tajima, Katsuya Harada, Takahiro Fukumoto, Masahiro Fujinaga, Aya Fujimoto, Masako Mitsunaga, Yuika Watanabe, Motohiro Sakai, Takayoshi Miyazaki",
                             authorsJa: "佐藤征弥, 池幡佳織, 浮田健太郎, 王艶, 大粟美菜, 駕田啓一郎, 加藤潤, 木下悠亮, 杉本多余, 高橋将央, 田嶋孝裕, 原田克哉, 福本孝博, 藤永真大, 藤本彩, 光永雅子, 渡邊ゆいか, 境泉洋, 宮崎隆義",
-                            link: "https://repo.lib.tokushima-u.ac.jp/105900",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002105",
                             language: "ja",
                             tags: ["査読論文"]
                         }
@@ -715,7 +715,7 @@
                             titleJa: "Environmental policy and firms agglomeration under the mixed duopoly",
                             authors: "Toru Naito",
                             authorsJa: "内藤徹",
-                            link: "https://repo.lib.tokushima-u.ac.jp/105901",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002106",
                             language: "en",
                             tags: ["論文"]
                         },
@@ -724,7 +724,7 @@
                             titleJa: "地域科学の教育課題に関する一考察",
                             authors: "Makoto Nakajima",
                             authorsJa: "中嶋信",
-                            link: "https://repo.lib.tokushima-u.ac.jp/105902",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002107",
                             language: "ja",
                             tags: ["論文"]
                         },
@@ -733,7 +733,7 @@
                             titleJa: "モラエスの庭 ―（1）日記文学・随筆文学ということ ―",
                             authors: "Takayoshi Miyazaki, Masaya Satoh, Motohiro Sakai",
                             authorsJa: "宮崎隆義, 佐藤征弥, 境泉洋",
-                            link: "https://repo.lib.tokushima-u.ac.jp/105903",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002108",
                             language: "ja",
                             tags: ["論文"]
                         },
@@ -742,7 +742,7 @@
                             titleJa: "中国青島市黄島地区におけるショッピングセンターの言語景観",
                             authors: "Jie Liu, Makoto Ohashi, Shinsuke Kishie",
                             authorsJa: "劉潔, 大橋眞, 岸江信介",
-                            link: "https://repo.lib.tokushima-u.ac.jp/105926",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002131",
                             language: "ja",
                             tags: ["論文"]
                         }
@@ -753,7 +753,7 @@
                             titleJa: "「行動する保守」の論理（1）― 中国が重要というα氏の場合 ―",
                             authors: "Naoto Higuchi",
                             authorsJa: "樋口直人",
-                            link: "https://repo.lib.tokushima-u.ac.jp/105927",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002132",
                             language: "ja",
                             tags: ["研究ノート"]
                         },
@@ -762,7 +762,7 @@
                             titleJa: "「行動する保守」の論理（2）― 外国人参政権に反対するβ氏の場合 ―",
                             authors: "Naoto Higuchi",
                             authorsJa: "樋口直人",
-                            link: "https://repo.lib.tokushima-u.ac.jp/105928",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002133",
                             language: "ja",
                             tags: ["研究ノート"]
                         },
@@ -771,7 +771,7 @@
                             titleJa: "「行動する保守」の論理（3）― 在特会から学んだγ氏の場合 ―",
                             authors: "Naoto Higuchi",
                             authorsJa: "樋口直人",
-                            link: "https://repo.lib.tokushima-u.ac.jp/105929",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002134",
                             language: "ja",
                             tags: ["研究ノート"]
                         },
@@ -780,7 +780,7 @@
                             titleJa: "在特会の論理（8）― 『嫌韓流』を地で行くH氏の場合 ―",
                             authors: "Naoto Higuchi",
                             authorsJa: "樋口直人",
-                            link: "https://repo.lib.tokushima-u.ac.jp/105930",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002135",
                             language: "ja",
                             tags: ["研究ノート"]
                         },
@@ -789,7 +789,7 @@
                             titleJa: "在特会の論理（9）― 「創価学会をつぶす」動画に引き込まれたI氏の場合 ―",
                             authors: "Naoto Higuchi",
                             authorsJa: "樋口直人",
-                            link: "https://repo.lib.tokushima-u.ac.jp/105931",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002136",
                             language: "ja",
                             tags: ["研究ノート"]
                         }
@@ -800,7 +800,7 @@
                             titleJa: "大川原高原に発生した雨氷の被害と現状",
                             authors: "Mamoru Higashi",
                             authorsJa: "東衛史",
-                            link: "https://repo.lib.tokushima-u.ac.jp/105932",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002137",
                             language: "ja",
                             tags: ["短信"]
                         }
