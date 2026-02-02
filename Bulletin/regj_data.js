@@ -1,4 +1,4 @@
-        const volumesData = [
+const volumesData = [
             {
                 volume: 15,
                 year: 2025,
@@ -134,7 +134,7 @@
                 sections: {
                      "論文": [
                         {
-                            title: "From corporal punishment to psychotropic drugs: From the narratives of facility staff working at child welfare institution Y in Z prefecture",
+                            title: "The shift from corporate punishment to psychotropic drugs ―From interviews with staff at Children's Home Y in Prefecture Z―",
                             titleJa: "体罰から向精神薬へ : Z県の児童養護施設Yで働く施設職員の語りから",
                             authors: "Kohei Yoshida, Atsushi Tsuchiya",
                             authorsJa: "吉田耕平, 土屋敦",
@@ -143,7 +143,7 @@
                             tags: ["論文"]
                         },
                         {
-                            title: "Verification of changes in perspectives on children's problem behavior and the medicalization process: From an examination of medical literature from the 1960s to the 2010s",
+                            title: "Problem Behavior in Children and Medicalization ―Based on Examination of Medical Texts from the 1960s to the 2010s―",
                             titleJa: "子どもの問題行動への視角の変遷と医療化プロセスの検証 : 1960年代から2010年代の医学文献の検討から",
                             authors: "Kohei Yoshida, Fumiya Sato, Atsushi Tsuchiya, Kayoko Ueno",
                             authorsJa: "吉田耕平, 佐藤文哉, 土屋敦, 上野加代子",
@@ -160,7 +160,7 @@
                 sections: {
                     "論文": [
                         {
-                            title: "A consideration of intercultural communication: Focusing on \"shame\" and \"amae\" culture",
+                            title: "A critical overview for problems of cross-cultural communication: from the standpoint of the \"haji\" and \"amae\" culture",
                             titleJa: "異文化コミュニケーションに関する一考察 : 「恥」と「甘え」文化を中心に",
                             authors: "Huanu Tang, Makoto Ohashi",
                             authorsJa: "唐画女, 大橋眞",
@@ -188,7 +188,7 @@
                     ],
                     "査読論文": [
                         {
-                            title: "Relationship between Difficulties in Emotion Regulation and the Results of Activity and Distraction",
+                            title: "The relationship between the difficult tendency in emotion regulation and activation, consequences of distraction",
                             titleJa: "感情制御困難傾向と活動性および気晴らしの結果との関連",
                             authors: "Yuki Shinoura, Motohiro Sakai",
                             authorsJa: "篠浦友希, 境泉洋",
@@ -199,7 +199,7 @@
                     ],
                     "実践報告": [
                         {
-                            title: "Practical Report of FY2016 Tokushima University Faculty of Integrated Arts and Sciences Dean's Discretionary Budget Creative Research Project \"Moraes Commemoration Project for Regional Revitalization\"",
+                            title: "A Report of the Project Studies in 2016 : Regional revitalization project through W. de Moraes",
                             titleJa: "平成28年度徳島大学総合科学部部局長裁量経費総合科学部創生研究プロジェクト実践報告「モラエス顕彰による地方創生プロジェクト」",
                             authors: "Takayoshi Miyazaki, Eisaku Ishikawa, Masaya Satoh, Motohiro Sakai",
                             authorsJa: "宮崎隆義, 石川榮作, 佐藤征弥, 境泉洋",
@@ -216,7 +216,7 @@
                 sections: {
                     "査読論文": [
                         {
-                            title: "Relationship between duration of functional and dysfunctional self-focused attention and anxiety and depression",
+                            title: "Relationship between duration of functional/dysfunctional self-focused attention and anxiety/depression",
                             titleJa: "機能的・非機能的自己注目の持続と不安・抑うつの関連",
                             authors: "Saki Taniguchi, Mai Miyamoto, Akiko Mizoguchi, Motohiro Sakai",
                             authorsJa: "谷口早紀, 宮本真衣, 溝口暁子, 境泉洋",
@@ -225,7 +225,7 @@
                             tags: ["査読論文"]
                         },
                         {
-                            title: "The Present situation of Elaeocarpus zolloingeri tree planted in Mt. Shiroyama in 2006 : survival and infection status of Elaeocarpus yellows",
+                            title: "Present situation of Elaeocarpus zolloingeri tree planted in Mt. Shiroyama in 2006: survival and infection status of Elaeocarpus yellows",
                             titleJa: "2006年に徳島市城山に植樹されたホルトノキの苗木の現状 : 生育状況とホルトノキ萎黄病感染状況について",
                             authors: "Masaya Satoh, Daisuke Minoda, Ryohei Takai, Yusuke Imada, Takaharu Anzai, Ryutaro Tanaka, Eri Shimogomi, Ayami Oda, Hajime Nonoichi, Risa Kamae, Shota Okumura, Miyu Hirase, Chihiro Itonaga, Shinzaburo Sano, Hiroaki Nakagawa, Hiro Okada, Mayu Yamagata",
                             authorsJa: "佐藤征弥, 箕田大祐, 高井竜平, 今田悠介, 安西隆治, 田中隆太郎, 下込衣里, 小田彩未, 野々市元, 釜江梨紗, 奥村彰太, 平瀬未悠, 糸永千尋, 佐野慎三郎, 中川寛章, 岡田ひろ, 山形真由",
@@ -236,7 +236,7 @@
                     ],
                     "論文": [
                         {
-                            title: "Moraes's Garden (6) Moraes's Eye: The Landscape of Tokushima",
+                            title: "Moraes's garden ― (6) Moraes's Eyes: Tokushima Landscape through his Eyes ―",
                             titleJa: "モラエスの庭 −(6) モラエスの目：徳島の風景",
                             authors: "Takayoshi Miyazaki, Eisaku Ishikawa, Masaya Satoh, Motohiro Sakai",
                             authorsJa: "宮崎隆義, 石川榮作, 佐藤征弥, 境泉洋",
@@ -247,7 +247,7 @@
                     ],
                     "実践報告": [
                         {
-                            title: "Practical Report of FY2015 Tokushima University Faculty of Integrated Arts and Sciences Dean's Discretionary Budget Creative Research Project \"Globalism and Moraes - Reconstruction of Tokushima's Nature, People, and Heart that Moraes Spread to the World\"",
+                            title: "A report of the Project Studies in 2015: Globalism and Moraes ― reevaluation of nature, people and heart of Tokushima in the world through W. de Moraes ―",
                             titleJa: "平成27年度徳島大学総合科学部部局長裁量経費総合科学部創生研究プロジェクト実践報告「グローバリズムとモラエス - モラエスが世界に広げた〈徳島の自然・人・心〉の再構築 -」",
                             authors: "Takayoshi Miyazaki, Eisaku Ishikawa, Masaya Satoh, Motohiro Sakai",
                             authorsJa: "宮崎隆義, 石川榮作, 佐藤征弥, 境泉洋",
@@ -264,7 +264,7 @@
                 sections: {
                     "査読論文": [
                         {
-                            title: "Effects of self-efficacy and employment anxiety on career indecision among university students",
+                            title: "The effect of career decision making self-efficacy and employment anxiety on career indecision in undergraduate students",
                             titleJa: "大学生の職業未決定に自己効力と就職不安が与える影響",
                             authors: "Hirokazu Matsubara, Azusa Noma, Megumi Ushio, Motohiro Sakai",
                             authorsJa: "松原弘和, 野間あずさ, 牛尾恵, 境泉洋",
@@ -273,7 +273,7 @@
                             tags: ["査読論文"]
                         },
                         {
-                            title: "The bridge and park built by German prisoners of war from Bando POW camp in the precincts of Oasa Hiko Shrine",
+                            title: "Bridges and a park made by German prisoners in the Bandō prisoner-of-war (POW) camp",
                             titleJa: "板東俘虜収容所のドイツ兵が大麻比古神社境内に造った橋と公園",
                             authors: "Masaya Satoh, Eri Tanegashima, Katsuaki Amita, Saburo Kawakami",
                             authorsJa: "佐藤征弥, 種ヶ嶋絵理, 網田克明, 川上三郎",
@@ -282,7 +282,7 @@
                             tags: ["査読論文"]
                         },
                         {
-                            title: "Living with the \"stuttering\" body: The meaning of stuttering coping methods seen in narratives at a stuttering self-help organization",
+                            title: "Dealing with stuttering body ― Narrative analysis of a self-help group for stuttering in Tokushima",
                             titleJa: "「嚼む」身体と共に生きる : 吃音自助組織での語りにみる吃音対処法の意味",
                             authors: "Ryo Otsuka, Naoki Naito",
                             authorsJa: "大塚諒, 内藤直樹",
@@ -293,7 +293,7 @@
                     ],
                     "論文": [
                         {
-                            title: "Moraes's Garden (5) The Position of Moraes's Works and the Fifth National Industrial Exhibition",
+                            title: "Moraes's garden ― (5) Writings in the time and The 5th National Industrial Exhibition",
                             titleJa: "モラエスの庭 −(5) モラエスの著作の位置づけと第五回内国勧業博覧会",
                             authors: "Takayoshi Miyazaki, Eisaku Ishikawa, Masaya Satoh, Motohiro Sakai",
                             authorsJa: "宮崎隆義, 石川榮作, 佐藤征弥, 境泉洋",
@@ -304,7 +304,7 @@
                     ],
                     "実践報告": [
                         {
-                            title: "Practical Report of FY2014 Tokushima University Faculty of Integrated Arts and Sciences Dean's Discretionary Budget Creative Research Project \"Globalism and Moraes - Reconstruction of Tokushima's Nature, People, and Heart that Moraes Spread to the World\"",
+                            title: "A report of the Project Studies in 2014: Globalism and Moraes ― reevaluation of nature, people and heart of Tokushima in the world through W. de Moraes ―",
                             titleJa: "平成26年度徳島大学総合科学部部局長裁量経費総合科学部創生研究プロジェクト実践報告「グローバリズムとモラエス - モラエスが世界に広げた〈徳島の自然・人・心〉の再構築 -」",
                             authors: "Takayoshi Miyazaki, Eisaku Ishikawa, Masaya Satoh, Motohiro Sakai",
                             authorsJa: "宮崎隆義, 石川榮作, 佐藤征弥, 境泉洋",
@@ -321,7 +321,7 @@
                 sections: {
                     "査読論文": [
                         {
-                            title: "Use and significance of Anan City marble in historically important buildings in Japan",
+                            title: "Marbles from Anan City decorating the historically important buildings in Japan",
                             titleJa: "日本の歴史的重要建造物における徳島県阿南市産大理石の使用とその意義",
                             authors: "Keisuke Ishida, Takahito Hayabuchi, Kenichi Nakao, Shozo Toomei",
                             authorsJa: "石田啓祐, 早渕隆人, 中尾賢一, 東明省三",
@@ -332,51 +332,51 @@
                     ],
                     "論文": [
                         {
-                            title: "Marriage behavior of young people in Tokushima Prefecture",
+                            title: "The feature of marriage among young adult of Tokushima Prefecture",
                             titleJa: "徳島県の若年層の結婚行動",
                             authors: "Tomokuni Mizunoue, Tong Zhao",
                             authorsJa: "水ノ上智邦, 趙彤",
-                            link: "https://tokushima-u.repo.nii.ac.jp/records/12002584",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002584",
                             language: "ja",
                             tags: ["論文"]
                         },
                         {
-                            title: "Moraes's Garden (4) Gaze on Life, Gaze on Death",
+                            title: "Moraes's garden ― (4) Looking to life, and looking to death ―",
                             titleJa: "モラエスの庭 −(4) 生へのまなざし、死へのまなざし",
                             authors: "Takayoshi Miyazaki, Eisaku Ishikawa, Masaya Satoh, Motohiro Sakai",
                             authorsJa: "宮崎隆義, 石川榮作, 佐藤征弥, 境泉洋",
-                            link: "https://tokushima-u.repo.nii.ac.jp/records/12002585",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002585",
                             language: "ja",
                             tags: ["論文"]
                         },
                         {
-                            title: "About articles on Moraes's grave, farewell ceremony, and his room reported in the Portuguese popular newspaper \"CIVILIZAÇÃO\" January 1930 issue",
+                            title: "Moraes's tomb, funeral, and rooms reported in the January 1930 issue of the Portuguese popular magazine \"CIVILIZAÇÃO\"",
                             titleJa: "ポルトガルの大衆紙\"CIVILIZAÇÃO\"が1930年1月号で伝えたモラエスの墓、告別式、彼の部屋に関する記事について",
                             authors: "Masaya Satoh, Takiko Okamura, Motohiro Sakai, Eisaku Ishikawa, Takayoshi Miyazaki",
                             authorsJa: "佐藤征弥, 岡村多希子, 境泉洋, 石川栄作, 宮崎隆義",
-                            link: "https://tokushima-u.repo.nii.ac.jp/records/12002587",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002587",
                             language: "ja",
                             tags: ["論文"]
                         }
                     ],
                     "実践報告": [
                         {
-                            title: "Practical Report of FY2013 Tokushima University Faculty of Integrated Arts and Sciences Dean's Discretionary Budget Creative Research Project \"Globalism and Moraes - Reconstruction of Tokushima's Nature, People, and Heart that Moraes Spread to the World\"",
+                            title: "A report of the Project Studies in 2013: Globalism and Moraes ― reevaluation of nature, people and heart of Tokushima in the world through W. de Moraes ―",
                             titleJa: "平成25年度徳島大学総合科学部学部長裁量経費総合科学部創生研究プロジェクト実践報告「グローバリズムとモラエス - モラエスが世界に広げた〈徳島の自然・人・心〉の再構築 -」",
                             authors: "Takayoshi Miyazaki, Eisaku Ishikawa, Masaya Satoh, Motohiro Sakai",
                             authorsJa: "宮崎隆義, 石川榮作, 佐藤征弥, 境泉洋",
-                            link: "https://tokushima-u.repo.nii.ac.jp/records/12002586",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002586",
                             language: "ja",
                             tags: ["実践報告"]
                         }
                     ],
                     "研究ノート": [
                         {
-                            title: "Attempt to create a \"voice language map\" in the Yoshino River basin of Tokushima Prefecture",
+                            title: "The attempt of creating \"Speaking Linguistic Atlas\" in Tokushima Prefecture Yoshino River basin",
                             titleJa: "徳島県吉野川流域における『声の言語地図』作成の試み",
                             authors: "Yukako Tsuboguchi, Abdunabi Ubul, Seiji Oizumi, Ying Chen",
                             authorsJa: "峪口有香子, Abdunabi Ubul, 大泉誠治, 陳英",
-                            link: "https://tokushima-u.repo.nii.ac.jp/records/12002588",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002588",
                             language: "ja",
                             tags: ["研究ノート"]
                         }
@@ -400,7 +400,7 @@
                     ],
                     "論文": [
                         {
-                            title: "Life strategies of migrant domestic workers in China: From interview surveys in Dalian",
+                            title: "Life strategies of female migrants working as domestic workers in China：Interview research on live-in domestic workers in Dalian",
                             titleJa: "中国の出稼ぎ家事労働者の生活戦略 : 大連でのインタビュー調査から",
                             authors: "Xinni Dong",
                             authorsJa: "董鑫妮",
@@ -409,7 +409,7 @@
                             tags: ["論文"]
                         },
                         {
-                            title: "An overview of women's life in the late modern period in Japan: from the description of a daily 'Sakurado Nikki' in Awa district",
+                            title: "An overview of women's life in the late modern period in Japan : from the description of a diary \"SAKURADO-NIKKI\" in Awa district",
                             titleJa: "日本の近世女性のあり方に関する一考察 - 阿波国における「桜戸日記」を中心に - ",
                             authors: "Donovan Waters (translated by Masato Shimizu)",
                             authorsJa: "湯麗, 劉潔, 大橋眞",
@@ -418,7 +418,7 @@
                             tags: ["論文"]
                         },
                         {
-                            title: "Three books of Moraes's picture postcards - Living areas, tourist resorts, and religiou piety -",
+                            title: "Three books of Moraes's picture postcards ― Living areas, tourist resorts, and religious piety ―",
                             titleJa: "モラエスの三つの絵葉書書簡集 - 絵葉書書簡からみえるモラエスの生活圏，旅行，信仰について -",
                             authors: "Masaya Satoh, Yoshimi Takagi, Eisaku Ishikawa, Motohiro Sakai, Takayoshi Miyazaki",
                             authorsJa: "佐藤征弥, 高木佳美, 石川栄作, 境泉洋, 宮崎隆義",
@@ -427,7 +427,7 @@
                             tags: ["論文"]
                         },
                         {
-                            title: "Moraes's Garden (3) In the Eyes of a Stranger",
+                            title: "Moraes's garden ― (3) In the eyes of a stranger ―",
                             titleJa: "モラエスの庭 − (3) 異邦人のまなざし -",
                             authors: "Takayoshi Miyazaki, Masaya Satoh, Motohiro Sakai",
                             authorsJa: "宮崎隆義, 佐藤征弥, 境泉洋",
@@ -438,7 +438,7 @@
                     ],
                     "実践報告": [
                         {
-                            title: "A Report of the Project Studies in 2012 : Moraes's Garden : Nature, People and Heart of Tokushima",
+                            title: "A report of the project studies 2012 : Moraes's Garden ― Nature, people and heart of Tokushima ―",
                             titleJa: "平成24年度徳島大学総合科学部学部長裁量経費総合科学部創生研究プロジェクト実践報告「モラエスの庭 - 徳島の自然・人・心 -」",
                             authors: "Takayoshi Miyazaki, Masaya Satoh, Motohiro Sakai",
                             authorsJa: "宮崎隆義, 佐藤征弥, 境泉洋",
@@ -449,7 +449,7 @@
                     ],
                     "研究ノート": [
                         {
-                            title: "A new approach to evaluating cancer care-related information on the Internet: A medical information sociology essay focusing on meaningfulness in life",
+                            title: "How should we evaluate the medical information in the Internet?",
                             titleJa: "インターネットにおけるがん療養関連情報の新たな評価への試み : 生活における有意味さに注目した医療情報社会学的試論",
                             authors: "Mina Karu, Chiemi Matsuura, Yoshio Kashida",
                             authorsJa: "香留美菜, 松浦智恵美, 樫田美雄",
@@ -458,7 +458,7 @@
                             tags: ["研究ノート"]
                         },
                         {
-                            title: "Logics of the ‘Aggressive Conservative’ Activists (9) : The Case of Mr. θ",
+                            title: "Logics of the 'aggressive conservative' movement (9) ― The case of Mr. θ ―",
                             titleJa: "「行動する保守」の論理(9) ― 国家革新の一部として排外主義運動に参加するθ氏の場合 ―",
                             authors: "Naoto Higuchi",
                             authorsJa: "樋口直人",
@@ -467,45 +467,54 @@
                             tags: ["研究ノート"]
                         },
                         {
-                            title: "Logics of Zaitokukai Activists (22) : The Case of Mr. V",
-                            titleJa: "在特会の論理(22) ― 「日の丸をじいちゃんが掲げた」Ｖ氏の場合 ―",
+                            title: "Logics of the 'aggressive conservative' movement (6) ― The case of Mr. α ―",
+                            titleJa: "「行動する保守」の論理(6) ― 中国が重要だというα氏・再 ―",
                             authors: "Naoto Higuchi",
                             authorsJa: "樋口直人",
-                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002575",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002154",
                             language: "ja",
                             tags: ["研究ノート"]
                         },
                         {
-                            title: "Logics of Zaitokukai Activists (23) : The Case of Mr. W",
-                            titleJa: "在特会の論理(23) ― インターネットで世界が変わったＷ氏の場合 ―",
+                            title: "Logics of Zaitokukai activists (11) ― The case of Mr. K ―",
+                            titleJa: "在特会の論理(11) ― ノンポリ転じて活動家になったK氏の場合 ―",
                             authors: "Naoto Higuchi",
                             authorsJa: "樋口直人",
-                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002576",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002155",
                             language: "ja",
                             tags: ["研究ノート"]
                         },
                         {
-                            title: "Logics of Zaitokukai Activists (24) : The Case of Ms. X",
-                            titleJa: "在特会の論理(24) ― 労組専従から右旋回したＸ氏の場合 ―",
+                            title: "Logics of Zaitokukai activists (12) ― The case of Mr. L ―",
+                            titleJa: "在特会の論理(12) ― 在特会が多くの人に勇気を与えたというL氏の場合 ―",
                             authors: "Naoto Higuchi",
                             authorsJa: "樋口直人",
-                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002577",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002156",
                             language: "ja",
                             tags: ["研究ノート"]
                         },
                         {
-                            title: "Logics of Zaitokukai Activists (25) : The Case of Mr. Y",
-                            titleJa: "在特会の論理(25) ― 勉強サークルとしての在特会に参加したＹ氏の場合 ―",
+                            title: "Logics of Zaitokukai activists (13) ― The case of Ms. M ―",
+                            titleJa: "在特会の論理(13) ― 大学生時代から『正論』を読んでいたM氏の場合 ―",
                             authors: "Naoto Higuchi",
                             authorsJa: "樋口直人",
-                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002578",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002157",
+                            language: "ja",
+                            tags: ["研究ノート"]
+                        },
+                        {
+                            title: "Logics of Zaitokukai activists (14) ― The case of Mr. N ―",
+                            titleJa: "在特会の論理(14) ― 交際相手に勧誘されたN氏の場合 ―",
+                            authors: "Naoto Higuchi",
+                            authorsJa: "樋口直人",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2002158",
                             language: "ja",
                             tags: ["研究ノート"]
                         }
                     ],
                     "翻訳": [
                         {
-                            title: "The use of trusts in Canada",
+                            title: "Uses of the trust device in Canada",
                             titleJa: "カナダにおける信託の利用",
                             authors: "Donovan Waters (translated by Masato Shimizu)",
                             authorsJa: "ドノヴァン・ウォーターズ著, 清水真人訳",
@@ -522,7 +531,7 @@
                 sections: {
                     "査読論文": [
                         {
-                            title: "An Analysis of the Interaction in Home Care : Focusing on the dressing scene of a person with injury in her vertebra",
+                            title: "An analysis of the interaction in home care ― Focusing on the dressing scene of a person with injury in her vertebra",
                             titleJa: "在宅療養者と介護者の相互行為分析―ある脊椎損傷者の着替え場面に注目して―",
                             authors: "Yuko Hotta, Yoshio Kashida",
                             authorsJa: "堀田裕子, 樫田美雄",
@@ -531,7 +540,7 @@
                             tags: ["査読論文"]
                         },
                         {
-                            title: "Landscape Architecture of Tokushima Central Park : Comparison with Hibiya Park and Seifersdorf Castle",
+                            title: "Landscape architecture of Tokushima Central Park – Comparison with Hibiya Park and Seifersdorf Castle –",
                             titleJa: "徳島公園（徳島中央公園）の造園設計について － 日比谷公園及びザイファースドルフ城との比較 ー",
                             authors: "Masaya Satoh, Yusuke Yasuda, Kazumasa Matoba, Akinori Maedaka, Bao Siqin Gowa, Yuka Hirashima, Asuka Nakajima, Masahiro Sakata, Jun Kurochi, Zhehao Han, Yosuke Endo, Motohiro Sakai, Takayoshi Miyazaki",
                             authorsJa: "佐藤征弥, 安田侑右, 的場一将, 前髙明典, 包斯琴高娃, 平島佑香, 中島明日香, 坂田真宏, 黒地潤, 韓哲浩, 遠藤陽介, 境泉洋, 宮崎隆義",
@@ -542,7 +551,7 @@
                     ],
                     "論文": [
                         {
-                            title: "RFactors related to the level of acceptance for people who are regarded as being different : Questionnaire research administered to first year students at The University of Tokushima",
+                            title: "Factors related to the level of acceptance for people who are regarded as being different ― Questionnaire research administered to first year students at The University of Tokushima ―",
                             titleJa: "「\"異なる他者\"とのかかわり方」に関連する諸要因の研究 ― 徳島大学総合科学部1年生を対象にしたアンケート調査から ―",
                             authors: "Remi Igata, Yun Ji, Yukako Tsuboguchi, Xinni Dong, Junko Futsugi, Tetsuya Haigo, Xiaoting Yang, Kohei Yoshida, Kayoko Ueno, Kazuhiro Makabe",
                             authorsJa: "井形玲美, 季昀, 峪口有香子, 董鑫妮, 二木順子, 拝郷哲也, 楊暁婷, 吉田耕平, 上野加代子, 真壁和裕",
@@ -560,7 +569,7 @@
                             tags: ["論文"]
                         },
                         {
-                            title: "The Firefly Which Wenceslau De Moraes Saw",
+                            title: "The firefly which Wenceslau de Moraes saw",
                             titleJa: "モラエスが見た蛍",
                             authors: "Masaya Satoh, Motohiro Sakai, Takayoshi Miyazaki",
                             authorsJa: "佐藤征弥, 境泉洋, 宮崎隆義",
@@ -569,7 +578,7 @@
                             tags: ["論文"]
                         },
                         {
-                            title: "A survey on the linguistic landscape of transportation in Qingdao, China",
+                            title: "Study on linguistic landscapes of the public transportation facilities of Qingdao city in China",
                             titleJa: "中国青島市における交通機関の言語景観についての一考査",
                             authors: "Jie Liu, Makoto Ohashi, Shinsuke Kishie",
                             authorsJa: "劉潔, 大橋眞, 岸江信介",
@@ -578,7 +587,7 @@
                             tags: ["論文"]
                         },
                         {
-                            title: "Study on linguistic landscapes of the public transportation facilities of Qingdao city in China",
+                            title: "Linguistic landscapes of the famous tourist spots of Qingdao city in China",
                             titleJa: "中国青島市における観光スポットの言語景観について",
                             authors: "Jie Liu, Makoto Ohashi, Shinsuke Kishie",
                             authorsJa: "劉潔, 大橋眞, 岸江信介",
@@ -587,7 +596,7 @@
                             tags: ["論文"]
                         },
                         {
-                            title: "Moraes's Garden : (2) Change in the Quality of ‘Essay’",
+                            title: "Moraes's garden ― (2) Change in the quality of 'essay' ―",
                             titleJa: "モラエスの庭 ― （2）「随想」の変質 ―",
                             authors: "Takayoshi Miyazaki, Masaya Satoh, Motohiro Sakai",
                             authorsJa: "宮崎隆義, 佐藤征弥, 境泉洋",
@@ -607,7 +616,7 @@
                             tags: ["研究ノート"]
                         },
                         {
-                            title: "Logics of the 'Aggressive Conservative' Movement (5) : The Case of Mr. ε",
+                            title: "Logics of the 'aggressive conservative' movement (5) ― The case of Mr. ε ―",
                             titleJa: "「行動する保守」の論理(5) ― トンデモ本から歴史問題をめぐる嫌悪感へ・ε氏の場合 ―",
                             authors: "Naoto Higuchi",
                             authorsJa: "樋口直人",
@@ -616,7 +625,7 @@
                             tags: ["研究ノート"]
                         },
                         {
-                            title: "Logics of the 'Aggressive Conservative' Movement (6) : The Case of Mr. α Revisited",
+                            title: "Logics of the 'aggressive conservative' movement (6) ― The case of Mr. α ―",
                             titleJa: "「行動する保守」の論理(6) ― 中国が重要だというα氏・再 ―",
                             authors: "Naoto Higuchi",
                             authorsJa: "樋口直人",
@@ -625,7 +634,7 @@
                             tags: ["研究ノート"]
                         },
                         {
-                            title: "Logics of Zaitokukai Activists (11) : The Case of Mr. K",
+                            title: "Logics of Zaitokukai activists (11) ― The case of Mr. K ―",
                             titleJa: "在特会の論理(11) ― ノンポリ転じて活動家になったK氏の場合 ―",
                             authors: "Naoto Higuchi",
                             authorsJa: "樋口直人",
@@ -634,7 +643,7 @@
                             tags: ["研究ノート"]
                         },
                         {
-                            title: "Logics of Zaitokukai Activists (12) : The Case of Mr. L",
+                            title: "Logics of Zaitokukai activists (12) ― The case of Mr. L ―",
                             titleJa: "在特会の論理(12) ― 在特会が多くの人に勇気を与えたというL氏の場合 ―",
                             authors: "Naoto Higuchi",
                             authorsJa: "樋口直人",
@@ -643,7 +652,7 @@
                             tags: ["研究ノート"]
                         },
                         {
-                            title: "Logics of Zaitokukai Activists (13) : The Case of Mr. M",
+                            title: "Logics of Zaitokukai activists (13) ― The case of Ms. M ―",
                             titleJa: "在特会の論理(13) ― 大学生時代から『正論』を読んでいたM氏の場合 ―",
                             authors: "Naoto Higuchi",
                             authorsJa: "樋口直人",
@@ -652,7 +661,7 @@
                             tags: ["研究ノート"]
                         },
                         {
-                            title: "Logics of Zaitokukai Activists (14) : The Case of Mr. N",
+                            title: "Logics of Zaitokukai activists (14) ― The case of Mr. N ―",
                             titleJa: "在特会の論理(14) ― 交際相手に勧誘されたN氏の場合 ―",
                             authors: "Naoto Higuchi",
                             authorsJa: "樋口直人",
@@ -663,7 +672,7 @@
                     ],
                     "実践報告": [
                         {
-                            title: "A Report of the Project Studies 2011 : Moraes's Garden : Nature, People and Heart of Tokushima",
+                            title: "A report of the project studies 2011: Moraes's Garden ― Nature, people and heart of Tokushima ―",
                             titleJa: "平成23年度徳島大学総合科学部学部長裁量経費総合科学部創生研究プロジェクト成果報告「モラエスの庭 ― 徳島の自然・人・心 ―」",
                             authors: "Takayoshi Miyazaki, Masaya Satoh, Motohiro Sakai",
                             authorsJa: "宮崎隆義, 佐藤征弥, 境泉洋",
@@ -674,7 +683,7 @@
                     ],
                     "翻訳": [
                         {
-                            title: "TThe Trust in Quebec",
+                            title: "The trust in Quebec",
                             titleJa: "ケベック州における信託",
                             authors: "Donovan Waters (translated by Masato Shimizu)",
                             authorsJa: "ドノヴァン・ウォーターズ著, 清水真人訳",
@@ -691,7 +700,7 @@
                 sections: {
                     "査読論文": [
                         {
-                            title: "Living through midlife - after a categorical change : Sociology of experiencing midlife diagnoses developmental disorders and self-searching",
+                            title: "Living through midlife ― after a categorical change ― Sociology of experiencing midlife diagnoses developmental disorders and self-searching ―",
                             titleJa: "中途診断というカテゴリー変化の中で生きる ― 発達障害者の中途診断経験と自己探求の社会学 ―",
                             authors: "Rina Oue, Yoshio Kashida",
                             authorsJa: "大上梨奈, 樫田美雄",
@@ -720,7 +729,7 @@
                             tags: ["論文"]
                         },
                         {
-                            title: "A Consideration on Educational Subjects of Regional Science",
+                            title: "A consideration on Educational Subjects of Regional Science",
                             titleJa: "地域科学の教育課題に関する一考察",
                             authors: "Makoto Nakajima",
                             authorsJa: "中嶋信",
@@ -729,7 +738,7 @@
                             tags: ["論文"]
                         },
                         {
-                            title: "Moraes's Garden : (1) On the Forms of Diary and Essay",
+                            title: "Moraes's garden ― (1) On the forms of diary and essay ―",
                             titleJa: "モラエスの庭 ―（1）日記文学・随筆文学ということ ―",
                             authors: "Takayoshi Miyazaki, Masaya Satoh, Motohiro Sakai",
                             authorsJa: "宮崎隆義, 佐藤征弥, 境泉洋",
@@ -749,7 +758,7 @@
                     ],
                     "研究ノート": [
                         {
-                            title: "Logics of the 'Aggressive Conservative' Movement (1) : The Case of Mr. α",
+                            title: "Logics of the 'Aggressive Conservative' Movement (1) ― The Case of Mr. α ―",
                             titleJa: "「行動する保守」の論理（1）― 中国が重要というα氏の場合 ―",
                             authors: "Naoto Higuchi",
                             authorsJa: "樋口直人",
@@ -758,7 +767,7 @@
                             tags: ["研究ノート"]
                         },
                         {
-                            title: "Logics of the 'Aggressive Conservative' Movement (2) : The Case of Mr. β",
+                            title: "Logics of the 'Aggressive Conservative' Movement (2) ― The Case of Mr. β ―",
                             titleJa: "「行動する保守」の論理（2）― 外国人参政権に反対するβ氏の場合 ―",
                             authors: "Naoto Higuchi",
                             authorsJa: "樋口直人",
@@ -767,7 +776,7 @@
                             tags: ["研究ノート"]
                         },
                         {
-                            title: "Logics of the 'Aggressive Conservative' Movement (3) : The Case of Mr. γ",
+                            title: "Logics of the 'Aggressive Conservative' Movement (3) ― The Case of Mr. γ ―",
                             titleJa: "「行動する保守」の論理（3）― 在特会から学んだγ氏の場合 ―",
                             authors: "Naoto Higuchi",
                             authorsJa: "樋口直人",
@@ -776,7 +785,7 @@
                             tags: ["研究ノート"]
                         },
                         {
-                            title: "Logics of Zaitokukai Activists (8) : The Case of Mr. H",
+                            title: "Logics of Zaitokukai Activists (8) ― The Case of Mr. H ―",
                             titleJa: "在特会の論理（8）― 『嫌韓流』を地で行くH氏の場合 ―",
                             authors: "Naoto Higuchi",
                             authorsJa: "樋口直人",
@@ -785,7 +794,7 @@
                             tags: ["研究ノート"]
                         },
                         {
-                            title: "Logics of Zaitokukai Activists (9) : The Case of Mr. I",
+                            title: "Logics of Zaitokukai Activists (9) ― The Case of Mr. I ―",
                             titleJa: "在特会の論理（9）― 「創価学会をつぶす」動画に引き込まれたI氏の場合 ―",
                             authors: "Naoto Higuchi",
                             authorsJa: "樋口直人",
@@ -796,7 +805,7 @@
                     ],
                     "短信": [
                         {
-                            title: "Ice storm damage and current situation at Okawara Plateau",
+                            title: "The damage caused by gaze ice occurred in Okawara Highland and the present situation",
                             titleJa: "大川原高原に発生した雨氷の被害と現状",
                             authors: "Mamoru Higashi",
                             authorsJa: "東衛史",
