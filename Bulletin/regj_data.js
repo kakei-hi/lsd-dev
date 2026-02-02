@@ -158,13 +158,24 @@ const volumesData = [
                 volume: 8,
                 year: 2018,
                 sections: {
-                    "論文": [
+                     "査読論文": [
+                        {
+                            title: "Wenceslau de Moraes's Proficiency of Japanese Language: His Speaking Ability and Personality",
+                            titleJa: "ヴェンセスラウ・デ・モラエスの日本語会話能力 : 会話能力の検証および会話内容からみえる人物像について",
+                            authors: "Masaya Satoh, Yoshimi Takagi, Eisaku Ishikawa, Takayoshi Miyazaki",
+                            authorsJa: "佐藤征弥, 高木佳美, 石川栄作, 宮崎隆義",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2005615",
+                            language: "ja",
+                            tags: ["査読論文"]
+                        }
+                    ],
+                   "論文": [
                         {
                             title: "A critical overview for problems of cross-cultural communication: from the standpoint of the \"haji\" and \"amae\" culture",
                             titleJa: "異文化コミュニケーションに関する一考察 : 「恥」と「甘え」文化を中心に",
                             authors: "Huanu Tang, Makoto Ohashi",
                             authorsJa: "唐画女, 大橋眞",
-                            link: "https://tokushima-u.repo.nii.ac.jp/records/12005013",
+                            link: "https://tokushima-u.repo.nii.ac.jp/records/2005013",
                             language: "ja",
                             tags: ["論文"]
                         }

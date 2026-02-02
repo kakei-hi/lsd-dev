@@ -136,11 +136,20 @@ const volumesData = [
         volume: 8,
         year: 2018,
         sections: {
+            "peer-reviewed paper": [
+                {
+                    title: "Wenceslau de Moraes's Proficiency of Japanese Language: His Speaking Ability and Personality",
+                    authors: "Masaya Satoh, Yoshimi Takagi, Eisaku Ishikawa, Takayoshi Miyazaki",
+                    link: "https://tokushima-u.repo.nii.ac.jp/records/2005615",
+                    language: "ja",
+                    tags: ["peer-reviewed paper"]
+                }
+            ],
             "paper": [
                 {
                     title: "A critical overview for problems of cross-cultural communication: from the standpoint of the \"haji\" and \"amae\" culture",
                     authors: "Huanu Tang, Makoto Ohashi",
-                    link: "https://tokushima-u.repo.nii.ac.jp/records/12005013",
+                    link: "https://tokushima-u.repo.nii.ac.jp/records/2005013",
                     language: "ja",
                     tags: ["paper"]
                 }
@@ -155,7 +164,7 @@ const volumesData = [
                 {
                     title: "Contemporary regional issues in sustainability : Prospective application for activation of local community and university education from an international seminar",
                     authors: "Awangku Hassanal Bahar Pengiran Bagul, Makoto Ohashi",
-                    link: "https://tokushima-u.repo.nii.ac.jp/records/110200",
+                    link: "https://tokushima-u.repo.nii.ac.jp/records/2003398",
                     language: "en",
                     tags: ["paper"]
                 }
