@@ -1,0 +1,9 @@
+name: 
+channels:
+  - conda-forge
+dependencies:
+  - matplotlib
+  - numpy
+  - pandas
+
+prefix: "/Users/hidekazukakei/Documents/GitHub/lsd-dev/Postal_Savings/envs"
