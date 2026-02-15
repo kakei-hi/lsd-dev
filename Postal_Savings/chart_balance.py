@@ -31,15 +31,19 @@ def resolve_jp_font():
     # 最後の保険
     return "IPAexGothic"
 
-JP_FONT = resolve_jp_font()
-plt.rcParams["font.family"] = JP_FONT
-plt.rcParams["axes.unicode_minus"] = False  # マイナス記号の豆腐回避
+# スタイルを先に適用してから、フォント設定で上書き
 plt.style.use("seaborn-v0_8")
+
+JP_FONT = resolve_jp_font()
+print(f"Using Japanese font: {JP_FONT}")  # デバッグ用
+plt.rcParams["font.sans-serif"] = [JP_FONT] + plt.rcParams["font.sans-serif"]
+plt.rcParams["font.family"] = "sans-serif"
+plt.rcParams["axes.unicode_minus"] = False  # マイナス記号の豆腐回避
 
 # ========= 2) データ読込 =========
 # raw_data.csv は以下の列名を想定:
 # Date, Deposit, Withdrawal, Balance, Description
-df = pd.read_csv("raw_data.csv", parse_dates=["Date"])
+df = pd.read_csv(r"/Users/hidekazukakei/Library/Mobile Documents/com~apple~CloudDocs/上柚木/義母ゆうちょ/raw_data.csv", parse_dates=["Date"])
 for c in ["Deposit", "Withdrawal", "Balance"]:
     df[c] = pd.to_numeric(df[c], errors="coerce")
 df = df.sort_values("Date").reset_index(drop=True)
@@ -105,16 +109,15 @@ if zero_date is not None:
 # 0円の基準線（横線）
 ax.axhline(0, color="black", lw=1.0)
 
-# 体裁
-ax.set_title("口座残高の推移（実績）", fontsize=14)
-ax.set_xlabel("日付", fontsize=12)
-ax.set_ylabel("残高（円）", fontsize=12)
+# 体裁（日本語フォントを明示的に指定）
+ax.set_title("口座残高の推移（実績）", fontsize=14, fontfamily=JP_FONT)
+ax.set_xlabel("日付", fontsize=12, fontfamily=JP_FONT)
+ax.set_ylabel("残高（円）", fontsize=12, fontfamily=JP_FONT)
 ax.yaxis.set_major_formatter(fmt)
-ax.legend(loc="upper left", frameon=True)
+ax.legend(loc="upper left", frameon=True, prop={"family": JP_FONT})
 fig.tight_layout()
 
 # 保存
-out_path = "chart_balance.png"
+out_path = "/Users/hidekazukakei/Library/Mobile Documents/com~apple~CloudDocs/上柚木/義母ゆうちょ/chart_balance.png"
 fig.savefig(out_path, dpi=200)
 print(f"saved: {out_path}")
-``
