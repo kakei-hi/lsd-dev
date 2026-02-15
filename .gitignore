@@ -5,6 +5,7 @@
 
 # 仮想環境フォルダを直接指定（末尾に / をつける）
 net_app/envs/
+Postal_Savings/envs/
 
 # 一般的なPython仮想環境名もついでに除外しておくと
 .venv/
