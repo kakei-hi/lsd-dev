@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""残高推移グラフ生成スクリプト（日本語フォント対応・ゼロ到達予測付き）"""
+"""残高推移グラフ生成スクリプト（170万入金シミュレーション・ゼロ到達予測付き）"""
 
 import pandas as pd
 import numpy as np
@@ -16,8 +16,9 @@ JP_FONT_CANDIDATES = [
 ]
 REGRESSION_DAYS = 365  # 回帰分析に使う直近日数
 MIN_DATA_POINTS = 30    # 回帰に必要な最小データ数
-FORECAST_DAYS = 180     # 予測期間（日）
-FIGURE_SIZE = (10, 4.2)
+FORECAST_DAYS = 1800    # 予測期間（日）- 2030年まで延長
+DEPOSIT_AMOUNT = 1700000  # シミュレーション用入金額
+FIGURE_SIZE = (12, 5)
 TITLE_FONTSIZE = 14
 LABEL_FONTSIZE = 12
 BASE_DIR = Path("/Users/hidekazukakei/Library/Mobile Documents/com~apple~CloudDocs/上柚木/義母ゆうちょ")
@@ -66,6 +67,23 @@ def create_daily_balance(df: pd.DataFrame) -> pd.DataFrame:
     daily.columns = ["Date", "Balance"]
     return daily
 
+def create_simulated_balance(daily_bal: pd.DataFrame, deposit: float) -> pd.DataFrame:
+    """最終日翌日に入金を加えたシミュレーション用データを作成"""
+    last_date = daily_bal["Date"].max()
+    last_balance = daily_bal[daily_bal["Date"] == last_date]["Balance"].iloc[0]
+    
+    # 最終日翌日のデータを追加
+    deposit_date = last_date + pd.Timedelta(days=1)
+    new_balance = last_balance + deposit
+    
+    new_row = pd.DataFrame({
+        "Date": [deposit_date],
+        "Balance": [new_balance]
+    })
+    
+    simulated = pd.concat([daily_bal, new_row], ignore_index=True)
+    return simulated
+
 # ========= 線形回帰と予測 =========
 def perform_linear_regression(daily_bal: pd.DataFrame) -> tuple:
     """直近の期間で線形回帰を実施し、傾きと切片を返す"""
@@ -83,33 +101,43 @@ def perform_linear_regression(daily_bal: pd.DataFrame) -> tuple:
     
     return recent, slope, intercept
 
-def estimate_zero_date(recent: pd.DataFrame, slope: float, intercept: float) -> dict:
-    """ゼロ到達日を推定"""
+def estimate_zero_date_from_simulation(simulated_bal: pd.DataFrame, slope: float) -> dict:
+    """シミュレーション後のデータからゼロ到達日を推定"""
     if slope >= 0:
-        return {"zero_date": None, "slope": slope, "intercept": intercept}
+        return {"zero_date": None, "slope": slope}
     
-    x_zero = -intercept / slope
-    zero_date = (recent["Date"].min() + pd.Timedelta(days=float(x_zero))).date()
-    return {"zero_date": zero_date, "slope": slope, "intercept": intercept}
+    # 入金後の残高を取得
+    sim_start = simulated_bal.iloc[-1]  # 最後の行（入金後）
+    balance_after_deposit = sim_start["Balance"]
+    
+    # ゼロに到達するまでの日数を計算（入金後の残高から傾きで減少）
+    days_to_zero = -balance_after_deposit / slope
+    zero_date = (sim_start["Date"] + pd.Timedelta(days=float(days_to_zero))).date()
+    
+    return {"zero_date": zero_date, "slope": slope, "balance_after_deposit": balance_after_deposit}
 
-def generate_forecast(daily_bal: pd.DataFrame, recent: pd.DataFrame, 
-                     slope: float, intercept: float) -> tuple:
-    """将来の予測直線を生成"""
-    t0 = recent["Date"].min()
-    t_last = daily_bal["Date"].max()
+def generate_forecast_from_simulation(simulated_bal: pd.DataFrame, slope: float) -> tuple:
+    """シミュレーション後の将来予測直線を生成"""
+    sim_start = simulated_bal.iloc[-1]
+    balance_start = sim_start["Balance"]
+    t_last = sim_start["Date"]
+    
     future_idx = pd.date_range(
         t_last + pd.Timedelta(days=1),
         t_last + pd.Timedelta(days=FORECAST_DAYS),
         freq="D"
     )
-    t_future = (future_idx - t0).days.values.astype(float)
-    y_future = slope * t_future + intercept
+    
+    # 入金後のポイントからの経過日数
+    days_from_start = (future_idx - t_last).days.values.astype(float)
+    y_future = balance_start + slope * days_from_start
+    
     return future_idx, y_future
 
 # ========= グラフ描画 =========
-def plot_balance_chart(daily_bal: pd.DataFrame, future_idx: pd.Index, 
-                       y_future: np.ndarray, zero_date, slope: float) -> tuple:
-    """残高推移グラフを描画"""
+def plot_balance_chart(daily_bal: pd.DataFrame, simulated_bal: pd.DataFrame,
+                       future_idx: pd.Index, y_future: np.ndarray, zero_date, slope: float) -> tuple:
+    """残高推移グラフを描画（実績とシミュレーション）"""
     def yen_fmt(v, pos):
         return f"¥{int(v):,}"
     
@@ -119,9 +147,18 @@ def plot_balance_chart(daily_bal: pd.DataFrame, future_idx: pd.Index,
     ax.plot(daily_bal["Date"], daily_bal["Balance"], 
             color="#1f77b4", lw=2.0, label="残高（実績）")
     
-    # 予測直線
-    if slope < 0:
-        ax.plot(future_idx, y_future, color="red", ls="--", 
+    # シミュレーション後のデータ（入金部分）
+    sim_date = simulated_bal["Date"].iloc[-1]
+    sim_balance = simulated_bal["Balance"].iloc[-1]
+    ax.plot([sim_date], [sim_balance],
+            color="#2ca02c", marker="o", markersize=8, linestyle="none", label="170万入金")
+    
+    # 予測直線（入金後の点から接続）
+    if slope < 0 and len(future_idx) > 0:
+        # 入金後の点と予測直線を接続
+        forecast_dates = pd.concat([pd.Series([sim_date]), pd.Series(future_idx)])
+        forecast_values = np.concatenate([[sim_balance], y_future])
+        ax.plot(forecast_dates, forecast_values, color="red", ls="--", 
                 lw=2.0, label="トレンド予測")
     
     # ゼロ到達日の垂直線
@@ -133,7 +170,7 @@ def plot_balance_chart(daily_bal: pd.DataFrame, future_idx: pd.Index,
     ax.axhline(0, color="black", lw=1.0)
     
     # グラフの装飾
-    ax.set_title("口座残高の推移（実績）", fontsize=TITLE_FONTSIZE, fontfamily=JP_FONT)
+    ax.set_title("口座残高の推移（170万入金シミュレーション）", fontsize=TITLE_FONTSIZE, fontfamily=JP_FONT)
     ax.set_xlabel("日付", fontsize=LABEL_FONTSIZE, fontfamily=JP_FONT)
     ax.set_ylabel("残高（円）", fontsize=LABEL_FONTSIZE, fontfamily=JP_FONT)
     ax.yaxis.set_major_formatter(FuncFormatter(yen_fmt))
@@ -149,23 +186,30 @@ def main():
     df = load_and_prepare_data(BASE_DIR / "raw_data.csv")
     daily_bal = create_daily_balance(df)
     
-    # 回帰分析
+    # 回帰分析（元のデータのみを使用して傾きを算出）
     recent, slope, intercept = perform_linear_regression(daily_bal)
     
-    # ゼロ到達日推定
-    result = estimate_zero_date(recent, slope, intercept)
-    zero_date, slope, intercept = result["zero_date"], result["slope"], result["intercept"]
+    # シミュレーション用データ作成（最終日翌日に170万入金）
+    simulated_bal = create_simulated_balance(daily_bal, DEPOSIT_AMOUNT)
     
-    # 予測直線生成
-    future_idx, y_future = generate_forecast(daily_bal, recent, slope, intercept)
+    # ゼロ到達日推定（入金後の残高から元の傾きで予測）
+    result = estimate_zero_date_from_simulation(simulated_bal, slope)
+    zero_date = result["zero_date"]
+    
+    # 予測直線生成（入金後の残高から元の傾きで予測）
+    future_idx, y_future = generate_forecast_from_simulation(simulated_bal, slope)
     
     # グラフ描画
-    fig, ax = plot_balance_chart(daily_bal, future_idx, y_future, zero_date, slope)
+    fig, ax = plot_balance_chart(daily_bal, simulated_bal, future_idx, y_future, zero_date, slope)
     
     # 保存
     out_path = BASE_DIR / "chart_balance_170.pdf"
     fig.savefig(out_path, format='pdf')
     print(f"saved: {out_path}")
+    print(f"Deposit: ¥{DEPOSIT_AMOUNT:,}")
+    print(f"Slope: {slope:.4f} yen/day")
+    if zero_date:
+        print(f"Estimated zero date: {zero_date}")
 
 if __name__ == "__main__":
     main()
