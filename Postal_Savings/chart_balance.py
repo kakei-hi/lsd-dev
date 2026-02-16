@@ -39,6 +39,7 @@ print(f"Using Japanese font: {JP_FONT}")  # デバッグ用
 plt.rcParams["font.sans-serif"] = [JP_FONT] + plt.rcParams["font.sans-serif"]
 plt.rcParams["font.family"] = "sans-serif"
 plt.rcParams["axes.unicode_minus"] = False  # マイナス記号の豆腐回避
+plt.rcParams["pdf.fonttype"] = 42  # TrueTypeフォントをPDFに埋め込む
 
 # ========= 2) データ読込 =========
 # raw_data.csv は以下の列名を想定:
@@ -118,6 +119,6 @@ ax.legend(loc="upper left", frameon=True, prop={"family": JP_FONT})
 fig.tight_layout()
 
 # 保存
-out_path = "/Users/hidekazukakei/Library/Mobile Documents/com~apple~CloudDocs/上柚木/義母ゆうちょ/chart_balance.png"
-fig.savefig(out_path, dpi=200)
+out_path = "/Users/hidekazukakei/Library/Mobile Documents/com~apple~CloudDocs/上柚木/義母ゆうちょ/chart_balance.pdf"
+fig.savefig(out_path, format='pdf')
 print(f"saved: {out_path}")
