@@ -1,98 +1,130 @@
 # -*- coding: utf-8 -*-
-# 月次の純増減（直近12か月）グラフを生成して PDF 保存
-# 前提: raw_data.csv が同ディレクトリに存在
-# 環境: macOS（日本語フォント自動解決）
+"""月次の純増減グラフ生成スクリプト（日本語フォント対応）"""
 
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.ticker import FuncFormatter
 from matplotlib import font_manager as fm
-from matplotlib.font_manager import FontProperties
-import datetime as dt
-import os
+from pathlib import Path
 
-# ===== 1) 日本語フォントの解決（macOS優先） =====
-CANDIDATES = [
+# ========= 定数定義 =========
+JP_FONT_CANDIDATES = [
     "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro",
     "Yu Gothic", "YuGothic",
-    "IPAexGothic", "Noto Sans CJK JP", "Source Han Sans JP", "IPAGothic"
+    "IPAexGothic", "IPAGothic", "Noto Sans CJK JP", "Source Han Sans JP"
 ]
+RECENT_MONTHS = 12       # 表示する直近月数
+FIGURE_SIZE = (10, 4.2)
+TITLE_FONTSIZE = 14
+LABEL_FONTSIZE = 12
+BAR_WIDTH = 0.6
+COLOR_POSITIVE = "#2ca02c"
+COLOR_NEGATIVE = "#d62728"
+BASE_DIR = Path("/Users/hidekazukakei/Library/Mobile Documents/com~apple~CloudDocs/上柚木/義母ゆうちょ")
 
-def resolve_jp_fontprop():
-    for name in CANDIDATES:
+# ========= 日本語フォントの自動選択 =========
+def resolve_jp_font() -> str:
+    """システムフォントから日本語フォントを自動選択"""
+    fonts = fm.findSystemFonts(fontext="ttf") + fm.findSystemFonts(fontext="otf")
+    for p in fonts:
         try:
-            path = fm.findfont(FontProperties(family=name), fallback_to_default=False)
-            # DejaVu等の英字フォントに落ちていないことを確認
-            if path and "DejaVuSans" not in path and "LastResort" not in path:
-                return FontProperties(fname=path)
+            name = fm.get_font(p).family_name
+            if any(cand.lower() in name.lower() for cand in JP_FONT_CANDIDATES):
+                return name
         except Exception:
-            pass
-    # 最終手段
-    return FontProperties(family="IPAexGothic")
+            continue
+    return "IPAexGothic"
 
-FP = resolve_jp_fontprop()
-plt.rcParams["axes.unicode_minus"] = False
+# フォント・グラフスタイル設定
 plt.style.use("seaborn-v0_8")
+JP_FONT = resolve_jp_font()
+print(f"Using Japanese font: {JP_FONT}")
+plt.rcParams["font.sans-serif"] = [JP_FONT] + plt.rcParams["font.sans-serif"]
+plt.rcParams["font.family"] = "sans-serif"
+plt.rcParams["axes.unicode_minus"] = False
+plt.rcParams["pdf.fonttype"] = 42
 
-# ===== 2) データ読み込み・前処理 =====
-# 必須列: Date, Deposit, Withdrawal
-df = pd.read_csv("raw_data.csv", parse_dates=["Date"])
-for c in ["Deposit", "Withdrawal"]:
-    df[c] = pd.to_numeric(df[c], errors="coerce").fillna(0.0)
-df = df.sort_values("Date").reset_index(drop=True)
+# ========= データ処理 =========
+def load_and_prepare_data(csv_path: Path) -> pd.DataFrame:
+    """CSVファイルを読込んでデータを前処理"""
+    df = pd.read_csv(csv_path, parse_dates=["Date"])
+    for col in ["Deposit", "Withdrawal"]:
+        df[col] = pd.to_numeric(df[col], errors="coerce").fillna(0.0)
+    return df.sort_values("Date").reset_index(drop=True)
 
-# 月単位へ集計
-df["year_month"] = df["Date"].dt.to_period("M")
-monthly = df.groupby("year_month").agg(
-    Deposit=("Deposit", "sum"),
-    Withdrawal=("Withdrawal", "sum")
-).reset_index()
-monthly["Net"] = monthly["Deposit"] - monthly["Withdrawal"]
+def aggregate_monthly_data(df: pd.DataFrame) -> pd.DataFrame:
+    """日次データを月単位に集計し、直近Nか月に絞る"""
+    df["year_month"] = df["Date"].dt.to_period("M")
+    monthly = df.groupby("year_month").agg(
+        Deposit=("Deposit", "sum"),
+        Withdrawal=("Withdrawal", "sum")
+    ).reset_index()
+    monthly["Net"] = monthly["Deposit"] - monthly["Withdrawal"]
+    
+    # 直近指定期間のみ抽出
+    if not monthly.empty:
+        last_month = df["Date"].max().to_period("M")
+        months = pd.period_range(last_month - (RECENT_MONTHS - 1), last_month, freq="M")
+        result = monthly[monthly["year_month"].isin(months)].copy()
+    else:
+        result = monthly.copy()
+    
+    # x軸ラベル用に文字列化（'YYYY-MM'形式）
+    result["ym_str"] = result["year_month"].astype(str)
+    return result
 
-# 直近12か月に絞る（不足分は0で埋めない＝実在月のみ）
-if not monthly.empty:
-    last_month = df["Date"].max().to_period("M")
-    months = pd.period_range(last_month - 11, last_month, freq="M")
-    # reindexして欠測月は0にしたい場合は以下を使用:
-    # m12 = monthly.set_index("year_month").reindex(months, fill_value=0).reset_index()
-    # 実データがある月のみ表示するなら:
-    m12 = monthly[monthly["year_month"].isin(months)].copy()
-else:
-    m12 = monthly.copy()
+# ========= グラフ描画 =========
+def plot_monthly_chart(monthly_data: pd.DataFrame) -> tuple:
+    """月次純増減グラフを描画"""
+    def yen_fmt(v, pos):
+        return f"¥{int(v):,}"
+    
+    fig, ax = plt.subplots(figsize=FIGURE_SIZE)
+    
+    # プラス/マイナスで色を変える
+    colors = [COLOR_POSITIVE if v >= 0 else COLOR_NEGATIVE for v in monthly_data["Net"]]
+    
+    ax.bar(monthly_data["ym_str"], monthly_data["Net"], 
+           color=colors, width=BAR_WIDTH)
+    
+    # グラフの装飾
+    title = f"月次の純増減（直近{RECENT_MONTHS}か月）"
+    ax.set_title(title, fontsize=TITLE_FONTSIZE, fontfamily=JP_FONT)
+    ax.set_xlabel("年月", fontsize=LABEL_FONTSIZE, fontfamily=JP_FONT)
+    ax.set_ylabel("純増減（円）", fontsize=LABEL_FONTSIZE, fontfamily=JP_FONT)
+    ax.yaxis.set_major_formatter(FuncFormatter(yen_fmt))
+    ax.legend(loc="upper left", frameon=True, prop={"family": JP_FONT})
+    
+    # 目盛ラベルにもフォント適用
+    for label in ax.get_xticklabels() + ax.get_yticklabels():
+        label.set_fontfamily(JP_FONT)
+    
+    # x軸ラベルの回転
+    plt.setp(ax.get_xticklabels(), rotation=45, ha="right")
+    
+    # ゼロライン
+    ax.axhline(0, color="black", lw=1.0)
+    
+    fig.tight_layout()
+    return fig, ax
 
-# x軸ラベル（文字列）を整える
-m12["ym_str"] = m12["year_month"].astype(str)  # 'YYYY-MM'
+# ========= メイン処理 =========
+def main():
+    """メイン処理"""
+    # データ読込と前処理
+    df = load_and_prepare_data(BASE_DIR / "raw_data.csv")
+    
+    # 月単位に集計
+    monthly_data = aggregate_monthly_data(df)
+    
+    # グラフ描画
+    fig, ax = plot_monthly_chart(monthly_data)
+    
+    # 保存
+    out_path = BASE_DIR / "chart_monthly_net.pdf"
+    fig.savefig(out_path, format='pdf')
+    print(f"saved: {out_path}")
 
-# ===== 3) プロット =====
-def yen_fmt(v, pos):
-    return f"¥{int(v):,}"
-
-fmt = FuncFormatter(yen_fmt)
-
-fig, ax = plt.subplots(figsize=(10, 4.2))
-
-# プラス/マイナスで色を変える
-colors = ["#2ca02c" if v >= 0 else "#d62728" for v in m12["Net"]]
-
-ax.bar(m12["ym_str"], m12["Net"], color=colors, width=0.6)
-
-# 体裁（日本語フォントを強制適用）
-ax.set_title("月次の純増減（直近12か月）", fontproperties=FP, fontsize=14)
-ax.set_xlabel("年月", fontproperties=FP, fontsize=12)
-ax.set_ylabel("純増減（円）", fontproperties=FP, fontsize=12)
-ax.yaxis.set_major_formatter(fmt)
-
-# 目盛ラベルにもフォント適用
-for label in ax.get_xticklabels() + ax.get_yticklabels():
-    label.set_fontproperties(FP)
-
-# x軸ラベルの回転
-plt.setp(ax.get_xticklabels(), rotation=45, ha="right")
-
-# ゼロライン
-ax.axhline(0, color="black", lw=1.0)
-
-fig.tight_layout()
-
-# ===== 4) PDF保存 =====
+if __name__ == "__main__":
+    main()
