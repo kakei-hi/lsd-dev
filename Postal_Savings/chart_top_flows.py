@@ -4,7 +4,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib.ticker import FuncFormatter
+from matplotlib.ticker import FuncFormatter, MaxNLocator
 from matplotlib import font_manager as fm
 from pathlib import Path
 
@@ -16,7 +16,7 @@ JP_FONT_CANDIDATES = [
 ]
 RECENT_MONTHS = 6        # 集計対象の直近月数
 TOP_N = 7                # 表示する上位件数
-FIGURE_SIZE = (12, 5)
+FIGURE_SIZE = (14, 6)  # グラフサイズを拡大して横軸ラベルにスペースを確保
 TITLE_FONTSIZE = 14
 LABEL_FONTSIZE = 12
 COLOR_OUTFLOW = "#d62728"  # 赤（支出）
@@ -91,6 +91,7 @@ def plot_top_flows_chart(top_outflows: pd.Series, top_inflows: pd.Series) -> tup
     ax1.barh(top_outflows.index[::-1], top_outflows.values[::-1], 
              color=COLOR_OUTFLOW)
     ax1.xaxis.set_major_formatter(FuncFormatter(yen_fmt))
+    ax1.xaxis.set_major_locator(MaxNLocator(nbins=5))  # 横軸の目盛り本数を制限
     ax1.set_title(f"主な支出（直近{RECENT_MONTHS}か月）", 
                   fontsize=TITLE_FONTSIZE, fontfamily=JP_FONT)
     ax1.set_xlabel("金額（円）", fontsize=LABEL_FONTSIZE, fontfamily=JP_FONT)
@@ -103,6 +104,7 @@ def plot_top_flows_chart(top_outflows: pd.Series, top_inflows: pd.Series) -> tup
     ax2.barh(top_inflows.index[::-1], top_inflows.values[::-1], 
              color=COLOR_INFLOW)
     ax2.xaxis.set_major_formatter(FuncFormatter(yen_fmt))
+    ax2.xaxis.set_major_locator(MaxNLocator(nbins=5))  # 横軸の目盛り本数を制限
     ax2.set_title(f"主な収入（直近{RECENT_MONTHS}か月）", 
                   fontsize=TITLE_FONTSIZE, fontfamily=JP_FONT)
     ax2.set_xlabel("金額（円）", fontsize=LABEL_FONTSIZE, fontfamily=JP_FONT)
@@ -110,7 +112,7 @@ def plot_top_flows_chart(top_outflows: pd.Series, top_inflows: pd.Series) -> tup
     for label in ax2.get_xticklabels() + ax2.get_yticklabels():
         label.set_fontfamily(JP_FONT)
     
-    fig.tight_layout()
+    fig.tight_layout(pad=1.5)  # グラフ間のパディングを調整
     return fig, (ax1, ax2)
 
 # ========= メイン処理 =========
