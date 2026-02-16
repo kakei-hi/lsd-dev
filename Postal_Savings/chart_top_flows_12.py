@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""主な支出・収入グラフ生成スクリプト（直近6か月、日本語フォント対応）"""
+"""主な支出・収入グラフ生成スクリプト（直近12か月、日本語フォント対応）"""
 
 import pandas as pd
 import numpy as np
@@ -14,7 +14,7 @@ JP_FONT_CANDIDATES = [
     "Yu Gospel", "YuGothic",
     "IPAexGothic", "IPAGothic", "Noto Sans CJK JP", "Source Han Sans JP"
 ]
-RECENT_MONTHS = 6        # 集計対象の直近月数
+RECENT_MONTHS = 12       # 集計対象の直近月数
 TOP_N = 7                # 表示する上位件数
 FIGURE_SIZE = (12, 5)
 TITLE_FONTSIZE = 14
@@ -126,7 +126,7 @@ def main():
     fig, (ax1, ax2) = plot_top_flows_chart(top_outflows, top_inflows)
     
     # 保存
-    out_path = BASE_DIR / "chart_top_flows_6months.pdf"
+    out_path = BASE_DIR / "chart_top_flows_12months.pdf"
     fig.savefig(out_path, format='pdf')
     print(f"saved: {out_path}")
 
