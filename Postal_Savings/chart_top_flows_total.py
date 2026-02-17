@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""主な支出・収入グラフ生成スクリプト（直近6か月、日本語フォント対応）"""
+"""主な支出・収入グラフ生成スクリプト（直近12か月、日本語フォント対応）"""
 
 import pandas as pd
 import numpy as np
@@ -14,8 +14,8 @@ JP_FONT_CANDIDATES = [
     "Yu Gospel", "YuGothic",
     "IPAexGothic", "IPAGothic", "Noto Sans CJK JP", "Source Han Sans JP"
 ]
-RECENT_MONTHS = 6        # 集計対象の直近月数
-TOP_N = 7                # 表示する上位件数
+RECENT_MONTHS = 12       # 集計対象の直近月数
+TOP_N = 5                # 表示する上位件数
 FIGURE_SIZE = (14, 6)  # グラフサイズを拡大して横軸ラベルにスペースを確保
 TITLE_FONTSIZE = 14
 LABEL_FONTSIZE = 12
@@ -51,17 +51,19 @@ def load_and_prepare_data(csv_path: Path) -> pd.DataFrame:
     df = pd.read_csv(csv_path, parse_dates=["Date"])
     for col in ["Deposit", "Withdrawal"]:
         df[col] = pd.to_numeric(df[col], errors="coerce")
+
+    # 摘要の統一処理：「レッツ永山」を「リコーリース」として集計
+    if "Description" in df.columns:
+        df["Description"] = df["Description"].replace("レッツ永山", "リコーリース")
+    
     return df.sort_values("Date").reset_index(drop=True)
 
 def aggregate_top_flows(df: pd.DataFrame) -> tuple:
-    """直近N月の Description 単位で支出・収入を集計し、上位を抽出"""
-    last_date = df["Date"].max()
-    cutoff = last_date - pd.DateOffset(months=RECENT_MONTHS)
-    df_recent = df[df["Date"] >= cutoff].copy()
+    """全期間の Description 単位で支出・収入を集計し、上位を抽出"""
     
     # 支出上位（Withdrawal）
     outflows = (
-        df_recent.groupby("Description", dropna=False)["Withdrawal"]
+        df.groupby("Description", dropna=False)["Withdrawal"]
         .sum()
         .sort_values(ascending=False)
         .dropna()
@@ -70,7 +72,7 @@ def aggregate_top_flows(df: pd.DataFrame) -> tuple:
     
     # 収入上位（Deposit）
     inflows = (
-        df_recent.groupby("Description", dropna=False)["Deposit"]
+        df.groupby("Description", dropna=False)["Deposit"]
         .sum()
         .sort_values(ascending=False)
         .dropna()
@@ -92,7 +94,7 @@ def plot_top_flows_chart(top_outflows: pd.Series, top_inflows: pd.Series) -> tup
              color=COLOR_OUTFLOW)
     ax1.xaxis.set_major_formatter(FuncFormatter(yen_fmt))
     ax1.xaxis.set_major_locator(MaxNLocator(nbins=5))  # 横軸の目盛り本数を制限
-    ax1.set_title(f"主な支出（直近{RECENT_MONTHS}か月）", 
+    ax1.set_title(f"主な支出（全期間）", 
                   fontsize=TITLE_FONTSIZE, fontfamily=JP_FONT)
     ax1.set_xlabel("金額（円）", fontsize=LABEL_FONTSIZE, fontfamily=JP_FONT)
     
@@ -105,7 +107,7 @@ def plot_top_flows_chart(top_outflows: pd.Series, top_inflows: pd.Series) -> tup
              color=COLOR_INFLOW)
     ax2.xaxis.set_major_formatter(FuncFormatter(yen_fmt))
     ax2.xaxis.set_major_locator(MaxNLocator(nbins=5))  # 横軸の目盛り本数を制限
-    ax2.set_title(f"主な収入（直近{RECENT_MONTHS}か月）", 
+    ax2.set_title(f"主な収入（全期間）", 
                   fontsize=TITLE_FONTSIZE, fontfamily=JP_FONT)
     ax2.set_xlabel("金額（円）", fontsize=LABEL_FONTSIZE, fontfamily=JP_FONT)
     
@@ -128,7 +130,7 @@ def main():
     fig, (ax1, ax2) = plot_top_flows_chart(top_outflows, top_inflows)
     
     # 保存
-    out_path = BASE_DIR / "chart_top_flows_6months.pdf"
+    out_path = BASE_DIR / "chart_top_flows_total.pdf"
     fig.savefig(out_path, format='pdf')
     print(f"saved: {out_path}")
 

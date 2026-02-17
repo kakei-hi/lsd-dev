@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""主な支出・収入グラフ生成スクリプト（直近12か月、日本語フォント対応）"""
+"""主な支出・収入グラフ生成スクリプト（直近6か月、日本語フォント対応）"""
 
 import pandas as pd
 import numpy as np
@@ -14,7 +14,7 @@ JP_FONT_CANDIDATES = [
     "Yu Gospel", "YuGothic",
     "IPAexGothic", "IPAGothic", "Noto Sans CJK JP", "Source Han Sans JP"
 ]
-RECENT_MONTHS = 12       # 集計対象の直近月数
+RECENT_MONTHS = 6        # 集計対象の直近月数
 TOP_N = 5                # 表示する上位件数
 FIGURE_SIZE = (14, 6)  # グラフサイズを拡大して横軸ラベルにスペースを確保
 TITLE_FONTSIZE = 14
@@ -52,9 +52,9 @@ def load_and_prepare_data(csv_path: Path) -> pd.DataFrame:
     for col in ["Deposit", "Withdrawal"]:
         df[col] = pd.to_numeric(df[col], errors="coerce")
 
-    # 摘要の統一処理：「レッツ永山」を「リコーリース」として集計
+    # 摘要の統一処理：「リコーリース」を「レッツ永山」として集計
     if "Description" in df.columns:
-        df["Description"] = df["Description"].replace("レッツ永山", "リコーリース")
+        df["Description"] = df["Description"].replace("リコーリース", "レッツ永山")
     
     return df.sort_values("Date").reset_index(drop=True)
 
@@ -133,7 +133,7 @@ def main():
     fig, (ax1, ax2) = plot_top_flows_chart(top_outflows, top_inflows)
     
     # 保存
-    out_path = BASE_DIR / "chart_top_flows_12months.pdf"
+    out_path = BASE_DIR / "chart_top_flows_6months.pdf"
     fig.savefig(out_path, format='pdf')
     print(f"saved: {out_path}")
 
