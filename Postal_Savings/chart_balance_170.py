@@ -16,7 +16,7 @@ JP_FONT_CANDIDATES = [
 ]
 REGRESSION_DAYS = 365  # 回帰分析に使う直近日数
 MIN_DATA_POINTS = 30    # 回帰に必要な最小データ数
-FORECAST_DAYS = 1800    # 予測期間（日）- 2030年まで延長
+FORECAST_DAYS = 1200    # 予測期間（日）
 DEPOSIT_AMOUNT = 1700000  # シミュレーション用入金額
 FIGURE_SIZE = (12, 5)
 TITLE_FONTSIZE = 14
