@@ -21,6 +21,7 @@ FIGURE_SIZE = (12, 5)
 TITLE_FONTSIZE = 14
 LABEL_FONTSIZE = 12
 BASE_DIR = Path(__file__).parent
+OUT_DIR = Path("/Users/hidekazukakei/Library/Mobile Documents/com~apple~CloudDocs/上柚木/秀夫JA_ゆうちょ")
 
 # ========= 日本語フォントの自動選択 =========
 def resolve_jp_font() -> str:
@@ -193,7 +194,7 @@ def main():
     fig, ax = plot_balance_chart(daily_bal, future_idx, y_future, zero_date, slope)
     
     # 保存
-    out_path = BASE_DIR / "hideo_chart_balance.pdf"
+    out_path = OUT_DIR / "hideo_chart_balance.pdf"
     fig.savefig(out_path, format='pdf')
     print(f"\nグラフを保存しました: {out_path}")
 
