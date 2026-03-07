@@ -22,6 +22,7 @@ FIGURE_SIZE = (12, 5)
 TITLE_FONTSIZE = 14
 LABEL_FONTSIZE = 12
 BASE_DIR = Path("/Users/hidekazukakei/Library/Mobile Documents/com~apple~CloudDocs/上柚木/義母ゆうちょ")
+ANCHOR_DATE = pd.Timestamp("2022-12-17")  # この日のBalanceのみ基準値として使用
 
 # ========= 日本語フォントの自動選択 =========
 def resolve_jp_font() -> str:
@@ -54,18 +55,45 @@ def load_and_prepare_data(csv_path: Path) -> pd.DataFrame:
     return df.sort_values("Date").reset_index(drop=True)
 
 def create_daily_balance(df: pd.DataFrame) -> pd.DataFrame:
-    """不規則なデータを日次ベースに補間"""
-    bal_df = (
-        df[["Date", "Balance"]]
-        .dropna()
-        .drop_duplicates(subset=["Date"], keep="last")
-        .set_index("Date")
-        .sort_index()
+    """2022-12-17のBalanceを基準に、入出金から日次残高を再構築"""
+    anchor_rows = df[(df["Date"] == ANCHOR_DATE) & (df["Balance"].notna())]
+    if anchor_rows.empty:
+        raise ValueError(f"Anchor Balance not found for {ANCHOR_DATE.date()}")
+    anchor_balance = float(anchor_rows.iloc[-1]["Balance"])
+
+    # 同一日付に複数行ある場合は入金・出金を日単位で合算
+    txn_daily = (
+        df.groupby("Date", as_index=False)[["Deposit", "Withdrawal"]]
+        .sum(min_count=1)
+        .fillna(0.0)
+        .sort_values("Date")
     )
-    idx = pd.date_range(bal_df.index.min(), bal_df.index.max(), freq="D")
-    daily = bal_df.reindex(idx).ffill().reset_index()
-    daily.columns = ["Date", "Balance"]
-    return daily
+    txn_daily["NetCashflow"] = txn_daily["Deposit"] - txn_daily["Withdrawal"]
+
+    start_date = min(txn_daily["Date"].min(), ANCHOR_DATE)
+    end_date = max(txn_daily["Date"].max(), ANCHOR_DATE)
+    idx = pd.date_range(start_date, end_date, freq="D")
+
+    daily = pd.DataFrame({"Date": idx})
+    daily = daily.merge(txn_daily[["Date", "NetCashflow"]], on="Date", how="left")
+    daily["NetCashflow"] = daily["NetCashflow"].fillna(0.0)
+    daily["Balance"] = np.nan
+
+    anchor_idx = daily.index[daily["Date"] == ANCHOR_DATE]
+    if len(anchor_idx) != 1:
+        raise ValueError(f"Anchor date index error: {ANCHOR_DATE.date()}")
+    anchor_idx = int(anchor_idx[0])
+    daily.at[anchor_idx, "Balance"] = anchor_balance
+
+    # 前方復元: 当日残高 = 前日残高 + 当日純入出金
+    for i in range(anchor_idx + 1, len(daily)):
+        daily.at[i, "Balance"] = daily.at[i - 1, "Balance"] + daily.at[i, "NetCashflow"]
+
+    # 後方復元: 前日残高 = 当日残高 - 当日純入出金
+    for i in range(anchor_idx - 1, -1, -1):
+        daily.at[i, "Balance"] = daily.at[i + 1, "Balance"] - daily.at[i + 1, "NetCashflow"]
+
+    return daily[["Date", "Balance"]]
 
 def create_simulated_balance(daily_bal: pd.DataFrame, deposit: float) -> pd.DataFrame:
     """最終日翌日に入金を加えたシミュレーション用データを作成"""
