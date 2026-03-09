@@ -23,6 +23,7 @@ COLOR_POSITIVE = "#2ca02c"
 COLOR_NEGATIVE = "#d62728"
 SCRIPT_DIR = Path(__file__).parent
 OUTPUT_DIR = Path("/Users/hidekazukakei/Library/Mobile Documents/com~apple~CloudDocs/上柚木/秀夫JA_ゆうちょ")
+ANCHOR_DATE = pd.Timestamp("2023-07-31")  # この日のBalanceのみ基準値として使用
 
 # ========= 日本語フォントの自動選択 =========
 def resolve_jp_font() -> str:
@@ -50,9 +51,51 @@ plt.rcParams["pdf.fonttype"] = 42
 def load_and_prepare_data(csv_path: Path) -> pd.DataFrame:
     """CSVファイルを読込んでデータを前処理"""
     df = pd.read_csv(csv_path, parse_dates=["Date"])
-    for col in ["Deposit", "Withdrawal"]:
-        df[col] = pd.to_numeric(df[col], errors="coerce").fillna(0.0)
+    for col in ["Deposit", "Withdrawal", "Balance"]:
+        df[col] = pd.to_numeric(df[col], errors="coerce")
+    df[["Deposit", "Withdrawal"]] = df[["Deposit", "Withdrawal"]].fillna(0.0)
     return df.sort_values("Date").reset_index(drop=True)
+
+def create_daily_balance(df: pd.DataFrame) -> pd.DataFrame:
+    """2023-07-31のBalanceを基準に、入出金から日次残高を再構築"""
+    df = df.copy()
+    df["Date"] = pd.to_datetime(df["Date"]).dt.normalize()
+
+    anchor_rows = df[(df["Date"] == ANCHOR_DATE) & (df["Balance"].notna())]
+    if anchor_rows.empty:
+        raise ValueError(f"Anchor Balance not found for {ANCHOR_DATE.date()}")
+    anchor_balance = float(anchor_rows.iloc[-1]["Balance"])
+
+    txn_daily = (
+        df.groupby("Date", as_index=False)[["Deposit", "Withdrawal"]]
+        .sum(min_count=1)
+        .fillna(0.0)
+        .sort_values("Date")
+    )
+    txn_daily["NetCashflow"] = txn_daily["Deposit"] - txn_daily["Withdrawal"]
+
+    start_date = min(txn_daily["Date"].min(), ANCHOR_DATE)
+    end_date = max(txn_daily["Date"].max(), ANCHOR_DATE)
+    idx = pd.date_range(start_date, end_date, freq="D")
+
+    daily = pd.DataFrame({"Date": idx})
+    daily = daily.merge(txn_daily[["Date", "NetCashflow"]], on="Date", how="left")
+    daily["NetCashflow"] = daily["NetCashflow"].fillna(0.0)
+    daily["Balance"] = np.nan
+
+    anchor_idx = daily.index[daily["Date"] == ANCHOR_DATE]
+    if len(anchor_idx) != 1:
+        raise ValueError(f"Anchor date index error: {ANCHOR_DATE.date()}")
+    anchor_idx = int(anchor_idx[0])
+    daily.at[anchor_idx, "Balance"] = anchor_balance
+
+    for i in range(anchor_idx + 1, len(daily)):
+        daily.at[i, "Balance"] = daily.at[i - 1, "Balance"] + daily.at[i, "NetCashflow"]
+
+    for i in range(anchor_idx - 1, -1, -1):
+        daily.at[i, "Balance"] = daily.at[i + 1, "Balance"] - daily.at[i + 1, "NetCashflow"]
+
+    return daily[["Date", "Balance"]]
 
 def aggregate_monthly_data(df: pd.DataFrame) -> pd.DataFrame:
     """日次データを月単位に集計し、直近Nか月に絞る"""
@@ -115,9 +158,11 @@ def main():
     # データ読込と前処理
     csv_path = SCRIPT_DIR / "Hideo_balance.csv"
     df = load_and_prepare_data(csv_path)
+    daily_bal = create_daily_balance(df)
     
     print(f"データ読込完了: {csv_path}")
     print(f"データ期間: {df['Date'].min().date()} ～ {df['Date'].max().date()}")
+    print(f"再構築残高期間: {daily_bal['Date'].min().date()} ～ {daily_bal['Date'].max().date()}")
     
     # 月単位に集計
     monthly_data = aggregate_monthly_data(df)
