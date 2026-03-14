@@ -1,6 +1,13 @@
 {
+  // 1. Condaのパスとしてmambaを指定
+  "python.condaPath": "/Users/hidekazukakei/miniforge3/condabin/mamba",
+
+  // 2. インタープリターのパス
   "python.defaultInterpreterPath": "/Users/hidekazukakei/Documents/GitHub/lsd-dev/net_app/envs/bin/python",
+
+  // 3. 環境マネージャーとパッケージマネージャーの設定
   "python-envs.defaultEnvManager": "ms-python.python:conda",
   "python-envs.defaultPackageManager": "ms-python.python:conda",
+  
   "python-envs.pythonProjects": []
 }
